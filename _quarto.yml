@@ -49,6 +49,7 @@ book:
         - lists.qmd
         - dataframes_intro.qmd
         - factors.qmd
+        - classes.qmd
     - references.qmd
     
   appendices:

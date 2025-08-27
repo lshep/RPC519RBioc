@@ -1,0 +1,11 @@
+# Classes
+
+All the data structures discussed are also known as an object's class. While R
+has many predefined classes, it is flexible to create new classes. Many packages
+define their own classes of objects. This can be beneficial for organizational
+purposes as well as to build custom functions for specialized analysis.
+
+This is a high level concept to be aware of. Bioconductor for example has many
+specialized classes related to genomic research. An overview of some of those
+classes can be found at [Introduction to Bioconductor
+Classes](https://lshep.github.io/RPG520/articles/day_4.html)
