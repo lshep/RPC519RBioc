@@ -1,5 +1,14 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This is a selection of material from **The RBioc Book** created by Sean
+Davis. The original full content may be viewed
+[here](https://seandavi.github.io/RBiocBook/). The contents of this book may
+have minor modifications or additions. 
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+The material is modified and redistributed in accordance with the original [Licensing](https://seandavi.github.io/RBiocBook/license.html).
+
+Select modifications were inspired by [RPC 520
+content](https://mtmorgan.github.io/RPG520/) originally distributed by Martin
+Morgan.
+
+To Learn more about creating Quarto books visit <https://quarto.org/docs/books>.
