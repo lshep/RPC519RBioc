@@ -31,8 +31,10 @@ book:
 
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - part: "Introduction"
+      chapters:
+        - intro.qmd
+        - intro_to_rstudio.qmd
     - references.qmd
 
   page-footer:

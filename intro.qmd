@@ -1,5 +1,109 @@
-# Introduction
+# About R
 
-This is a book created from markdown and executable code.
+In this chapter, we will discuss the basics of R and RStudio\index{RStudio}, two essential
+tools in genomics data analysis. We will cover the advantages of using R and
+RStudio, how to set up RStudio, and the different panels of the RStudio
+interface.
 
-See @knuth84 for additional discussion of literate programming.
+## What is R?
+
+[R](https://en.wikipedia.org/wiki/R_(programming_language)) is a programming
+language and software environment designed for statistical computing and
+graphics. It is widely used by statisticians, data scientists, and researchers
+for data analysis and visualization. R is an open-source language, which means
+it is free to use, modify, and distribute. Over the years, R has become
+particularly popular in the fields of genomics and bioinformatics, owing to its
+extensive libraries and powerful data manipulation capabilities.
+
+The R language is a dialect of the S language, which was developed in the 1970s
+at Bell Laboratories. The first version of R was written by Robert Gentleman
+and Ross Ihaka and released in 1995 (see [this slide
+deck](https://www.stat.auckland.ac.nz/~ihaka/downloads/Massey.pdf) for Ross
+Ihaka's take on R's history). Since then, R has been continuously developed by
+the R Core Team, a group of statisticians and computer scientists. The R Core
+Team releases a new version of R every year.
+
+
+## Why use R?
+
+There are several reasons why R is a popular choice for data analysis,
+particularly in genomics and bioinformatics. These include:
+
+1. **Open-source**: R is free to use and has a large community of developers
+   who contribute to its growth and development. [What is "open-source"?](https://opensource.com/resources/what-open-source)
+1. **Extensive libraries**: There are thousands of R packages available for a
+   wide range of tasks, including specialized packages for genomics and
+   bioinformatics. These libraries have been extensively tested and ara
+   available for free.
+1. **Data manipulation**: R has powerful data manipulation capabilities, making
+   it easy (or at least possible) to clean, process, and analyze large
+   datasets.
+1. **Graphics and visualization**: R has excellent tools for creating
+   high-quality graphics and visualizations that can be customized to meet the
+   specific needs of your analysis. In most cases, graphics produced by R are
+   publication-quality. 
+1. **Reproducible research**: R enables you to create reproducible research by
+   recording your analysis in a script, which can be easily shared and executed
+   by others. In addition, R does not have a meaningful graphical user
+   interface (GUI), which renders analysis in R much more reproducible than
+   tools that rely on GUI interactions.
+1. **Cross-platform**: R runs on Windows, Mac, and Linux (as well as more
+   obscure systems).
+1. **Interoperability with other languages**: R can interfact with FORTRAN, C,
+   and many other languages.
+1. **Scalability**: R is useful for small and large projects.
+
+I can develop code for analysis on my Mac laptop. I can
+then install the *same* code on our 20k core cluster and run it in
+parallel on 100 samples, monitor the process, and then update a database (for example)
+with R when complete. In other words, R is a powerful tool that can be used
+for a wide range of tasks, from small-scale data analysis to large-scale
+genomics and omics data science projects.
+
+## Why not use R?
+
+- R cannot do everything.
+- R is not always the “best” tool for the job.
+- R will *not* hold your hand. Often, it will *slap* your hand instead.
+- The documentation can be opaque (but there is documentation).
+- R can drive you crazy (on a good day) or age you prematurely (on a
+    bad one).
+- Finding the right package to do the job you want to do can be
+    challenging; worse, some contributed packages are unreliable.]{}
+- R does not have a meaningfully useful graphical user interface (GUI).
+- Additional languages are becoming increasingly popular for bioinformatics
+  and biological data science, such as Python, Julia, and Rust.
+
+## R License and the Open Source Ideal
+
+R is free (yes, totally free!) and distributed under GNU license. In particular, this license allows one to:
+
+- Download the source code
+- Modify the source code to your heart’s content
+- Distribute the modified source code and even charge
+    money for it, but you must distribute the modified source code
+    under the original GNU license.
+
+This license means that R will always be
+available, will always be open source, and can grow organically without
+constraint.
+
+## Working with R
+
+R is a programming language, and as such, it requires you to write code to
+perform tasks. This can be intimidating for beginners, but it is also what
+makes R so powerful. In R, you can write scripts to automate tasks, create
+functions to encapsulate complex operations, and use packages to extend the
+functionality of R.
+
+R can be used interactively or as a scripting language. In interactive mode, you can
+enter commands directly into the R console and see the results immediately. In
+scripting mode, you can write a series of commands in a script file and then
+execute the entire script at once. This allows you to save your work, reuse code,
+and share your analysis with others.
+
+In the next section, we will discuss how to set up RStudio, an integrated
+development environment (IDE) for R that makes it easier to write and execute R
+code. However, you can use R without RStudio if you prefer to work in the R console or
+another IDE. RStudio is not required to use R, but it does provide a more user-friendly
+interface and several useful features that can enhance your R programming experience.
