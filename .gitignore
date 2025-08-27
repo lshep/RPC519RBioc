@@ -1,4 +1,5 @@
 /.quarto/
+/_site/
 _book
 _extensions/nmfs-opensci/titlepage
 *_cache
