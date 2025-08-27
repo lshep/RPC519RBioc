@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2025-08-27">
 <meta name="description" content="A selection of material introducing R, Bioconductor, and more …">
 
-<title>References – RPC 519 R and Bioconductor</title>
+<title>6&nbsp; Reading and writing data files – RPC 519 R and Bioconductor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,8 +68,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix.html" rel="next">
-<link href="./reading_and_writing.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./packages.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -150,7 +166,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./reading_and_writing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and writing data files</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -209,7 +225,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reading_and_writing.html" class="sidebar-item-text sidebar-link">
+  <a href="./reading_and_writing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and writing data files</span></span></a>
   </div>
 </li>
@@ -217,7 +233,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -261,15 +277,32 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">6.1</span> Introduction</a></li>
+  <li><a href="#csv-files" id="toc-csv-files" class="nav-link" data-scroll-target="#csv-files"><span class="header-section-number">6.2</span> CSV files</a>
+  <ul class="collapse">
+  <li><a href="#writing-a-csv-file" id="toc-writing-a-csv-file" class="nav-link" data-scroll-target="#writing-a-csv-file"><span class="header-section-number">6.2.1</span> Writing a CSV file</a></li>
+  <li><a href="#reading-a-csv-file" id="toc-reading-a-csv-file" class="nav-link" data-scroll-target="#reading-a-csv-file"><span class="header-section-number">6.2.2</span> Reading a CSV file</a></li>
+  </ul></li>
+  <li><a href="#excel-files" id="toc-excel-files" class="nav-link" data-scroll-target="#excel-files"><span class="header-section-number">6.3</span> Excel files</a>
+  <ul class="collapse">
+  <li><a href="#reading-an-excel-file" id="toc-reading-an-excel-file" class="nav-link" data-scroll-target="#reading-an-excel-file"><span class="header-section-number">6.3.1</span> Reading an Excel file</a></li>
+  <li><a href="#writing-an-excel-file" id="toc-writing-an-excel-file" class="nav-link" data-scroll-target="#writing-an-excel-file"><span class="header-section-number">6.3.2</span> Writing an Excel file</a></li>
+  </ul></li>
+  <li><a href="#additional-options" id="toc-additional-options" class="nav-link" data-scroll-target="#additional-options"><span class="header-section-number">6.4</span> Additional options</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/reading_and_writing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/reading_and_writing.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./reading_and_writing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and writing data files</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and writing data files</span></h1>
 </div>
 
 
@@ -313,11 +346,179 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<section id="introduction" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">6.1</span> Introduction</h2>
+<p>In this chapter, we will discuss how to read and write data files in R. Data files are essential for storing and sharing data across different platforms and applications. R provides a variety of functions and packages to read and write data files in different formats, such as text files, CSV files, Excel files. By mastering these functions, you can efficiently import and export data in R, enabling you to perform data analysis and visualization tasks effectively.</p>
+</section>
+<section id="csv-files" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="csv-files"><span class="header-section-number">6.2</span> CSV files</h2>
+<p>Comma-Separated Values (CSV) files are a common file format for storing tabular data. They consist of rows and columns, with each row representing a record and each column representing a variable or attribute. CSV files are widely used for data storage and exchange due to their simplicity and compatibility with various software applications. In R, you can read and write CSV files using the <code>read.csv()</code> and <code>write.csv()</code> functions, respectively. A commonly used alternative is to use the <code>readr</code> package, which provides faster and more user-friendly functions for reading and writing CSV files.</p>
+<section id="writing-a-csv-file" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="writing-a-csv-file"><span class="header-section-number">6.2.1</span> Writing a CSV file</h3>
+<p>Since we are going to use the <code>readr</code> package, we need to install it first. You can install the <code>readr</code> package using the following command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Once the package is installed, you can load it into your R session using the <code>library()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Since we don’t have a CSV file sitting around, let’s create a simple data frame to write to a CSV file. Here’s an example data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>, <span class="st">"Eve"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, you can write this data frame to a CSV file using the <code>write_csv()</code> function from the <code>readr</code> package. Here’s how you can do it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(df, <span class="st">"data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can check the current working directory to see if the CSV file was created successfully. If you want to specify a different directory or file path, you can provide the full path in the <code>write_csv()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see what the current working directory is</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/lorikern/Projects/Papers_Reporting_Conferences/RBiocBook-book/RPC519RBioc"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and check to see that the file was created</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(<span class="at">pattern =</span> <span class="st">"data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.csv"</code></pre>
+</div>
+</div>
+</section>
+<section id="reading-a-csv-file" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="reading-a-csv-file"><span class="header-section-number">6.2.2</span> Reading a CSV file</h3>
+<p>Now that we have a CSV file, let’s read it back into R using the <code>read_csv()</code> function from the <code>readr</code> package. Here’s how you can do it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 5 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): name
+dbl (2): id, age
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>You can check the structure of the data frame <code>df2</code> to verify that the data was read correctly:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 3
+     id name      age
+  &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+1     1 Alice      25
+2     2 Bob        30
+3     3 Charlie    35
+4     4 David      40
+5     5 Eve        45</code></pre>
+</div>
+</div>
+<p>The <code>readr</code> package can read CSV files with various delimiters, headers, and data types, making it a versatile tool for handling tabular data in R. It can also read CSV files directly from web locations like so:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://data.cdc.gov/resource/pwn4-m3yp.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1000 Columns: 10
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): state
+dbl  (6): tot_cases, new_cases, tot_deaths, new_deaths, new_historic_cases, ...
+dttm (3): date_updated, start_date, end_date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>The dataset that you just downloaded is described here: <a href="https://data.cdc.gov/Case-Surveillance/Weekly-United-States-COVID-19-Cases-and-Deaths-by-/pwn4-m3yp/about_data">Covid-19 data from CDC</a></p>
+</section>
+</section>
+<section id="excel-files" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="excel-files"><span class="header-section-number">6.3</span> Excel files</h2>
+<p>Microsoft Excel files are another common file format for storing tabular data. Excel files can contain multiple sheets, formulas, and formatting options, making them a popular choice for data storage and analysis. In R, you can read and write Excel files using the <code>readxl</code> package. This package provides functions to import and export data from Excel files, enabling you to work with Excel data in R.</p>
+<section id="reading-an-excel-file" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="reading-an-excel-file"><span class="header-section-number">6.3.1</span> Reading an Excel file</h3>
+<p>To read an Excel file in R, you need to install and load the <code>readxl</code> package. You can install the <code>readxl</code> package using the following command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once the package is installed, you can load it into your R session using the <code>library()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, you can read an Excel file using the <code>read_excel()</code> function from the <code>readxl</code> package. We don’t have an excel file available, so let’s download one from the internet. Here’s an example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">'https://www.w3resource.com/python-exercises/pandas/excel/SaleData.xlsx'</span>, <span class="st">'SaleData.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, you can read the Excel file into R using the <code>read_excel()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_excel <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"SaleData.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can check the structure of the data frame <code>df_excel</code> to verify that the data was read correctly:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df_excel</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 45 × 8
+   OrderDate           Region  Manager SalesMan  Item  Units Unit_price Sale_amt
+   &lt;dttm&gt;              &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
+ 1 2018-01-06 00:00:00 East    Martha  Alexander Tele…    95       1198   113810
+ 2 2018-01-23 00:00:00 Central Hermann Shelli    Home…    50        500    25000
+ 3 2018-02-09 00:00:00 Central Hermann Luis      Tele…    36       1198    43128
+ 4 2018-02-26 00:00:00 Central Timothy David     Cell…    27        225     6075
+ 5 2018-03-15 00:00:00 West    Timothy Stephen   Tele…    56       1198    67088
+ 6 2018-04-01 00:00:00 East    Martha  Alexander Home…    60        500    30000
+ 7 2018-04-18 00:00:00 Central Martha  Steven    Tele…    75       1198    89850
+ 8 2018-05-05 00:00:00 Central Hermann Luis      Tele…    90       1198   107820
+ 9 2018-05-22 00:00:00 West    Douglas Michael   Tele…    32       1198    38336
+10 2018-06-08 00:00:00 East    Martha  Alexander Home…    60        500    30000
+# ℹ 35 more rows</code></pre>
+</div>
+</div>
+<p>The <code>readxl</code> package provides various options to read Excel files with multiple sheets, specific ranges, and data types, making it a versatile tool for handling Excel data in R.</p>
+</section>
+<section id="writing-an-excel-file" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="writing-an-excel-file"><span class="header-section-number">6.3.2</span> Writing an Excel file</h3>
+<p>To write an Excel file in R, you can use the <code>write_xlsx()</code> function from the <code>writexl</code> package. You can install the <code>writexl</code> package using the following command:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"writexl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once the package is installed, you can load it into your R session using the <code>library()</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>write_xlsx()</code> function allows you to write a data frame to an Excel file. Here’s an example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(df, <span class="st">"data.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can check the current working directory to see if the Excel file was created successfully. If you want to specify a different directory or file path, you can provide the full path in the <code>write_xlsx()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># see what the current working directory is</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/home/lorikern/Projects/Papers_Reporting_Conferences/RBiocBook-book/RPC519RBioc"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># and check to see that the file was created</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir</span>(<span class="at">pattern =</span> <span class="st">"data.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.xlsx"</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="additional-options" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="additional-options"><span class="header-section-number">6.4</span> Additional options</h2>
+<ul>
+<li>Google Sheets: You can read and write data from Google Sheets using the <code>googlesheets4</code> package. This package provides functions to interact with Google Sheets, enabling you to import and export data from Google Sheets to R.</li>
+<li>JSON files: You can read and write JSON files using the <code>jsonlite</code> package. This package provides functions to convert R objects to JSON format and vice versa, enabling you to work with JSON data in R.</li>
+<li>Database files: You can read and write data from database files using the <code>DBI</code> and <code>RSQLite</code> packages. These packages provide functions to interact with various database systems, enabling you to import and export data from databases to R.</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -721,13 +922,13 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./reading_and_writing.html" class="pagination-link" aria-label="Reading and writing data files">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and writing data files</span></span>
+      <a href="./packages.html" class="pagination-link" aria-label="Packages">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Packages</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix.html" class="pagination-link" aria-label="Interactive Intro to R">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Interactive Intro to R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -745,7 +946,7 @@ div.csl-indent {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/references.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/reading_and_writing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/reading_and_writing.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
