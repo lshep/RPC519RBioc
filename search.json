@@ -395,6 +395,472 @@
     ]
   },
   {
+    "objectID": "rproj_and_save_load.html",
+    "href": "rproj_and_save_load.html",
+    "title": "7  Saving and Loading Workspaces and Objects",
+    "section": "",
+    "text": "7.1 Rstudio Projects",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Saving and Loading Workspaces and Objects</span>"
+    ]
+  },
+  {
+    "objectID": "rproj_and_save_load.html#saving-and-loading-objects",
+    "href": "rproj_and_save_load.html#saving-and-loading-objects",
+    "title": "7  Saving and Loading Workspaces and Objects",
+    "section": "7.2 Saving and Loading Objects",
+    "text": "7.2 Saving and Loading Objects",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Saving and Loading Workspaces and Objects</span>"
+    ]
+  },
+  {
+    "objectID": "rproj_and_save_load.html#saving-and-loading-workspace",
+    "href": "rproj_and_save_load.html#saving-and-loading-workspace",
+    "title": "7  Saving and Loading Workspaces and Objects",
+    "section": "7.3 Saving and Loading Workspace",
+    "text": "7.3 Saving and Loading Workspace",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Saving and Loading Workspaces and Objects</span>"
+    ]
+  },
+  {
+    "objectID": "data_structures_overview.html",
+    "href": "data_structures_overview.html",
+    "title": "R Data Structures",
+    "section": "",
+    "text": "Chapter overview\nWelcome to the section on R data structures! As you begin your journey in learning R, it is essential to understand the fundamental building blocks of this powerful programming language. R offers a variety of data structures to store and manipulate data, each with its unique properties and capabilities. In this section, we will cover the core data structures in R, including:\nBy the end of this section, you will have a solid understanding of these data structures, and you will be able to choose and utilize the appropriate data structure for your specific data manipulation and analysis tasks.\nIn each chapter, we will delve into the properties and usage of each data structure, starting with their definitions and moving on to their practical applications. We will provide examples, exercises, and active learning approaches to help you better understand and apply these concepts in your work.\nAs you progress through these chapters, practice the examples and exercises provided, engage in discussion, and collaborate with your peers to deepen your understanding of R data structures. This solid foundation will serve as the basis for more advanced data manipulation, analysis, and visualization techniques in R.",
+    "crumbs": [
+      "Home",
+      "R Data Structures"
+    ]
+  },
+  {
+    "objectID": "data_structures_overview.html#chapter-overview",
+    "href": "data_structures_overview.html#chapter-overview",
+    "title": "R Data Structures",
+    "section": "",
+    "text": "Vectors\n\nIn this chapter, we will introduce you to the simplest data structure in R, the vector. We will cover how to create, access, and manipulate vectors, as well as discuss their unique properties and limitations.\n\n\n\nMatrices\n\nNext, we will explore matrices, which are two-dimensional data structures that extend vectors. You will learn how to create, access, and manipulate matrices, and understand their usefulness in mathematical operations and data organization.\n\n\n\nLists\n\nThe third chapter will focus on lists, a versatile data structure that can store elements of different types and sizes. We will discuss how to create, access, and modify lists, and demonstrate their flexibility in handling complex data structures.\n\n\n\nData.frames\n\nFinally, we will examine data.frames, a widely-used data structure for organizing and manipulating tabular data. You will learn how to create, access, and manipulate data.frames, and understand their advantages over other data structures for data analysis tasks.\n\n\n\nArrays\n\nWhile we will not focus directly on the array data type, which are multidimensional data structures that extend matrices, they are very similar to matrices, but with a third dimension.",
+    "crumbs": [
+      "Home",
+      "R Data Structures"
+    ]
+  },
+  {
+    "objectID": "vectors.html",
+    "href": "vectors.html",
+    "title": "8  Vectors",
+    "section": "",
+    "text": "8.1 What is a Vector?\nA vector is the simplest and most basic data structure in R. It is a one-dimensional, ordered collection of elements, where all the elements are of the same data type. Vectors can store various types of data, such as numeric, character, or logical values. Figure 8.1 shows a pictorial representation of three vector examples.\nIn this chapter, we will provide a comprehensive overview of vectors, including how to create, access, and manipulate them. We will also discuss some unique properties and rules associated with vectors, and explore their applications in data analysis tasks.\nIn R, even a single value is a vector with length=1.\nz = 1\nz\n\n[1] 1\n\nlength(z)\n\n[1] 1\nIn the code above, we “assigned” the value 1 to the variable named z. Typing z by itself is an “expression” that returns a result which is, in this case, the value that we just assigned. The length method takes an R object and returns the R length. There are numerous ways of asking R about what an object represents, and length is one of them.\nVectors can contain numbers, strings (character data), or logical values (TRUE and FALSE) or other “atomic” data types Table 8.1. Vectors cannot contain a mix of types! We will introduce another data structure, the R list for situations when we need to store a mix of base R data types.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#what-is-a-vector",
+    "href": "vectors.html#what-is-a-vector",
+    "title": "8  Vectors",
+    "section": "",
+    "text": "Figure 8.1: “Pictorial representation of three vector examples. The first vector is a numeric vector. The second is a ‘logical’ vector. The third is a character vector. Vectors also have indices and, optionally, names.”\n\n\n\n\n\n\n\n\n\n\n\nTable 8.1: Atomic (simplest) data types in R.\n\n\n\n\n\nData type\nStores\n\n\n\n\nnumeric\nfloating point numbers\n\n\ninteger\nintegers\n\n\ncomplex\ncomplex numbers\n\n\nfactor\ncategorical data\n\n\ncharacter\nstrings\n\n\nlogical\nTRUE or FALSE\n\n\nNA\nmissing\n\n\nNULL\nempty\n\n\nfunction\nfunction type",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#creating-vectors",
+    "href": "vectors.html#creating-vectors",
+    "title": "8  Vectors",
+    "section": "8.2 Creating vectors",
+    "text": "8.2 Creating vectors\nCharacter vectors (also sometimes called “string” vectors) are entered with each value surrounded by single or double quotes; either is acceptable, but they must match. They are always displayed by R with double quotes. Here are some examples of creating vectors:\n\n# examples of vectors\nc('hello','world')\n\n[1] \"hello\" \"world\"\n\nc(1,3,4,5,1,2)\n\n[1] 1 3 4 5 1 2\n\nc(1.12341e7,78234.126)\n\n[1] 11234100.00    78234.13\n\nc(TRUE,FALSE,TRUE,TRUE)\n\n[1]  TRUE FALSE  TRUE  TRUE\n\n# note how in the next case the TRUE is converted to \"TRUE\"\n# with quotes around it.\nc(TRUE,'hello')\n\n[1] \"TRUE\"  \"hello\"\n\n\nWe can also create vectors as “regular sequences” of numbers. For example:\n\n# create a vector of integers from 1 to 10\nx = 1:10\n# and backwards\nx = 10:1\n\nThe seq function can create more flexible regular sequences.\n\n# create a vector of numbers from 1 to 4 skipping by 0.3\ny = seq(1,4,0.3)\n\nAnd creating a new vector by concatenating existing vectors is possible, as well.\n\n# create a sequence by concatenating two other sequences\nz = c(y,x)\nz\n\n [1]  1.0  1.3  1.6  1.9  2.2  2.5  2.8  3.1  3.4  3.7  4.0 10.0  9.0  8.0  7.0\n[16]  6.0  5.0  4.0  3.0  2.0  1.0",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#vector-operations",
+    "href": "vectors.html#vector-operations",
+    "title": "8  Vectors",
+    "section": "8.3 Vector Operations",
+    "text": "8.3 Vector Operations\nOperations on a single vector are typically done element-by-element. For example, we can add 2 to a vector, 2 is added to each element of the vector and a new vector of the same length is returned.\n\nx = 1:10\nx + 2\n\n [1]  3  4  5  6  7  8  9 10 11 12\n\n\nIf the operation involves two vectors, the following rules apply. If the vectors are the same length: R simply applies the operation to each pair of elements.\n\nx + x\n\n [1]  2  4  6  8 10 12 14 16 18 20\n\n\nIf the vectors are different lengths, but one length a multiple of the other, R reuses the shorter vector as needed.\n\nx = 1:10\ny = c(1,2)\nx * y\n\n [1]  1  4  3  8  5 12  7 16  9 20\n\n\nIf the vectors are different lengths, but one length not a multiple of the other, R reuses the shorter vector as needed and delivers a warning.\n\nx = 1:10\ny = c(2,3,4)\nx * y\n\nWarning in x * y: longer object length is not a multiple of shorter object\nlength\n\n\n [1]  2  6 12  8 15 24 14 24 36 20\n\n\nTypical operations include multiplication (“*”), addition, subtraction, division, exponentiation (“^”), but many operations in R operate on vectors and are then called “vectorized”.\n\n\n\n\n\n\nWarning\n\n\n\nBe aware of the recycling rule when working with vectors of different lengths, as it may lead to unexpected results if you’re not careful.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#logical-vectors",
+    "href": "vectors.html#logical-vectors",
+    "title": "8  Vectors",
+    "section": "8.4 Logical Vectors",
+    "text": "8.4 Logical Vectors\nLogical vectors are vectors composed on only the values TRUE and FALSE. Note the all-upper-case and no quotation marks.\n\na = c(TRUE,FALSE,TRUE)\n\n# we can also create a logical vector from a numeric vector\n# 0 = false, everything else is 1\nb = c(1,0,217)\nd = as.logical(b)\nd\n\n[1]  TRUE FALSE  TRUE\n\n# test if a and d are the same at every element\nall.equal(a,d)\n\n[1] TRUE\n\n# We can also convert from logical to numeric\nas.numeric(a)\n\n[1] 1 0 1\n\n\n\n8.4.1 Logical Operators\nSome operators like &lt;, &gt;, ==, &gt;=, &lt;=, != can be used to create logical vectors.\n\n# create a numeric vector\nx = 1:10\n# testing whether x &gt; 5 creates a logical vector\nx &gt; 5\n\n [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE\n\nx &lt;= 5\n\n [1]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE\n\nx != 5\n\n [1]  TRUE  TRUE  TRUE  TRUE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE\n\nx == 5\n\n [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE\n\n\nWe can also assign the results to a variable:\n\ny = (x == 5)\ny\n\n [1] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#indexing-vectors",
+    "href": "vectors.html#indexing-vectors",
+    "title": "8  Vectors",
+    "section": "8.5 Indexing Vectors",
+    "text": "8.5 Indexing Vectors\nIn R, an index is used to refer to a specific element or set of elements in an vector (or other data structure). [R uses [ and ] to perform indexing, although other approaches to getting subsets of larger data structures are common in R.\n\nx = seq(0,1,0.1)\n# create a new vector from the 4th element of x\nx[4]\n\n[1] 0.3\n\n\nWe can even use other vectors to perform the “indexing”.\n\nx[c(3,5,6)]\n\n[1] 0.2 0.4 0.5\n\ny = 3:6\nx[y]\n\n[1] 0.2 0.3 0.4 0.5\n\n\nCombining the concept of indexing with the concept of logical vectors results in a very power combination.\n\n# use help('rnorm') to figure out what is happening next\nmyvec = rnorm(10)\n\n# create logical vector that is TRUE where myvec is &gt;0.25\ngt1 = (myvec &gt; 0.25)\nsum(gt1)\n\n[1] 4\n\n# and use our logical vector to create a vector of myvec values that are &gt;0.25\nmyvec[gt1]\n\n[1] 1.3312651 0.6017431 0.3761033 0.4584445\n\n# or &lt;=0.25 using the logical \"not\" operator, \"!\"\nmyvec[!gt1]\n\n[1] -0.4385308 -0.5662789 -0.5151642 -0.1318329 -1.6637423 -0.4015470\n\n# shorter, one line approach\nmyvec[myvec &gt; 0.25]\n\n[1] 1.3312651 0.6017431 0.3761033 0.4584445",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#named-vectors",
+    "href": "vectors.html#named-vectors",
+    "title": "8  Vectors",
+    "section": "8.6 Named Vectors",
+    "text": "8.6 Named Vectors\nNamed vectors are vectors with labels or names assigned to their elements. These names can be used to access and manipulate the elements in a more meaningful way.\nTo create a named vector, use the names() function:\n\nfruit_prices &lt;- c(0.5, 0.75, 1.25)\nnames(fruit_prices) &lt;- c(\"apple\", \"banana\", \"cherry\")\nprint(fruit_prices)\n\n apple banana cherry \n  0.50   0.75   1.25 \n\n\nYou can also access and modify elements using their names:\n\nbanana_price &lt;- fruit_prices[\"banana\"]\nprint(banana_price)\n\nbanana \n  0.75 \n\nfruit_prices[\"apple\"] &lt;- 0.6\nprint(fruit_prices)\n\n apple banana cherry \n  0.60   0.75   1.25",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#character-vectors-a.k.a.-strings",
+    "href": "vectors.html#character-vectors-a.k.a.-strings",
+    "title": "8  Vectors",
+    "section": "8.7 Character Vectors, A.K.A. Strings",
+    "text": "8.7 Character Vectors, A.K.A. Strings\nR uses the paste function to concatenate strings.\n\npaste(\"abc\",\"def\")\n\n[1] \"abc def\"\n\npaste(\"abc\",\"def\",sep=\"THISSEP\")\n\n[1] \"abcTHISSEPdef\"\n\npaste0(\"abc\",\"def\")\n\n[1] \"abcdef\"\n\n## [1] \"abcdef\"\npaste(c(\"X\",\"Y\"),1:10)\n\n [1] \"X 1\"  \"Y 2\"  \"X 3\"  \"Y 4\"  \"X 5\"  \"Y 6\"  \"X 7\"  \"Y 8\"  \"X 9\"  \"Y 10\"\n\npaste(c(\"X\",\"Y\"),1:10,sep=\"_\")\n\n [1] \"X_1\"  \"Y_2\"  \"X_3\"  \"Y_4\"  \"X_5\"  \"Y_6\"  \"X_7\"  \"Y_8\"  \"X_9\"  \"Y_10\"\n\n\nWe can count the number of characters in a string.\n\nnchar('abc')\n\n[1] 3\n\nnchar(c('abc','d',123456))\n\n[1] 3 1 6\n\n\nPulling out parts of strings is also sometimes useful.\n\nsubstr('This is a good sentence.',start=10,stop=15)\n\n[1] \" good \"\n\n\nAnother common operation is to replace something in a string with something (a find-and-replace).\n\nsub('This','That','This is a good sentence.')\n\n[1] \"That is a good sentence.\"\n\n\nWhen we want to find all strings that match some other string, we can use grep, or “grab regular expression”.\n\ngrep('bcd',c('abcdef','abcd','bcde','cdef','defg'))\n\n[1] 1 2 3\n\ngrep('bcd',c('abcdef','abcd','bcde','cdef','defg'),value=TRUE)\n\n[1] \"abcdef\" \"abcd\"   \"bcde\"  \n\n\nRead about the grepl function (?grepl). Use that function to return a logical vector (TRUE/FALSE) for each entry above with an a in it.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#missing-values-aka-na",
+    "href": "vectors.html#missing-values-aka-na",
+    "title": "8  Vectors",
+    "section": "8.8 Missing Values, AKA “NA”",
+    "text": "8.8 Missing Values, AKA “NA”\nR has a special value, “NA”, that represents a “missing” value, or Not Available, in a vector or other data structure. Here, we just create a vector to experiment.\n\nx = 1:5\nx\n\n[1] 1 2 3 4 5\n\nlength(x)\n\n[1] 5\n\n\n\nis.na(x)\n\n[1] FALSE FALSE FALSE FALSE FALSE\n\nx[2] = NA\nx\n\n[1]  1 NA  3  4  5\n\n\nThe length of x is unchanged, but there is one value that is marked as “missing” by virtue of being NA.\n\nlength(x)\n\n[1] 5\n\nis.na(x)\n\n[1] FALSE  TRUE FALSE FALSE FALSE\n\n\nWe can remove NA values by using indexing. In the following, is.na(x) returns a logical vector the length of x. The ! is the logical NOT operator and converts TRUE to FALSE and vice-versa.\n\nx[!is.na(x)]\n\n[1] 1 3 4 5",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "vectors.html#exercises",
+    "href": "vectors.html#exercises",
+    "title": "8  Vectors",
+    "section": "8.9 Exercises",
+    "text": "8.9 Exercises\n\nCreate a numeric vector called temperatures containing the following values: 72, 75, 78, 81, 76, 73.\n\n\nShow answer\ntemperatures &lt;- c(72, 75, 78, 81, 76, 73, 93)\n\n\nCreate a character vector called days containing the following values: “Monday”, “Tuesday”, “Wednesday”, “Thursday”, “Friday”, “Saturday”, “Sunday”.\n\n\nShow answer\ndays &lt;- c(\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\")\n\n\nCalculate the average temperature for the week and store it in a variable called average_temperature.\n\n\nShow answer\naverage_temperature &lt;- mean(temperatures)\n\n\nCreate a named vector called weekly_temperatures, where the names are the days of the week and the values are the temperatures from the temperatures vector.\n\n\nShow answer\nweekly_temperatures &lt;- temperatures\nnames(weekly_temperatures) &lt;- days\n\n\nCreate a numeric vector called ages containing the following values: 25, 30, 35, 40, 45, 50, 55, 60.\n\n\nShow answer\nages &lt;- c(25, 30, 35, 40, 45, 50, 55, 60)\n\n\nCreate a logical vector called is_adult by checking if the elements in the ages vector are greater than or equal to 18.\n\n\nShow answer\nis_adult &lt;- ages &gt;= 18\n\n\nCalculate the sum and product of the ages vector.\n\n\nShow answer\nsum_ages &lt;- sum(ages)\nproduct_ages &lt;- prod(ages)\n\n\nExtract the ages greater than or equal to 40 from the ages vector and store them in a variable called older_ages.\n\n\nShow answer\nolder_ages &lt;- ages[ages &gt;= 40]",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Vectors</span>"
+    ]
+  },
+  {
+    "objectID": "matrices.html",
+    "href": "matrices.html",
+    "title": "9  Matrices",
+    "section": "",
+    "text": "9.1 Creating a matrix\nA matrix is a rectangular collection of the same data type (see Figure 9.1). It can be viewed as a collection of column vectors all of the same length and the same type (i.e. numeric, character or logical) OR a collection of row vectors, again all of the same type and length. A data.frame is also a rectangular array. All of the columns must be the same length, but they may be of different types. The rows and columns of a matrix or data frame can be given names. However these are implemented differently in R; many operations will work for one but not both, often a source of confusion.\nThere are many ways to create a matrix in R. One of the simplest is to use the matrix() function. In the code below, we’ll create a matrix from a vector from 1:16.\nmat1 &lt;- matrix(1:16,nrow=4)\nmat1\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    5    9   13\n[2,]    2    6   10   14\n[3,]    3    7   11   15\n[4,]    4    8   12   16\nThe same is possible, but specifying that the matrix be “filled” by row.\nmat1 &lt;- matrix(1:16,nrow=4,byrow = TRUE)\nmat1\n\n     [,1] [,2] [,3] [,4]\n[1,]    1    2    3    4\n[2,]    5    6    7    8\n[3,]    9   10   11   12\n[4,]   13   14   15   16\nNotice the subtle difference in the order that the numbers go into the matrix.\nWe can also build a matrix from parts by “binding” vectors together:\nx &lt;- 1:10 \ny &lt;- rnorm(10)\nEach of the vectors above is of length 10 and both are “numeric”, so we can make them into a matrix. Using rbind binds rows (r) into a matrix.\nmat &lt;- rbind(x,y)\nmat\n\n       [,1]     [,2]       [,3]      [,4]     [,5]     [,6]        [,7]\nx  1.000000 2.000000  3.0000000 4.0000000 5.000000 6.000000 7.000000000\ny -1.325599 2.625988 -0.5995257 0.2640878 1.066886 1.026504 0.007406872\n       [,8]     [,9]     [,10]\nx 8.0000000 9.000000 10.000000\ny 0.9496984 1.374093  1.862218\nThe alternative to rbind is cbind that binds columns (c) together.\nmat &lt;- cbind(x,y)\nmat\n\n       x            y\n [1,]  1 -1.325598661\n [2,]  2  2.625987528\n [3,]  3 -0.599525738\n [4,]  4  0.264087823\n [5,]  5  1.066885781\n [6,]  6  1.026504421\n [7,]  7  0.007406872\n [8,]  8  0.949698364\n [9,]  9  1.374092714\n[10,] 10  1.862218163\nInspecting the names associated with rows and columns is often useful, particularly if the names have human meaning.\nrownames(mat)\n\nNULL\n\ncolnames(mat)\n\n[1] \"x\" \"y\"\nWe can also change the names of the matrix by assigning valid names to the columns or rows.\ncolnames(mat) = c('apples','oranges')\ncolnames(mat)\n\n[1] \"apples\"  \"oranges\"\n\nmat\n\n      apples      oranges\n [1,]      1 -1.325598661\n [2,]      2  2.625987528\n [3,]      3 -0.599525738\n [4,]      4  0.264087823\n [5,]      5  1.066885781\n [6,]      6  1.026504421\n [7,]      7  0.007406872\n [8,]      8  0.949698364\n [9,]      9  1.374092714\n[10,]     10  1.862218163\nMatrices have dimensions.\ndim(mat)\n\n[1] 10  2\n\nnrow(mat)\n\n[1] 10\n\nncol(mat)\n\n[1] 2",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Matrices</span>"
+    ]
+  },
+  {
+    "objectID": "matrices.html#accessing-elements-of-a-matrix",
+    "href": "matrices.html#accessing-elements-of-a-matrix",
+    "title": "9  Matrices",
+    "section": "9.2 Accessing elements of a matrix",
+    "text": "9.2 Accessing elements of a matrix\nIndexing for matrices works as for vectors except that we now need to include both the row and column (in that order). We can access elements of a matrix using the square bracket [ indexing method. Elements can be accessed as var[r, c]. Here, r and c are vectors describing the elements of the matrix to select.\n\n\n\n\n\n\nImportant\n\n\n\nThe indices in R start with one, meaning that the first element of a vector or the first row/column of a matrix is indexed as one.\nThis is different from some other programming languages, such as Python, which use zero-based indexing, meaning that the first element of a vector or the first row/column of a matrix is indexed as zero.\nIt is important to be aware of this difference when working with data in R, especially if you are coming from a programming background that uses zero-based indexing. Using the wrong index can lead to unexpected results or errors in your code.\n\n\n\n# The 2nd element of the 1st row of mat\nmat[1,2]\n\n  oranges \n-1.325599 \n\n# The first ROW of mat\nmat[1,]\n\n   apples   oranges \n 1.000000 -1.325599 \n\n# The first COLUMN of mat\nmat[,1]\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n# and all elements of mat that are &gt; 4; note no comma\nmat[mat&gt;4]\n\n[1]  5  6  7  8  9 10\n\n## [1]  5  6  7  8  9 10\n\n\n\n\n\n\n\nCaution\n\n\n\nNote that in the last case, there is no “,”, so R treats the matrix as a long vector (length=20). This is convenient, sometimes, but it can also be a source of error, as some code may “work” but be doing something unexpected.\n\n\nWe can also use indexing to exclude a row or column by prefixing the selection with a - sign.\n\nmat[,-1]       # remove first column\n\n [1] -1.325598661  2.625987528 -0.599525738  0.264087823  1.066885781\n [6]  1.026504421  0.007406872  0.949698364  1.374092714  1.862218163\n\nmat[-c(1:5),]  # remove first five rows\n\n     apples     oranges\n[1,]      6 1.026504421\n[2,]      7 0.007406872\n[3,]      8 0.949698364\n[4,]      9 1.374092714\n[5,]     10 1.862218163",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Matrices</span>"
+    ]
+  },
+  {
+    "objectID": "matrices.html#changing-values-in-a-matrix",
+    "href": "matrices.html#changing-values-in-a-matrix",
+    "title": "9  Matrices",
+    "section": "9.3 Changing values in a matrix",
+    "text": "9.3 Changing values in a matrix\nWe can create a matrix filled with random values drawn from a normal distribution for our work below.\n\nm = matrix(rnorm(20),nrow=10)\nsummary(m)\n\n       V1                V2         \n Min.   :-1.4939   Min.   :-1.2081  \n 1st Qu.:-0.9215   1st Qu.:-0.6468  \n Median :-0.1318   Median : 0.1367  \n Mean   :-0.0953   Mean   : 0.1488  \n 3rd Qu.: 0.3056   3rd Qu.: 0.5619  \n Max.   : 2.0916   Max.   : 2.4685  \n\n\nMultiplication and division works similarly to vectors. When multiplying by a vector, for example, the values of the vector are reused. In the simplest case, let’s multiply the matrix by a constant (vector of length 1).\n\n# multiply all values in the matrix by 20\nm2 = m*20\nsummary(m2)\n\n       V1                V2         \n Min.   :-29.879   Min.   :-24.161  \n 1st Qu.:-18.430   1st Qu.:-12.936  \n Median : -2.637   Median :  2.733  \n Mean   : -1.906   Mean   :  2.976  \n 3rd Qu.:  6.112   3rd Qu.: 11.239  \n Max.   : 41.833   Max.   : 49.370  \n\n\nBy combining subsetting with assignment, we can make changes to just part of a matrix.\n\n# and add 100 to the first column of m\nm2[,1] = m2[,1] + 100\n# summarize m\nsummary(m2)\n\n       V1               V2         \n Min.   : 70.12   Min.   :-24.161  \n 1st Qu.: 81.57   1st Qu.:-12.936  \n Median : 97.36   Median :  2.733  \n Mean   : 98.09   Mean   :  2.976  \n 3rd Qu.:106.11   3rd Qu.: 11.239  \n Max.   :141.83   Max.   : 49.370  \n\n\nA somewhat common transformation for a matrix is to transpose which changes rows to columns. One might need to do this if an assay output from a lab machine puts samples in rows and genes in columns, for example, while in Bioconductor/R, we often want the samples in columns and the genes in rows.\n\nt(m2)\n\n         [,1]      [,2]      [,3]       [,4]      [,5]       [,6]      [,7]\n[1,] 97.54502 70.121171 118.95653 141.832989 89.824526 105.547895  78.81841\n[2,] 13.11580  2.993531  49.36978   2.472511  5.607523  -6.200718 -15.18058\n          [,8]      [,9]     [,10]\n[1,] 106.30054  97.18116  74.81129\n[2,]  21.36702 -19.62368 -24.16138",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Matrices</span>"
+    ]
+  },
+  {
+    "objectID": "matrices.html#calculations-on-matrix-rows-and-columns",
+    "href": "matrices.html#calculations-on-matrix-rows-and-columns",
+    "title": "9  Matrices",
+    "section": "9.4 Calculations on matrix rows and columns",
+    "text": "9.4 Calculations on matrix rows and columns\nAgain, we just need a matrix to play with. We’ll use rnorm again, but with a slight twist.\n\nm3 = matrix(rnorm(100,5,2),ncol=10) # what does the 5 mean here? And the 2?\n\nSince these data are from a normal distribution, we can look at a row (or column) to see what the mean and standard deviation are.\n\nmean(m3[,1])\n\n[1] 5.549797\n\nsd(m3[,1])\n\n[1] 1.541549\n\n# or a row\nmean(m3[1,])\n\n[1] 3.608359\n\nsd(m3[1,])\n\n[1] 1.647011\n\n\nThere are some useful convenience functions for computing means and sums of data in all of the columns and rows of matrices.\n\ncolMeans(m3)\n\n [1] 5.549797 4.505066 5.083448 4.682110 5.265026 5.246739 3.614876 5.350698\n [9] 5.049795 5.036546\n\nrowMeans(m3)\n\n [1] 3.608359 5.881085 5.650431 5.844686 4.932823 5.843897 4.052513 3.870038\n [9] 5.298616 4.401653\n\nrowSums(m3)\n\n [1] 36.08359 58.81085 56.50431 58.44686 49.32823 58.43897 40.52513 38.70038\n [9] 52.98616 44.01653\n\ncolSums(m3)\n\n [1] 55.49797 45.05066 50.83448 46.82110 52.65026 52.46739 36.14876 53.50698\n [9] 50.49795 50.36546\n\n\nWe can look at the distribution of column means:\n\n# save as a variable\ncmeans = colMeans(m3)\nsummary(cmeans)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  3.615   4.771   5.067   4.938   5.260   5.550 \n\n\nNote that this is centered pretty closely around the selected mean of 5 above.\nHow about the standard deviation? There is not a colSd function, but it turns out that we can easily apply functions that take vectors as input, like sd and “apply” them across either the rows (the first dimension) or columns (the second) dimension.\n\ncsds = apply(m3, 2, sd)\nsummary(csds)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  1.542   1.798   1.915   2.047   2.214   2.699 \n\n\nAgain, take a look at the distribution which is centered quite close to the selected standard deviation when we created our matrix.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Matrices</span>"
+    ]
+  },
+  {
+    "objectID": "matrices.html#exercises",
+    "href": "matrices.html#exercises",
+    "title": "9  Matrices",
+    "section": "9.5 Exercises",
+    "text": "9.5 Exercises\n\n9.5.1 Data preparation\nFor this set of exercises, we are going to rely on a dataset that comes with R. It gives the number of sunspots per month from 1749-1983. The dataset comes as a ts or time series data type which I convert to a matrix using the following code.\nJust run the code as is and focus on the rest of the exercises.\n\ndata(sunspots)\nsunspot_mat &lt;- matrix(as.vector(sunspots),ncol=12,byrow = TRUE)\ncolnames(sunspot_mat) &lt;- as.character(1:12)\nrownames(sunspot_mat) &lt;- as.character(1749:1983)\n\n\n\n9.5.2 Questions\n\nAfter the conversion above, what does sunspot_mat look like? Use functions to find the number of rows, the number of columns, the class, and some basic summary statistics.\n\n\nShow answer\nncol(sunspot_mat)\nnrow(sunspot_mat)\ndim(sunspot_mat)\nsummary(sunspot_mat)\nhead(sunspot_mat)\ntail(sunspot_mat)\n\n\nPractice subsetting the matrix a bit by selecting:\n\nThe first 10 years (rows)\nThe month of July (7th column)\nThe value for July, 1979 using the rowname to do the selection.\n\n\n\nShow answer\nsunspot_mat[1:10,]\nsunspot_mat[,7]\nsunspot_mat['1979',7]\n\n\n\n\nThese next few exercises take advantage of the fact that calling a univariate statistical function (one that expects a vector) works for matrices by just making a vector of all the values in the matrix. What is the highest (max) number of sunspots recorded in these data?\n\n\nShow answer\nmax(sunspot_mat)\n\n\nAnd the minimum?\n\n\nShow answer\nmin(sunspot_mat)\n\n\nAnd the overall mean and median?\n\n\nShow answer\nmean(sunspot_mat)\nmedian(sunspot_mat)\n\n\nUse the hist() function to look at the distribution of all the monthly sunspot data.\n\n\nShow answer\nhist(sunspot_mat)\n\n\nRead about the breaks argument to hist() to try to increase the number of breaks in the histogram to increase the resolution slightly. Adjust your hist() and breaks to your liking.\n\n\nShow answer\nhist(sunspot_mat, breaks=40)\n\n\nNow, let’s move on to summarizing the data a bit to learn about the pattern of sunspots varies by month or by year. Examine the dataset again. What do the columns represent? And the rows?\n\n\nShow answer\n# just a quick glimpse of the data will give us a sense\nhead(sunspot_mat)\n\n\nWe’d like to look at the distribution of sunspots by month. How can we do that?\n\n\nShow answer\n# the mean of the columns is the mean number of sunspots per month.\ncolMeans(sunspot_mat)\n\n# Another way to write the same thing:\napply(sunspot_mat, 2, mean)\n\n\nAssign the month summary above to a variable and summarize it to get a sense of the spread over months.\n\n\nShow answer\nmonthmeans = colMeans(sunspot_mat)\nsummary(monthmeans)\n\n\nPlay the same game for years to get the per-year mean?\n\n\nShow answer\nymeans = rowMeans(sunspot_mat)\nsummary(ymeans)\n\n\nMake a plot of the yearly means. Do you see a pattern?\n\n\nShow answer\nplot(ymeans)\n# or make it clearer\nplot(ymeans, type='l')",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Matrices</span>"
+    ]
+  },
+  {
+    "objectID": "lists.html",
+    "href": "lists.html",
+    "title": "10  Lists",
+    "section": "",
+    "text": "10.1 The Power of a “Catch-All” Container\nSo far in our journey through R’s data structures, we’ve dealt with vectors and matrices. These are fantastic tools, but they have one strict rule: all their elements must be of the same data type. You can have a vector of numbers or a matrix of characters, but you can’t mix and match.\nBut what about real-world biological data? A single experiment can generate a dizzying variety of information. Imagine you’re studying a particular gene. You might have:\nHow could you possibly store all of this related, yet different, information together? You could create many separate variables, but that would be clunky and hard to manage. This is exactly the problem that lists are designed to solve.\nA list in R is like a flexible, multi-compartment container. It’s a single object that can hold a collection of other R objects, and those objects can be of any type, length, or dimension. You can put vectors, matrices, logical values, and even other lists inside a single list. This makes them one of the most fundamental and powerful data structures for bioinformatics analysis.\nThe key features of lists are:",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Lists</span>"
+    ]
+  },
+  {
+    "objectID": "lists.html#the-power-of-a-catch-all-container",
+    "href": "lists.html#the-power-of-a-catch-all-container",
+    "title": "10  Lists",
+    "section": "",
+    "text": "The gene’s name (text).\nIts expression level across several samples (a set of numbers).\nA record of whether it’s a known cancer-related gene (a simple TRUE/FALSE).\nThe raw fluorescence values from your qPCR machine (a matrix of numbers).\nSome personal notes about the experiment (a paragraph of text).\n\n\n\n\n\nFlexibility: They can contain a mix of any data type.\nOrganization: You can and should name the elements of a list, making your data self-describing.\nHierarchy: Because lists can contain other lists, you can create complex, nested data structures to represent sophisticated relationships in your data.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Lists</span>"
+    ]
+  },
+  {
+    "objectID": "lists.html#creating-a-list",
+    "href": "lists.html#creating-a-list",
+    "title": "10  Lists",
+    "section": "10.2 Creating a List",
+    "text": "10.2 Creating a List\nYou create a list with the list() function. The best practice is to name the elements as you create them. This makes your code infinitely more readable and your data easier to work with.\nLet’s create a list to store the information for our hypothetical gene study.\n\n# An experiment tracking list for the gene TP53\nexperiment_data &lt;- list(\n  experiment_id = \"EXP042\",\n  gene_name = \"TP53\",\n  read_counts = c(120, 155, 98, 210),\n  is_control = FALSE,\n  sample_matrix = matrix(1:4, nrow = 2, dimnames = list(c(\"Treated\", \"Untreated\"), c(\"Replicate1\", \"Replicate2\")))\n)\n\n# --- Function Explainer: print() ---\n# The print() function displays the contents of an R object in the console. \n# For a list, it shows each element and its contents. It's the default action \n# when you just type the variable's name and hit Enter.\nprint(experiment_data)\n\n$experiment_id\n[1] \"EXP042\"\n\n$gene_name\n[1] \"TP53\"\n\n$read_counts\n[1] 120 155  98 210\n\n$is_control\n[1] FALSE\n\n$sample_matrix\n          Replicate1 Replicate2\nTreated            1          3\nUntreated          2          4",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Lists</span>"
+    ]
+  },
+  {
+    "objectID": "lists.html#inspecting-your-list-whats-inside",
+    "href": "lists.html#inspecting-your-list-whats-inside",
+    "title": "10  Lists",
+    "section": "10.3 Inspecting Your List: What’s Inside?",
+    "text": "10.3 Inspecting Your List: What’s Inside?\nWhen someone hands you a tube in the lab, the first thing you do is look at the label. When R gives you a complex object like a list, you need to do the same. R provides several “introspection” functions to help you understand the contents and structure of your lists.\n\n10.3.1 str(): The Structure Function\nThis is arguably the most useful function for inspecting any R object, especially lists.\n\n# --- Function Explainer: str() ---\n# The str() function provides a compact, human-readable summary of an \n# object's internal \"str\"ucture. It's your best friend for understanding \n# what's inside a list, including the type and a preview of each element.\nstr(experiment_data)\n\nList of 5\n $ experiment_id: chr \"EXP042\"\n $ gene_name    : chr \"TP53\"\n $ read_counts  : num [1:4] 120 155 98 210\n $ is_control   : logi FALSE\n $ sample_matrix: int [1:2, 1:2] 1 2 3 4\n  ..- attr(*, \"dimnames\")=List of 2\n  .. ..$ : chr [1:2] \"Treated\" \"Untreated\"\n  .. ..$ : chr [1:2] \"Replicate1\" \"Replicate2\"\n\n\nThe output of str() tells us everything we need to know: it’s a “List of 5”, and for each of the 5 elements, it shows the name (e.g., experiment_id), the data type (e.g., chr for character, num for numeric), and a preview of the content.\n\n\n10.3.2 length(), names(), and class()\nThese functions give you more specific information about the list itself.\n\n# --- Function Explainer: length() ---\n# For a list, length() tells you how many top-level elements it contains.\nlength(experiment_data)\n\n[1] 5\n\n# --- Function Explainer: names() ---\n# The names() function extracts the names of the elements in a list as a \n# character vector. It's a great way to see what you can access.\nnames(experiment_data)\n\n[1] \"experiment_id\" \"gene_name\"     \"read_counts\"   \"is_control\"   \n[5] \"sample_matrix\"\n\n# --- Function Explainer: class() ---\n# The class() function tells you the type of the object itself. \n# This is useful to confirm you are indeed working with a list.\nclass(experiment_data)\n\n[1] \"list\"",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Lists</span>"
+    ]
+  },
+  {
+    "objectID": "lists.html#accessing-list-elements-getting-things-out",
+    "href": "lists.html#accessing-list-elements-getting-things-out",
+    "title": "10  Lists",
+    "section": "10.4 Accessing List Elements: Getting Things Out",
+    "text": "10.4 Accessing List Elements: Getting Things Out\nOkay, you’ve packed your experimental data into a list. Now, how do you get specific items out? This is a critical concept, and R has a few ways to do it, each with a distinct purpose.\n\n10.4.1 The Mighty [[...]] and $ for Single Items\nTo pull out a single element from a list in its original form, you use either double square brackets [[...]] or the dollar sign $ (for named lists). Think of this as carefully reaching into a specific compartment of your container and taking out the item itself.\nLet’s use our experiment_data list.\n\n# Get the gene name using [[...]]\ngene &lt;- experiment_data[[\"gene_name\"]]\nprint(gene)\n\n[1] \"TP53\"\n\nclass(gene) # It's a character vector, just as it was when we put it in.\n\n[1] \"character\"\n\n# Get the read counts using the $ shortcut. This is often easier to read.\nreads &lt;- experiment_data$read_counts\nprint(reads)\n\n[1] 120 155  98 210\n\nclass(reads) # It's a numeric vector.\n\n[1] \"numeric\"\n\n# The [[...]] has a neat trick: you can use a variable to specify the name.\nelement_to_get &lt;- \"read_counts\"\nexperiment_data[[element_to_get]]\n\n[1] 120 155  98 210\n\n\nThe key takeaway is that [[...]] and $ extract the element. The result is the object that was stored inside the list.\n\n\n10.4.2 The Subsetting [...] for New Lists\nThe single square bracket [...] behaves differently. It always returns a new, smaller list that is a subset of the original list. It’s like taking a whole compartment, label and all, out of your larger container.\n\n# Get the gene name using [...]\ngene_sublist &lt;- experiment_data[\"gene_name\"]\n\nprint(gene_sublist)\n\n$gene_name\n[1] \"TP53\"\n\n# --- Note the class! ---\n# The result is another list, which contains the gene_name element.\nclass(gene_sublist) \n\n[1] \"list\"\n\n\nThis distinction is vital. If you want to perform a calculation on an element (like finding the mean() of read_counts), you must extract it with [[...]] or $. If you tried mean(experiment_data[\"read_counts\"]), R would give you an error because you can’t calculate the mean of a list!",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Lists</span>"
+    ]
+  },
+  {
+    "objectID": "lists.html#modifying-lists",
+    "href": "lists.html#modifying-lists",
+    "title": "10  Lists",
+    "section": "10.5 Modifying Lists",
+    "text": "10.5 Modifying Lists\nYour data is rarely static. You can easily add, remove, or update elements in a list after you’ve created it.\n\n10.5.1 Adding and Updating Elements\nYou can add a new element or change an existing one by using the $ or [[...]] assignment syntax.\n\n# Add the date of the experiment\nexperiment_data$date &lt;- \"2024-06-05\"\n\n# Add some notes using the [[...]] syntax\nexperiment_data[[\"notes\"]] &lt;- \"Initial pilot experiment. High variance in read counts.\"\n\n# Let's update the control status\nexperiment_data$is_control &lt;- TRUE\n\n# Let's look at the structure now\nstr(experiment_data)\n\nList of 7\n $ experiment_id: chr \"EXP042\"\n $ gene_name    : chr \"TP53\"\n $ read_counts  : num [1:4] 120 155 98 210\n $ is_control   : logi TRUE\n $ sample_matrix: int [1:2, 1:2] 1 2 3 4\n  ..- attr(*, \"dimnames\")=List of 2\n  .. ..$ : chr [1:2] \"Treated\" \"Untreated\"\n  .. ..$ : chr [1:2] \"Replicate1\" \"Replicate2\"\n $ date         : chr \"2024-06-05\"\n $ notes        : chr \"Initial pilot experiment. High variance in read counts.\"\n\n\n\n\n10.5.2 Removing Elements\nTo remove an element from a list, you simply assign NULL to it. NULL is R’s special object representing nothingness.\n\n# We've decided the matrix isn't needed for this summary object.\nexperiment_data$sample_matrix &lt;- NULL\n\n# See the final structure of our list\nstr(experiment_data)\n\nList of 6\n $ experiment_id: chr \"EXP042\"\n $ gene_name    : chr \"TP53\"\n $ read_counts  : num [1:4] 120 155 98 210\n $ is_control   : logi TRUE\n $ date         : chr \"2024-06-05\"\n $ notes        : chr \"Initial pilot experiment. High variance in read counts.\"",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Lists</span>"
+    ]
+  },
+  {
+    "objectID": "lists.html#a-biological-example-a-self-contained-gene-record",
+    "href": "lists.html#a-biological-example-a-self-contained-gene-record",
+    "title": "10  Lists",
+    "section": "10.6 A Biological Example: A Self-Contained Gene Record",
+    "text": "10.6 A Biological Example: A Self-Contained Gene Record\nLet’s put this all together. Lists are perfect for creating self-contained records that you can easily pass to functions or combine into larger lists.\n\n# --- Function Explainer: log2() ---\n# The log2() function calculates the base-2 logarithm. It's very common in \n# gene expression analysis to transform skewed count data to make it more \n# symmetric and easier to model.\n\nbrca1_gene &lt;- list(\n  gene_symbol = \"BRCA1\",\n  full_name = \"BRCA1 DNA repair associated\",\n  chromosome = \"17\",\n  expression_log2 = log2(c(45, 50, 30, 88, 120)),\n  related_diseases = c(\"Breast Cancer\", \"Ovarian Cancer\")\n)\n\n# Now we can easily work with this structured information\n\n# --- Function Explainer: cat() ---\n# The cat() function concatenates and prints its arguments to the console.\n# Unlike print(), it allows you to seamlessly join text and variables, and \n# the \"\\n\" character is used to add a newline (a line break).\ncat(\"Analyzing gene:\", brca1_gene$gene_symbol, \"\\n\")\n\nAnalyzing gene: BRCA1 \n\ncat(\"Located on chromosome:\", brca1_gene$chromosome, \"\\n\")\n\nLocated on chromosome: 17 \n\n# Calculate the average log2 expression\n# --- Function Explainer: mean() ---\n# The mean() function calculates the arithmetic average of a numeric vector.\navg_expression &lt;- mean(brca1_gene$expression_log2)\ncat(\"Average log2 expression:\", avg_expression, \"\\n\")\n\nAverage log2 expression: 5.881784 \n\n\nThis simple brca1_gene list is now a complete, portable record. You could imagine creating a list of these gene records, creating a powerful, hierarchical database for your entire project.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Lists</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html",
+    "href": "dataframes_intro.html",
+    "title": "11  Data Frames",
+    "section": "",
+    "text": "11.1 Learning goals\nWhile R has many different data types, the one that is central to much of the power and popularity of R is the data.frame. A data.frame looks a bit like an R matrix in that it has two dimensions, rows and columns. However, data.frames are usually viewed as a set of columns representing variables and the rows representing the values of those variables. Importantly, a data.frame may contain different data types in each of its columns; matrices must contain only one data type. This distinction is important to remember, as there are specific approaches to working with R data.frames that may be different than those for working with matrices.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#learning-goals",
+    "href": "dataframes_intro.html#learning-goals",
+    "title": "11  Data Frames",
+    "section": "",
+    "text": "Understand how data.frames are different from matrices.\nKnow a few functions for examing the contents of a data.frame.\nList approaches for subsetting data.frames.\nBe able to load and save tabular data from and to disk.\nShow how to create a data.frames from scratch.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#learning-objectives",
+    "href": "dataframes_intro.html#learning-objectives",
+    "title": "11  Data Frames",
+    "section": "11.2 Learning objectives",
+    "text": "11.2 Learning objectives\n\nLoad the yeast growth dataset into R using read.csv.\nExamine the contents of the dataset.\nUse subsetting to find genes that may be involved with nutrient metabolism and transport.\nSummarize data measurements by categories.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#dataset",
+    "href": "dataframes_intro.html#dataset",
+    "title": "11  Data Frames",
+    "section": "11.3 Dataset",
+    "text": "11.3 Dataset\nThe data used here are borrowed directly from the fantastic Bioconnector tutorials and are a cleaned up version of the data from Brauer et al. Coordination of Growth Rate, Cell Cycle, Stress Response, and Metabolic Activity in Yeast (2008) Mol Biol Cell 19:352-367. These data are from a gene expression microarray, and in this paper the authors examine the relationship between growth rate and gene expression in yeast cultures limited by one of six different nutrients (glucose, leucine, ammonium, sulfate, phosphate, uracil). If you give yeast a rich media loaded with nutrients except restrict the supply of a single nutrient, you can control the growth rate to any rate you choose. By starving yeast of specific nutrients you can find genes that:\n\nRaise or lower their expression in response to growth rate. Growth-rate dependent expression patterns can tell us a lot about cell cycle control, and how the cell responds to stress. The authors found that expression of &gt;25% of all yeast genes is linearly correlated with growth rate, independent of the limiting nutrient. They also found that the subset of negatively growth-correlated genes is enriched for peroxisomal functions, and positively correlated genes mainly encode ribosomal functions.\nRespond differently when different nutrients are being limited. If you see particular genes that respond very differently when a nutrient is sharply restricted, these genes might be involved in the transport or metabolism of that specific nutrient.\n\nThe dataset can be downloaded directly from:\n\nbrauer2007_tidy.csv\n\nWe are going to read this dataset into R and then use it as a playground for learning about data.frames.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#reading-in-data",
+    "href": "dataframes_intro.html#reading-in-data",
+    "title": "11  Data Frames",
+    "section": "11.4 Reading in data",
+    "text": "11.4 Reading in data\nR has many capabilities for reading in data. Many of the functions have names that help us to understand what data format is to be expected. In this case, the filename that we want to read ends in .csv, meaning comma-separated-values. The read.csv() function reads in .csv files. As usual, it is worth reading help('read.csv') to get a better sense of the possible bells-and-whistles.\nThe read.csv() function can read directly from a URL, so we do not need to download the file directly. This dataset is relatively large (about 16MB), so this may take a bit depending on your network connection speed.\n\noptions(width=60)\n\n\nurl = paste0(\n    'https://raw.githubusercontent.com',\n    '/bioconnector/workshops/master/data/brauer2007_tidy.csv'\n)\nydat &lt;- read.csv(url)\n\nOur variable, ydat, now “contains” the downloaded and read data. We can check to see what data type read.csv gave us:\n\nclass(ydat)\n\n[1] \"data.frame\"",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#inspecting-data.frames",
+    "href": "dataframes_intro.html#inspecting-data.frames",
+    "title": "11  Data Frames",
+    "section": "11.5 Inspecting data.frames",
+    "text": "11.5 Inspecting data.frames\nOur ydat variable is a data.frame. As I mentioned, the dataset is fairly large, so we will not be able to look at it all at once on the screen. However, R gives us many tools to inspect a data.frame.\n\nOverviews of content\n\nhead() to show first few rows\ntail() to show last few rows\n\nSize\n\ndim() for dimensions (rows, columns)\nnrow()\nncol()\nobject.size() for power users interested in the memory used to store an object\n\nData and attribute summaries\n\ncolnames() to get the names of the columns\nrownames() to get the “names” of the rows–may not be present\nsummary() to get per-column summaries of the data in the data.frame.\n\n\n\nhead(ydat)\n\n  symbol systematic_name nutrient rate expression\n1   SFB2         YNL049C  Glucose 0.05      -0.24\n2   &lt;NA&gt;         YNL095C  Glucose 0.05       0.28\n3   QRI7         YDL104C  Glucose 0.05      -0.02\n4   CFT2         YLR115W  Glucose 0.05      -0.33\n5   SSO2         YMR183C  Glucose 0.05       0.05\n6   PSP2         YML017W  Glucose 0.05      -0.69\n                            bp\n1        ER to Golgi transport\n2   biological process unknown\n3 proteolysis and peptidolysis\n4      mRNA polyadenylylation*\n5              vesicle fusion*\n6   biological process unknown\n                             mf\n1    molecular function unknown\n2    molecular function unknown\n3 metalloendopeptidase activity\n4                   RNA binding\n5              t-SNARE activity\n6    molecular function unknown\n\ntail(ydat)\n\n       symbol systematic_name nutrient rate expression\n198425   DOA1         YKL213C   Uracil  0.3       0.14\n198426   KRE1         YNL322C   Uracil  0.3       0.28\n198427   MTL1         YGR023W   Uracil  0.3       0.27\n198428   KRE9         YJL174W   Uracil  0.3       0.43\n198429   UTH1         YKR042W   Uracil  0.3       0.19\n198430   &lt;NA&gt;         YOL111C   Uracil  0.3       0.04\n                                               bp\n198425    ubiquitin-dependent protein catabolism*\n198426      cell wall organization and biogenesis\n198427      cell wall organization and biogenesis\n198428     cell wall organization and biogenesis*\n198429 mitochondrion organization and biogenesis*\n198430                 biological process unknown\n                                        mf\n198425          molecular function unknown\n198426 structural constituent of cell wall\n198427          molecular function unknown\n198428          molecular function unknown\n198429          molecular function unknown\n198430          molecular function unknown\n\ndim(ydat)\n\n[1] 198430      7\n\nnrow(ydat)\n\n[1] 198430\n\nncol(ydat)\n\n[1] 7\n\ncolnames(ydat)\n\n[1] \"symbol\"          \"systematic_name\" \"nutrient\"       \n[4] \"rate\"            \"expression\"      \"bp\"             \n[7] \"mf\"             \n\nsummary(ydat)\n\n    symbol          systematic_name      nutrient        \n Length:198430      Length:198430      Length:198430     \n Class :character   Class :character   Class :character  \n Mode  :character   Mode  :character   Mode  :character  \n                                                         \n                                                         \n                                                         \n      rate          expression             bp           \n Min.   :0.0500   Min.   :-6.500000   Length:198430     \n 1st Qu.:0.1000   1st Qu.:-0.290000   Class :character  \n Median :0.2000   Median : 0.000000   Mode  :character  \n Mean   :0.1752   Mean   : 0.003367                     \n 3rd Qu.:0.2500   3rd Qu.: 0.290000                     \n Max.   :0.3000   Max.   : 6.640000                     \n      mf           \n Length:198430     \n Class :character  \n Mode  :character  \n                   \n                   \n                   \n\n\nIn RStudio, there is an additional function, View() (note the capital “V”) that opens the first 1000 rows (default) in the RStudio window, akin to a spreadsheet view.\n\nView(ydat)",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#accessing-variables-columns-and-subsetting",
+    "href": "dataframes_intro.html#accessing-variables-columns-and-subsetting",
+    "title": "11  Data Frames",
+    "section": "11.6 Accessing variables (columns) and subsetting",
+    "text": "11.6 Accessing variables (columns) and subsetting\nIn R, data.frames can be subset similarly to other two-dimensional data structures. The [ in R is used to denote subsetting of any kind. When working with two-dimensional data, we need two values inside the [ ] to specify the details. The specification is [rows, columns]. For example, to get the first three rows of ydat, use:\n\nydat[1:3, ]\n\n  symbol systematic_name nutrient rate expression\n1   SFB2         YNL049C  Glucose 0.05      -0.24\n2   &lt;NA&gt;         YNL095C  Glucose 0.05       0.28\n3   QRI7         YDL104C  Glucose 0.05      -0.02\n                            bp\n1        ER to Golgi transport\n2   biological process unknown\n3 proteolysis and peptidolysis\n                             mf\n1    molecular function unknown\n2    molecular function unknown\n3 metalloendopeptidase activity\n\n\nNote how the second number, the columns, is blank. R takes that to mean “all the columns”. Similarly, we can combine rows and columns specification arbitrarily.\n\nydat[1:3, 1:3]\n\n  symbol systematic_name nutrient\n1   SFB2         YNL049C  Glucose\n2   &lt;NA&gt;         YNL095C  Glucose\n3   QRI7         YDL104C  Glucose\n\n\nBecause selecting a single variable, or column, is such a common operation, there are two shortcuts for doing so with data.frames. The first, the $ operator works like so:\n\n# Look at the column names, just to refresh memory\ncolnames(ydat)\n\n[1] \"symbol\"          \"systematic_name\" \"nutrient\"       \n[4] \"rate\"            \"expression\"      \"bp\"             \n[7] \"mf\"             \n\n# Note that I am using \"head\" here to limit the output\nhead(ydat$symbol)\n\n[1] \"SFB2\" NA     \"QRI7\" \"CFT2\" \"SSO2\" \"PSP2\"\n\n# What is the actual length of \"symbol\"?\nlength(ydat$symbol)\n\n[1] 198430\n\n\nThe second is related to the fact that, in R, data.frames are also lists. We subset a list by using [[]] notation. To get the second column of ydat, we can use:\n\nhead(ydat[[2]])\n\n[1] \"YNL049C\" \"YNL095C\" \"YDL104C\" \"YLR115W\" \"YMR183C\"\n[6] \"YML017W\"\n\n\nAlternatively, we can use the column name:\n\nhead(ydat[[\"systematic_name\"]])\n\n[1] \"YNL049C\" \"YNL095C\" \"YDL104C\" \"YLR115W\" \"YMR183C\"\n[6] \"YML017W\"\n\n\n\n11.6.1 Some data exploration\nThere are a couple of columns that include numeric values. Which columns are numeric?\n\nclass(ydat$symbol)\n\n[1] \"character\"\n\nclass(ydat$rate)\n\n[1] \"numeric\"\n\nclass(ydat$expression)\n\n[1] \"numeric\"\n\n\nMake histograms of: - the expression values - the rate values\nWhat does the table() function do? Could you use that to look a the rate column given that that column appears to have repeated values?\nWhat rate corresponds to the most nutrient-starved condition?\n\n\n11.6.2 More advanced indexing and subsetting\nWe can use, for example, logical values (TRUE/FALSE) to subset data.frames.\n\nhead(ydat[ydat$symbol == 'LEU1', ])\n\n     symbol systematic_name nutrient rate expression   bp\nNA     &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA &lt;NA&gt;\nNA.1   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA &lt;NA&gt;\nNA.2   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA &lt;NA&gt;\nNA.3   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA &lt;NA&gt;\nNA.4   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA &lt;NA&gt;\nNA.5   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA &lt;NA&gt;\n       mf\nNA   &lt;NA&gt;\nNA.1 &lt;NA&gt;\nNA.2 &lt;NA&gt;\nNA.3 &lt;NA&gt;\nNA.4 &lt;NA&gt;\nNA.5 &lt;NA&gt;\n\ntail(ydat[ydat$symbol == 'LEU1', ])\n\n         symbol systematic_name nutrient rate expression\nNA.47244   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA\nNA.47245   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA\nNA.47246   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA\nNA.47247   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA\nNA.47248   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA\nNA.47249   &lt;NA&gt;            &lt;NA&gt;     &lt;NA&gt;   NA         NA\n           bp   mf\nNA.47244 &lt;NA&gt; &lt;NA&gt;\nNA.47245 &lt;NA&gt; &lt;NA&gt;\nNA.47246 &lt;NA&gt; &lt;NA&gt;\nNA.47247 &lt;NA&gt; &lt;NA&gt;\nNA.47248 &lt;NA&gt; &lt;NA&gt;\nNA.47249 &lt;NA&gt; &lt;NA&gt;\n\n\nWhat is the problem with this approach? It appears that there are a bunch of NA values. Taking a quick look at the symbol column, we see what the problem.\n\nsummary(ydat$symbol)\n\n   Length     Class      Mode \n   198430 character character \n\n\nUsing the is.na() function, we can make filter further to get down to values of interest.\n\nhead(ydat[ydat$symbol == 'LEU1' & !is.na(ydat$symbol), ])\n\n      symbol systematic_name nutrient rate expression\n1526    LEU1         YGL009C  Glucose 0.05      -1.12\n7043    LEU1         YGL009C  Glucose 0.10      -0.77\n12555   LEU1         YGL009C  Glucose 0.15      -0.67\n18071   LEU1         YGL009C  Glucose 0.20      -0.59\n23603   LEU1         YGL009C  Glucose 0.25      -0.20\n29136   LEU1         YGL009C  Glucose 0.30       0.03\n                        bp\n1526  leucine biosynthesis\n7043  leucine biosynthesis\n12555 leucine biosynthesis\n18071 leucine biosynthesis\n23603 leucine biosynthesis\n29136 leucine biosynthesis\n                                          mf\n1526  3-isopropylmalate dehydratase activity\n7043  3-isopropylmalate dehydratase activity\n12555 3-isopropylmalate dehydratase activity\n18071 3-isopropylmalate dehydratase activity\n23603 3-isopropylmalate dehydratase activity\n29136 3-isopropylmalate dehydratase activity\n\n\nSometimes, looking at the data themselves is not that important. Using dim() is one possibility to look at the number of rows and columns after subsetting.\n\ndim(ydat[ydat$expression &gt; 3, ])\n\n[1] 714   7\n\n\nFind the high expressed genes when leucine-starved. For this task we can also use subset which allows us to treat column names as R variables (no $ needed).\n\nsubset(ydat, nutrient == 'Leucine' & rate == 0.05 & expression &gt; 3)\n\n       symbol systematic_name nutrient rate expression\n133768   QDR2         YIL121W  Leucine 0.05       4.61\n133772   LEU1         YGL009C  Leucine 0.05       3.84\n133858   BAP3         YDR046C  Leucine 0.05       4.29\n135186   &lt;NA&gt;         YPL033C  Leucine 0.05       3.43\n135187   &lt;NA&gt;         YLR267W  Leucine 0.05       3.23\n135288   HXT3         YDR345C  Leucine 0.05       5.16\n135963   TPO2         YGR138C  Leucine 0.05       3.75\n135965   YRO2         YBR054W  Leucine 0.05       4.40\n136102   GPG1         YGL121C  Leucine 0.05       3.08\n136109  HSP42         YDR171W  Leucine 0.05       3.07\n136119   HXT5         YHR096C  Leucine 0.05       4.90\n136151   &lt;NA&gt;         YJL144W  Leucine 0.05       3.06\n136152   MOH1         YBL049W  Leucine 0.05       3.43\n136153   &lt;NA&gt;         YBL048W  Leucine 0.05       3.95\n136189  HSP26         YBR072W  Leucine 0.05       4.86\n136231   NCA3         YJL116C  Leucine 0.05       4.03\n136233   &lt;NA&gt;         YBR116C  Leucine 0.05       3.28\n136486   &lt;NA&gt;         YGR043C  Leucine 0.05       3.07\n137443   ADH2         YMR303C  Leucine 0.05       4.15\n137448   ICL1         YER065C  Leucine 0.05       3.54\n137451   SFC1         YJR095W  Leucine 0.05       3.72\n137569   MLS1         YNL117W  Leucine 0.05       3.76\n                                              bp\n133768                       multidrug transport\n133772                      leucine biosynthesis\n133858                      amino acid transport\n135186                                  meiosis*\n135187                biological process unknown\n135288                          hexose transport\n135963                       polyamine transport\n135965                biological process unknown\n136102                       signal transduction\n136109                       response to stress*\n136119                          hexose transport\n136151                   response to dessication\n136152                biological process unknown\n136153                                      &lt;NA&gt;\n136189                       response to stress*\n136231 mitochondrion organization and biogenesis\n136233                                      &lt;NA&gt;\n136486                biological process unknown\n137443                             fermentation*\n137448                          glyoxylate cycle\n137451                       fumarate transport*\n137569                          glyoxylate cycle\n                                           mf\n133768         multidrug efflux pump activity\n133772 3-isopropylmalate dehydratase activity\n133858        amino acid transporter activity\n135186             molecular function unknown\n135187             molecular function unknown\n135288          glucose transporter activity*\n135963          spermine transporter activity\n135965             molecular function unknown\n136102             signal transducer activity\n136109               unfolded protein binding\n136119          glucose transporter activity*\n136151             molecular function unknown\n136152             molecular function unknown\n136153                                   &lt;NA&gt;\n136189               unfolded protein binding\n136231             molecular function unknown\n136233                                   &lt;NA&gt;\n136486                 transaldolase activity\n137443         alcohol dehydrogenase activity\n137448              isocitrate lyase activity\n137451 succinate:fumarate antiporter activity\n137569               malate synthase activity",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#aggregating-data",
+    "href": "dataframes_intro.html#aggregating-data",
+    "title": "11  Data Frames",
+    "section": "11.7 Aggregating data",
+    "text": "11.7 Aggregating data\nAggregating data, or summarizing by category, is a common way to look for trends or differences in measurements between categories. Use aggregate to find the mean expression by gene symbol.\n\nhead(aggregate(ydat$expression, by=list( ydat$symbol), mean))\n\n  Group.1           x\n1    AAC1  0.52888889\n2    AAC3 -0.21628571\n3   AAD10  0.43833333\n4   AAD14 -0.07166667\n5   AAD16  0.24194444\n6    AAD4 -0.79166667\n\n# or \nhead(aggregate(expression ~ symbol, mean, data=ydat))\n\n  symbol  expression\n1   AAC1  0.52888889\n2   AAC3 -0.21628571\n3  AAD10  0.43833333\n4  AAD14 -0.07166667\n5  AAD16  0.24194444\n6   AAD4 -0.79166667",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#creating-a-data.frame-from-scratch",
+    "href": "dataframes_intro.html#creating-a-data.frame-from-scratch",
+    "title": "11  Data Frames",
+    "section": "11.8 Creating a data.frame from scratch",
+    "text": "11.8 Creating a data.frame from scratch\nSometimes it is useful to combine related data into one object. For example, let’s simulate some data.\n\nsmoker = factor(rep(c(\"smoker\", \"non-smoker\"), each=50))\nsmoker_numeric = as.numeric(smoker)\nx = rnorm(100)\nrisk = x + 2*smoker_numeric\n\nWe have two varibles, risk and smoker that are related. We can make a data.frame out of them:\n\nsmoker_risk = data.frame(smoker = smoker, risk = risk)\nhead(smoker_risk)\n\n  smoker     risk\n1 smoker 3.494214\n2 smoker 3.841851\n3 smoker 3.607017\n4 smoker 4.449390\n5 smoker 3.896246\n6 smoker 5.712052\n\n\nR also has plotting shortcuts that work with data.frames to simplify plotting\n\nplot( risk ~ smoker, data=smoker_risk)",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "dataframes_intro.html#saving-a-data.frame",
+    "href": "dataframes_intro.html#saving-a-data.frame",
+    "title": "11  Data Frames",
+    "section": "11.9 Saving a data.frame",
+    "text": "11.9 Saving a data.frame\nOnce we have a data.frame of interest, we may want to save it. The most portable way to save a data.frame is to use one of the write functions. In this case, let’s save the data as a .csv file.\n\nwrite.csv(smoker_risk, \"smoker_risk.csv\")",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Data Frames</span>"
+    ]
+  },
+  {
+    "objectID": "factors.html",
+    "href": "factors.html",
+    "title": "12  Factors",
+    "section": "",
+    "text": "12.1 Factors\nA factor is a special type of vector, normally used to hold a categorical variable–such as smoker/nonsmoker, state of residency, zipcode–in many statistical functions. Such vectors have class “factor”. Factors are primarily used in Analysis of Variance (ANOVA) or other situations when “categories” are needed. When a factor is used as a predictor variable, the corresponding indicator variables are created (more later).\nNote of caution that factors in R often appear to be character vectors when printed, but you will notice that they do not have double quotes around them. They are stored in R as numbers with a key name, so sometimes you will note that the factor behaves like a numeric vector.\n# create the character vector\ncitizen&lt;-c(\"uk\",\"us\",\"no\",\"au\",\"uk\",\"us\",\"us\",\"no\",\"au\") \n\n# convert to factor\ncitizenf&lt;-factor(citizen)                                \ncitizen             \n\n[1] \"uk\" \"us\" \"no\" \"au\" \"uk\" \"us\" \"us\" \"no\" \"au\"\n\ncitizenf\n\n[1] uk us no au uk us us no au\nLevels: au no uk us\n\n# convert factor back to character vector\nas.character(citizenf)\n\n[1] \"uk\" \"us\" \"no\" \"au\" \"uk\" \"us\" \"us\" \"no\" \"au\"\n\n# convert to numeric vector\nas.numeric(citizenf)\n\n[1] 3 4 2 1 3 4 4 2 1\nR stores many data structures as vectors with “attributes” and “class” (just so you have seen this).\nattributes(citizenf)\n\n$levels\n[1] \"au\" \"no\" \"uk\" \"us\"\n\n$class\n[1] \"factor\"\n\nclass(citizenf)\n\n[1] \"factor\"\n\n# note that after unclassing, we can see the \n# underlying numeric structure again\nunclass(citizenf)\n\n[1] 3 4 2 1 3 4 4 2 1\nattr(,\"levels\")\n[1] \"au\" \"no\" \"uk\" \"us\"\nTabulating factors is a useful way to get a sense of the “sample” set available.\ntable(citizenf)\n\ncitizenf\nau no uk us \n 2  2  2  3\nThe default factor levels are the unique set of possible values. It is possible to specify a subset of factor levels. Note how missing values are introduced if a value is not included.\ncitizenf2 &lt;- factor(citizen, levels=c(\"us\", \"uk\"))\ncitizenf2\n\n[1] uk   us   &lt;NA&gt; &lt;NA&gt; uk   us   us   &lt;NA&gt; &lt;NA&gt;\nLevels: us uk\n\ntable(citizenf2)\n\ncitizenf2\nus uk \n 3  2\nMissing values are exlcuded by default. There is an option to override this setting.\naddNA(citizenf2)\n\n[1] uk   us   &lt;NA&gt; &lt;NA&gt; uk   us   us   &lt;NA&gt; &lt;NA&gt;\nLevels: us uk &lt;NA&gt;\n\ntable(addNA(citizenf2))\n\n\n  us   uk &lt;NA&gt; \n   3    2    4",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Factors</span>"
+    ]
+  },
+  {
+    "objectID": "factors.html#factors",
+    "href": "factors.html#factors",
+    "title": "12  Factors",
+    "section": "",
+    "text": "Caution\n\n\n\nThis emphasizes that default settings may or may not be appropriate for your analysis. It’s important to know what those settings are and choose alternatives as necessary.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Factors</span>"
+    ]
+  },
+  {
     "objectID": "appendix.html",
     "href": "appendix.html",
     "title": "Appendix A — Interactive Intro to R",
