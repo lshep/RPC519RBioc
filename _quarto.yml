@@ -1,0 +1,49 @@
+project:
+  type: book
+
+author:
+  - name: Lori Kern
+    url: https://seandavi.github.io/
+    affiliation: Bioconductor / Roswell Park Comprehensive Cancer Center
+    affiliation-url: https://bioconductor.org
+    email: lori.shepherd@roswellpark.org
+date: "2025-08-27"
+date-modified: 'last-modified'
+description: |
+  A selection of material introducing R, Bioconductor, and more ... 
+
+book:
+  title: "RPC 519 R and Bioconductor"
+  author: "Lori Kern"
+  date: "today"
+  repo-url: https://github.com/lshep/RPC519RBioc
+  url: https://seandavi.github.io/RBiocBook
+  repo-actions: [edit, issue, source]
+  downloads: [pdf, epub]
+  page-navigation: true
+  reader-mode: true
+
+  navbar:
+    title: "The RBioc Book"
+    left:
+      - href: index.qmd
+        text: Home
+
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+

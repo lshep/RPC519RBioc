@@ -1,0 +1,14 @@
+/.quarto/
+_book
+_extensions/nmfs-opensci/titlepage
+*_cache
+*_files
+
+figure
+.DS_Store
+.Rproj.user
+
+tikz*log
+_extensions
+GSE*
+.Rhistory
