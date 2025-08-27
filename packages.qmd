@@ -1,0 +1,97 @@
+---
+author: "Garrett Grolemund and Lori Kern"
+---
+
+# Packages
+
+R is a powerful language for data science and programming, allowing beginners
+and experts alike to manipulate, analyze, and visualize data effectively. One
+of the most appealing features of R is its extensive library of packages, which
+are essential tools for expanding its capabilities and streamlining the coding
+process.
+
+An R package is a collection of reusable functions, datasets, and compiled code
+created by other users and developers to extend the functionality of the base R
+language. These packages cover a wide range of applications, such as data
+manipulation, statistical analysis, machine learning, and data visualization.
+By utilizing existing R packages, you can leverage the expertise of others and
+save time by avoiding the need to create custom functions from scratch.
+
+Using others' R packages is incredibly beneficial as it allows you to take
+advantage of the collective knowledge of the R community. Developers often
+create packages to address specific challenges, optimize performance, or
+implement popular algorithms or methodologies. By incorporating these packages
+into your projects, you can enhance your productivity, reduce development time,
+and ensure that you are using well-tested and reliable code.
+
+## Installing R packages
+
+To install an R package, you can use the `install.packages()` function in the R
+console or script. For example, to install the popular data manipulation
+package "dplyr," simply type install.packages("dplyr"). This command will
+download the package from the Comprehensive R Archive Network (CRAN) and
+install it on your local machine. Keep in mind that you only need to install a
+package once, unless you want to update it to a newer version.
+
+For those who are going to be using R for bioinformatics or biological data
+science, you will also want to install packages from Bioconductor, which is a
+repository of R packages specifically designed for bioinformatics and
+computational biology. To install Bioconductor packages, you can use the
+`BiocManager::install()` function. 
+
+To use this recommended approach, you first need to install the
+`BiocManager` package, which is the package manager for Bioconductor. 
+
+```{r eval=FALSE}
+install.packages('BiocManager')
+```
+
+This is a one-time installation. After that, you can install any R, Bioconductor, rOpenSci, or even GitHub package using the `BiocManager::install()` function. For example, to install the `ggplot2` package, which is widely used for data visualization, you would run:
+
+```{r eval=FALSE}
+BiocManager::install("ggplot2")
+```
+
+## Installing vs loading (library) R packages
+
+After installing an R package, you will need to load it into your R session
+before using its functions. To load a package, use the `library()` function
+followed by the package name, such as `library(dplyr)`. Loading a package makes
+its functions and datasets available for use in your current R session. Note
+that you need to load a package every time you start a new R session.
+
+```{r}
+library(ggplot2)
+```
+
+Now, the functionality of the _ggplot2_ package is available in our R session.
+
+
+::: {.callout-tip}
+## Installing vs loading packages
+
+The main thing to remember is that you only need to install a package once, but you need to load it with library each time you wish to use it in a new R session. R will unload all of its packages each time you close RStudio.
+
+![Installing vs loading R packages.](https://hbctraining.github.io/Intro-to-R-flipped/img/install_vs_library.jpeg){#fig-install-vs-library}
+
+As in {@fig-install-vs-library}, screw in the lightbulb (eg., `BiocManager::install`) only once and then to use it, you need to turn on the switch each time you want to use it (`library`).
+
+:::
+
+## Finding R packages
+
+Finding useful R packages can be done in several ways. First, browsing CRAN
+(<https://cran.r-project.org/>) and Bioconductor (<https://bioconductor.org>) are an excellent starting points, as they host
+thousands of packages categorized by topic. Additionally, online forums like
+Stack Overflow and R-bloggers can provide valuable recommendations based on
+user experiences. Social media platforms such as Twitter, where developers and
+data scientists often share new packages and updates, can also be a helpful
+resource. Finally, don't forget to ask your colleagues or fellow R users for
+their favorite packages, as they may have insights on which ones best suit your
+specific needs.
+
+## Creating a package
+
+While it may seem overwhelming, creating a package can be fairly simple with the
+assistance of R packages that provide tips and templates. [devtools](https://cran.r-project.org/web/packages/devtools/index.html) and
+[biocthis](https://bioconductor.org/packages/biocthis/) are great starting points. 
