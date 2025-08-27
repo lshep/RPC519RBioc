@@ -1,3 +1,7 @@
+---
+author: "Sean Davis"
+---
+
 # About R
 
 In this chapter, we will discuss the basics of R and RStudio\index{RStudio}, two essential

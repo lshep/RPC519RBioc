@@ -1,3 +1,7 @@
+---
+author: "Sean Davis"
+---
+
 # R mechanics
 
 ```{r style, echo = FALSE, results = 'asis'}

@@ -1,5 +1,6 @@
 ---
 title: "Reading and writing data files"
+author: "Sean Davis"
 ---
 
 ## Introduction

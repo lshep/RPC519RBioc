@@ -1,3 +1,7 @@
+---
+author: "Sean Davis"
+---
+
 # RStudio
 
 RStudio is an integrated development environment (IDE) for R. It provides a

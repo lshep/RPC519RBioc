@@ -42,6 +42,13 @@ book:
         - packages.qmd
         - reading_and_writing.qmd
         - rproj_and_save_load.qmd
+    - part: data_structures_overview.qmd
+      chapters:
+        - vectors.qmd
+        - matrices.qmd
+        - lists.qmd
+        - dataframes_intro.qmd
+        - factors.qmd
     - references.qmd
     
   appendices:
