@@ -41,6 +41,7 @@ book:
         - r_basics.qmd
         - packages.qmd
         - reading_and_writing.qmd
+        - rproj_and_save_load.qmd
     - references.qmd
     
   appendices:
