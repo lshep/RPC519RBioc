@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2025-08-27">
 <meta name="description" content="A selection of material introducing R, Bioconductor, and more …">
 
-<title>References – RPC 519 R and Bioconductor</title>
+<title>3&nbsp; R mechanics – RPC 519 R and Bioconductor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,42 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,8 +68,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix.html" rel="next">
-<link href="./r_intro_mechanics.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./intro_to_rstudio.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -150,7 +166,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./r_intro_mechanics.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R mechanics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -191,7 +207,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./r_intro_mechanics.html" class="sidebar-item-text sidebar-link">
+  <a href="./r_intro_mechanics.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R mechanics</span></span></a>
   </div>
 </li>
@@ -199,7 +215,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -243,15 +259,31 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#starting-r" id="toc-starting-r" class="nav-link active" data-scroll-target="#starting-r"><span class="header-section-number">3.1</span> Starting R</a></li>
+  <li><a href="#rstudio-a-quick-tour" id="toc-rstudio-a-quick-tour" class="nav-link" data-scroll-target="#rstudio-a-quick-tour"><span class="header-section-number">3.2</span> <em>RStudio</em>: A Quick Tour</a></li>
+  <li><a href="#interacting-with-r" id="toc-interacting-with-r" class="nav-link" data-scroll-target="#interacting-with-r"><span class="header-section-number">3.3</span> Interacting with R</a>
+  <ul class="collapse">
+  <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions"><span class="header-section-number">3.3.1</span> Expressions</a></li>
+  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment"><span class="header-section-number">3.3.2</span> Assignment</a></li>
+  </ul></li>
+  <li><a href="#rules-for-names-in-r" id="toc-rules-for-names-in-r" class="nav-link" data-scroll-target="#rules-for-names-in-r"><span class="header-section-number">3.4</span> Rules for Names in R</a></li>
+  <li><a href="#about-r-functions" id="toc-about-r-functions" class="nav-link" data-scroll-target="#about-r-functions"><span class="header-section-number">3.5</span> About R functions</a></li>
+  <li><a href="#resources-for-getting-help" id="toc-resources-for-getting-help" class="nav-link" data-scroll-target="#resources-for-getting-help"><span class="header-section-number">3.6</span> Resources for Getting Help</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="header-section-number">3.7</span> Reflection</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/r_intro_mechanics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/r_intro_mechanics.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./r_intro_mechanics.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R mechanics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R mechanics</span></h1>
 </div>
 
 
@@ -295,11 +327,192 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<section id="starting-r" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="starting-r"><span class="header-section-number">3.1</span> Starting R</h2>
+<p>We’ve installed R and RStudio. Now, let’s start R and get going. How to start R depends a bit on the operating system (Mac, Windows, Linux) and interface. In this course, we will largely be using an Integrated Development Environment (IDE) called <em>RStudio</em>, but there is nothing to prohibit using R at the command line or in some other interface (and there are a few).</p>
+</section>
+<section id="rstudio-a-quick-tour" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="rstudio-a-quick-tour"><span class="header-section-number">3.2</span> <em>RStudio</em>: A Quick Tour</h2>
+<p>The RStudio interface has multiple panes. All of these panes are simply for convenience except the “Console” panel, typically in the lower left corner (by default). The console pane contains the running R interface. If you choose to run R outside RStudio, the interaction will be <em>identical</em> to working in the console pane. This is useful to keep in mind as some environments, such as a computer cluster, encourage using R without RStudio.</p>
+<ul>
+<li>Panes</li>
+<li>Options</li>
+<li>Help</li>
+<li>Environment, History, and Files</li>
+</ul>
+</section>
+<section id="interacting-with-r" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="interacting-with-r"><span class="header-section-number">3.3</span> Interacting with R</h2>
+<p>The only meaningful way of interacting with R is by typing into the R console. At the most basic level, anything that we type at the command line will fall into one of two categories:</p>
+<ol type="1">
+<li><p>Assignments</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+<li><p>Expressions</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> pi <span class="sc">+</span> <span class="fu">sin</span>(<span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.225071</code></pre>
 </div>
+</div></li>
+</ol>
+<p>The assignment type is obvious because either the The <code>&lt;-</code> or <code>=</code> are used. Note that when we type expressions, R will return a result. In this case, the result of R evaluating <code>1 + pi + sin(42)</code> is 3.2250711.</p>
+<p>The standard R prompt is a “&gt;” sign. When present, R is waiting for the next expression or assignment. If a line is not a complete R command, R will continue the next line with a “+”. For example, typing the following with a “Return” after the second “+” will result in R giving back a “+” on the next line, a prompt to keep typing.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> pi <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sin</span>(<span class="fl">3.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.611757</code></pre>
+</div>
+</div>
+<p>R can be used as a glorified calculator by using R expressions. Mathematical operations include:</p>
+<ul>
+<li>Addition: <code>+</code></li>
+<li>Subtraction: <code>-</code></li>
+<li>Multiplication: <code>*</code></li>
+<li>Division: <code>/</code></li>
+<li>Exponentiation: <code>^</code></li>
+<li>Modulo: <code>%%</code></li>
+</ul>
+<p>The <code>^</code> operator raises the number to its left to the power of the number to its right: for example <code>3^2</code> is <code>9</code>. The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or <code>5 %% 3</code> is 2.</p>
+<section id="expressions" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="expressions"><span class="header-section-number">3.3.1</span> Expressions</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dv">28</span> <span class="sc">%%</span> <span class="dv">3</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">*</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">^</span> <span class="dv">4</span> <span class="sc">/</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that R follows order-of-operations and groupings based on parentheses.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span> <span class="sc">/</span> <span class="dv">9</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span> <span class="sc">+</span> <span class="dv">4</span>) <span class="sc">/</span> <span class="dv">9</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="assignment" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="assignment"><span class="header-section-number">3.3.2</span> Assignment</h3>
+<p>While using R as a calculator is interesting, to do useful and interesting things, we need to assign <em>values</em> to <em>objects</em>. To create objects, we need to give it a name followed by the assignment operator <code>&lt;-</code> (or, entirely equivalently, <code>=</code>) and the value we want to give it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>weight_kg <span class="ot">&lt;-</span> <span class="dv">55</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>&lt;-</code> is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Using an <code>=</code> is equivalent (in nearly all cases). Learn to use <code>&lt;-</code> as it is good programming practice.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What about <code>&lt;-</code> and <code>=</code> for assignment?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>&lt;-</code> and <code>=</code> both work fine for assignment. You’ll see both used and it is up to you to choose a standard for yourself. However, some programming communities, such as Bioconductor, will strongly suggest using the <code>&lt;-</code> as it is clearer that it represents an <em>assignment</em> operation.</p>
+</div>
+</div>
+<p>Objects can be given any name such as <code>x</code>, <code>current_temperature</code>, or <code>subject_id</code> (see below). You want your object names to be explicit and not too long. They cannot start with a number (<code>2x</code> is not valid but <code>x2</code> is). R is case sensitive (e.g., <code>weight_kg</code> is different from <code>Weight_kg</code>). There are some names that cannot be used because they represent the names of fundamental functions in R (e.g., <code>if</code>, <code>else</code>, <code>for</code>, see <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html">here</a> for a complete list). In general, even if it’s allowed, it’s best to not use other function names, which we’ll get into shortly (e.g., <code>c</code>, <code>T</code>, <code>mean</code>, <code>data</code>, <code>df</code>, <code>weights</code>). When in doubt, check the help to see if the name is already in use. It’s also best to avoid dots (<code>.</code>) within a variable name as in <code>my.dataset</code>. It is also recommended to use nouns for variable names, and verbs for function names.</p>
+<p>When assigning a value to an object, R does not print anything. You can force to print the value by typing the name:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>weight_kg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 55</code></pre>
+</div>
+</div>
+<p>Now that R has <code>weight_kg</code> in memory, which R refers to as the “global environment”, we can do arithmetic with it. For instance, we may want to convert this weight in pounds (weight in pounds is 2.2 times the weight in kg).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fl">2.2</span> <span class="sc">*</span> weight_kg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 121</code></pre>
+</div>
+</div>
+<p>We can also change a variable’s value by assigning it a new one:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>weight_kg <span class="ot">&lt;-</span> <span class="fl">57.5</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fl">2.2</span> <span class="sc">*</span> weight_kg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 126.5</code></pre>
+</div>
+</div>
+<p>This means that assigning a value to one variable does not change the values of other variables. For example, let’s store the animal’s weight in pounds in a variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>weight_lb <span class="ot">&lt;-</span> <span class="fl">2.2</span> <span class="sc">*</span> weight_kg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and then change <code>weight_kg</code> to 100.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>weight_kg <span class="ot">&lt;-</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What do you think is the current content of the object <code>weight_lb</code>, 126.5 or 220?</p>
+<p>You can see what objects (variables) are stored by viewing the Environment tab in Rstudio. You can also use the <code>ls()</code> function. You can remove objects (variables) with the <code>rm()</code> function. You can do this one at a time or remove several objects at once. You can also use the little broom button in your environment pane to remove everything from your environment.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(weight_lb, weight_kg)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What happens when you type the following, now?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>weight_lb <span class="co"># oops! you should get an error because weight_lb no longer exists!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="rules-for-names-in-r" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="rules-for-names-in-r"><span class="header-section-number">3.4</span> Rules for Names in R</h2>
+<p>R allows users to assign names to objects such as variables, functions, and even dimensions of data. However, these names must follow a few rules.</p>
+<ul>
+<li>Names may contain any combination of letters, numbers, underscore, and “.”</li>
+<li>Names may not start with numbers, underscore.</li>
+<li>R names are case-sensitive.</li>
+</ul>
+<p>Examples of valid R names include:</p>
+<pre><code>pi
+x
+camelCaps
+my_stuff
+MY_Stuff
+this.is.the.name.of.the.man
+ABC123
+abc1234asdf
+.hi</code></pre>
+</section>
+<section id="about-r-functions" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="about-r-functions"><span class="header-section-number">3.5</span> About R functions</h2>
+<p>When you see a name followed by parentheses <code>()</code>, you are likely looking a name that represents an R function (or method, but we’ll sidestep that distinction for now). Examples of R functions include <code>print()</code>, <code>help()</code>, and <code>ls()</code>. We haven’t seen examples yet, but when a name is followed by <code>[]</code>, that name represents a variable of some kind and the <code>[]</code> are used for “subsetting” the variable. So:</p>
+<ul>
+<li>Name followed by <code>()</code> is a function.</li>
+<li>Name with <code>[]</code> means a variable that is being subset.</li>
+</ul>
+<p>In many cases, when you see a new function used, you may not know what it does. The R <code>help()</code> function takes the name of another function and gives back the R help document for that function if there is one. The next section reviews that technique.</p>
+</section>
+<section id="resources-for-getting-help" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="resources-for-getting-help"><span class="header-section-number">3.6</span> Resources for Getting Help</h2>
+<p>There is extensive built-in help and documentation within R. A separate page contains a collection of <a href="additional_resources.html">additional resources</a>.</p>
+<p>If the name of the function or object on which help is sought is known, the following approaches with the name of the function or object will be helpful. For a concrete example, examine the help for the <code>print</code> method.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(print)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(<span class="st">'print'</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>?print</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are also tons of online resources that Google will include in searches if online searching feels more appropriate.</p>
+<p>I strongly recommend using <code>help("newfunction")</code> for all functions that are new or unfamiliar to you.</p>
+<p>There are also many open and free resources and reference guides for R.</p>
+<ul>
+<li><a href="http://www.statmethods.net/">Quick-R</a>: a quick online reference for data input, basic statistics and plots</li>
+<li>R reference card <a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">PDF</a> by Tom Short</li>
+<li>Rstudio <a href="https://www.rstudio.com/resources/cheatsheets/">cheatsheets</a></li>
+</ul>
+</section>
+<section id="reflection" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="reflection"><span class="header-section-number">3.7</span> Reflection</h2>
+<ul>
+<li>Can you recognize the difference between <em>assignment</em> and <em>expressions</em> when interacting with R?</li>
+<li>Can you demonstrate an assignment to a variable?</li>
+<li>Do you know the rules for “names” in R?</li>
+<li>Are you able to get help using the R <code>help()</code> function?</li>
+<li>Do you know that functions are recognizable as names followed by <code>()</code>?</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -703,13 +916,13 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r_intro_mechanics.html" class="pagination-link" aria-label="R mechanics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R mechanics</span></span>
+      <a href="./intro_to_rstudio.html" class="pagination-link" aria-label="RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix.html" class="pagination-link" aria-label="Appendix">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -727,7 +940,7 @@ div.csl-indent {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/references.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/r_intro_mechanics.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/r_intro_mechanics.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

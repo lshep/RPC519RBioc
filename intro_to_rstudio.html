@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2025-08-27">
 <meta name="description" content="A selection of material introducing R, Bioconductor, and more …">
 
-<title>References – RPC 519 R and Bioconductor</title>
+<title>2&nbsp; RStudio – RPC 519 R and Bioconductor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -52,8 +33,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix.html" rel="next">
-<link href="./r_intro_mechanics.html" rel="prev">
+<link href="./r_intro_mechanics.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -150,7 +131,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./intro_to_rstudio.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -185,7 +166,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro_to_rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro_to_rstudio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio</span></span></a>
   </div>
 </li>
@@ -199,7 +180,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -243,15 +224,23 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#getting-started-with-rstudio" id="toc-getting-started-with-rstudio" class="nav-link active" data-scroll-target="#getting-started-with-rstudio"><span class="header-section-number">2.1</span> Getting started with RStudio</a></li>
+  <li><a href="#the-rstudio-interface" id="toc-the-rstudio-interface" class="nav-link" data-scroll-target="#the-rstudio-interface"><span class="header-section-number">2.2</span> The RStudio Interface</a></li>
+  <li><a href="#alternatives-to-rstudio" id="toc-alternatives-to-rstudio" class="nav-link" data-scroll-target="#alternatives-to-rstudio"><span class="header-section-number">2.3</span> Alternatives to RStudio</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/intro_to_rstudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/intro_to_rstudio.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./intro_to_rstudio.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio</span></h1>
 </div>
 
 
@@ -295,11 +284,144 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" role="list" style="display: none">
-
+<p>RStudio is an integrated development environment (IDE) for R. It provides a graphical user interface (GUI) for R, making it easier to write and execute R code. RStudio also provides several other useful features, including a built-in console, syntax-highlighting editor, and tools for plotting, history, debugging, workspace management, and workspace viewing. RStudio is available in both free and commercial editions; the commercial edition provides some additional features, including support for multiple sessions and enhanced debugging.</p>
+<section id="getting-started-with-rstudio" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="getting-started-with-rstudio"><span class="header-section-number">2.1</span> Getting started with RStudio</h2>
+<p>To get started with RStudio, you first need to install both R and RStudio on your computer. Follow these steps:</p>
+<ol type="1">
+<li>Download and install R from the <a href="https://cran.r-project.org/">official R website</a>.</li>
+<li>Download and install RStudio from the <a href="https://posit.co/downloads/">official RStudio website</a>.</li>
+<li>Launch RStudio. You should see the RStudio interface with four panels.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+R versions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>RStudio works with all versions of R, but it is recommended to use the latest version of R to take advantage of the latest features and improvements. You can check your R version by running <code>version</code> (no parentheses)in the R console.</p>
+<p>You can check the latest version of R on the <a href="https://www.r-project.org/">R-project website</a>.</p>
+</div>
+</div>
+</section>
+<section id="the-rstudio-interface" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-rstudio-interface"><span class="header-section-number">2.2</span> The RStudio Interface</h2>
+<p>RStudio’s interface consists of four panels (see <a href="#fig-rstudio-interface" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>):</p>
+<ul>
+<li><dl>
+<dt>Console</dt>
+<dd>
+This panel displays the R console, where you can enter and execute R commands directly. The console also shows the output of your code, error messages, and other information.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Source</dt>
+<dd>
+This panel is where you write and edit your R scripts. You can create new scripts, open existing ones, and run your code from this panel.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Environment</dt>
+<dd>
+This panel displays your current workspace, including all variables, data objects, and functions that you have created or loaded in your R session.
+</dd>
+</dl></li>
+<li><dl>
+<dt>Plots, Packages, Help, and Viewer</dt>
+<dd>
+These panels display plots, installed packages, help files, and web content, respectively.
+</dd>
+</dl></li>
+</ul>
+<div id="fig-rstudio-interface" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/rstudio_image.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-interface-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: The RStudio interface. In this layout, the <strong>source</strong> pane is in the upper left, the <strong>console</strong> is in the lower left, the <strong>environment</strong> panel is in the top right and the <strong>viewer/help/files</strong> panel is in the bottom right.
+</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Do I need to use RStudio?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No.&nbsp;You can use R without RStudio. However, RStudio makes it easier to write and execute R code, and it provides several useful features that are not available in the basic R console. Note that the only part of RStudio that is actually interacting with R directly is the console. The other panels are simply providing a GUI that enhances the user experience.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Customizing the RStudio Interface
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can customize the layout of RStudio to suit your preferences. To do so, go to <strong>Tools &gt; Global Options &gt; Appearance</strong>. Here, you can change the theme, font size, and panel layout. You can also resize the panels as needed to gain screen real estate (see <a href="#fig-rstudio-resize" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>).</p>
+</div>
+</div>
+<div id="fig-rstudio-resize" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-rstudio-resize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/rstudio_resize.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rstudio-resize-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Dealing with limited screen real estate can be a challenge, particularly when you want to open another window to, for example, view a web page. You can resize the panes by sliding the center divider (red arrows) or by clicking on the minimize/maximize buttons (see blue arrow).
+</figcaption>
+</figure>
+</div>
+<p>In summary, R and RStudio are powerful tools for genomics data analysis. By understanding the advantages of using R and RStudio and familiarizing yourself with the RStudio interface, you can efficiently analyze and visualize your data. In the following chapters, we will delve deeper into the functionality of R, Bioconductor, and various statistical methods to help you gain a comprehensive understanding of genomics data analysis.</p>
+</section>
+<section id="alternatives-to-rstudio" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="alternatives-to-rstudio"><span class="header-section-number">2.3</span> Alternatives to RStudio</h2>
+<p>While RStudio is a popular choice for R development, there are several alternatives you can consider:</p>
+<ol type="1">
+<li><a href="https://jupyter.org/"><strong>Jupyter Notebooks</strong></a>: Jupyter Notebooks provide an interactive environment for writing and executing R code, along with rich text support for documentation. You can use the IRKernel to run R code in Jupyter.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.iunera.com/wp-content/uploads/image-352.png" class="img-fluid figure-img"></p>
+<figcaption>Jupyter Notebook interface. This is an interactive environment for writing and executing R code, along with rich text support for documentation.</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><a href="https://code.visualstudio.com/docs/languages/r"><strong>Visual Studio Code</strong></a>: With the R extension for Visual Studio Code, you can write and execute R code in a lightweight editor. This setup provides features like syntax highlighting, code completion, and integrated terminal support.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://code.visualstudio.com/assets/docs/languages/r/overview.png" class="img-fluid figure-img"></p>
+<figcaption>Visual Studio Code (VSCode) with the R extension. This is a lightweight alternative to RStudio that provides syntax highlighting, code completion, and integrated terminal support.</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li><a href="https://positron.posit.co/">Positron Workbench</a>: This is a commercial IDE that supports R and Python. It provides a similar interface to RStudio but with additional features for data science workflows, including support for multiple languages and cloud integration.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://positron.posit.co/images/astropy.png" class="img-fluid figure-img"></p>
+<figcaption>Positron Workbench interface. This IDE supports R and Python, providing a similar interface to RStudio with additional features for data science workflows.</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><strong>Command Line R</strong>: For those who prefer a minimalistic approach, you can use R directly from the command line. This method lacks the GUI features of RStudio but can be efficient for quick tasks, scripting, automation, or when working on remote servers.</li>
+</ol>
+<p>Each of these alternatives has its own strengths and weaknesses, so you may want to try a few to see which one best fits your workflow. All are available for free, and you can install them alongside RStudio if you wish to use multiple environments. Each can be installed in Windows, Mac, and Linux.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -703,13 +825,13 @@ div.csl-indent {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./r_intro_mechanics.html" class="pagination-link" aria-label="R mechanics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R mechanics</span></span>
+      <a href="./intro.html" class="pagination-link" aria-label="About R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">About R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix.html" class="pagination-link" aria-label="Appendix">
-        <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Appendix</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./r_intro_mechanics.html" class="pagination-link" aria-label="R mechanics">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">R mechanics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -727,7 +849,7 @@ div.csl-indent {
 </a>
   </li>  
 </ul>
-    <div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/references.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/references.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/intro_to_rstudio.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/intro_to_rstudio.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

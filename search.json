@@ -13,34 +13,349 @@
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "1  About R",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 What is R?\nIn this chapter, we will discuss the basics of R and RStudio, two essential tools in genomics data analysis. We will cover the advantages of using R and RStudio, how to set up RStudio, and the different panels of the RStudio interface.\nR is a programming language and software environment designed for statistical computing and graphics. It is widely used by statisticians, data scientists, and researchers for data analysis and visualization. R is an open-source language, which means it is free to use, modify, and distribute. Over the years, R has become particularly popular in the fields of genomics and bioinformatics, owing to its extensive libraries and powerful data manipulation capabilities.\nThe R language is a dialect of the S language, which was developed in the 1970s at Bell Laboratories. The first version of R was written by Robert Gentleman and Ross Ihaka and released in 1995 (see this slide deck for Ross Ihaka’s take on R’s history). Since then, R has been continuously developed by the R Core Team, a group of statisticians and computer scientists. The R Core Team releases a new version of R every year.",
     "crumbs": [
       "Home",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About R</span>"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "objectID": "intro.html#why-use-r",
+    "href": "intro.html#why-use-r",
+    "title": "1  About R",
+    "section": "1.2 Why use R?",
+    "text": "1.2 Why use R?\nThere are several reasons why R is a popular choice for data analysis, particularly in genomics and bioinformatics. These include:\n\nOpen-source: R is free to use and has a large community of developers who contribute to its growth and development. What is “open-source”?\nExtensive libraries: There are thousands of R packages available for a wide range of tasks, including specialized packages for genomics and bioinformatics. These libraries have been extensively tested and ara available for free.\nData manipulation: R has powerful data manipulation capabilities, making it easy (or at least possible) to clean, process, and analyze large datasets.\nGraphics and visualization: R has excellent tools for creating high-quality graphics and visualizations that can be customized to meet the specific needs of your analysis. In most cases, graphics produced by R are publication-quality.\nReproducible research: R enables you to create reproducible research by recording your analysis in a script, which can be easily shared and executed by others. In addition, R does not have a meaningful graphical user interface (GUI), which renders analysis in R much more reproducible than tools that rely on GUI interactions.\nCross-platform: R runs on Windows, Mac, and Linux (as well as more obscure systems).\nInteroperability with other languages: R can interfact with FORTRAN, C, and many other languages.\nScalability: R is useful for small and large projects.\n\nI can develop code for analysis on my Mac laptop. I can then install the same code on our 20k core cluster and run it in parallel on 100 samples, monitor the process, and then update a database (for example) with R when complete. In other words, R is a powerful tool that can be used for a wide range of tasks, from small-scale data analysis to large-scale genomics and omics data science projects.",
     "crumbs": [
       "Home",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About R</span>"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "intro.html#why-not-use-r",
+    "href": "intro.html#why-not-use-r",
+    "title": "1  About R",
+    "section": "1.3 Why not use R?",
+    "text": "1.3 Why not use R?\n\nR cannot do everything.\nR is not always the “best” tool for the job.\nR will not hold your hand. Often, it will slap your hand instead.\nThe documentation can be opaque (but there is documentation).\nR can drive you crazy (on a good day) or age you prematurely (on a bad one).\nFinding the right package to do the job you want to do can be challenging; worse, some contributed packages are unreliable.]{}\nR does not have a meaningfully useful graphical user interface (GUI).\nAdditional languages are becoming increasingly popular for bioinformatics and biological data science, such as Python, Julia, and Rust.",
     "crumbs": [
       "Home",
-      "References"
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#r-license-and-the-open-source-ideal",
+    "href": "intro.html#r-license-and-the-open-source-ideal",
+    "title": "1  About R",
+    "section": "1.4 R License and the Open Source Ideal",
+    "text": "1.4 R License and the Open Source Ideal\nR is free (yes, totally free!) and distributed under GNU license. In particular, this license allows one to:\n\nDownload the source code\nModify the source code to your heart’s content\nDistribute the modified source code and even charge money for it, but you must distribute the modified source code under the original GNU license.\n\nThis license means that R will always be available, will always be open source, and can grow organically without constraint.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About R</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#working-with-r",
+    "href": "intro.html#working-with-r",
+    "title": "1  About R",
+    "section": "1.5 Working with R",
+    "text": "1.5 Working with R\nR is a programming language, and as such, it requires you to write code to perform tasks. This can be intimidating for beginners, but it is also what makes R so powerful. In R, you can write scripts to automate tasks, create functions to encapsulate complex operations, and use packages to extend the functionality of R.\nR can be used interactively or as a scripting language. In interactive mode, you can enter commands directly into the R console and see the results immediately. In scripting mode, you can write a series of commands in a script file and then execute the entire script at once. This allows you to save your work, reuse code, and share your analysis with others.\nIn the next section, we will discuss how to set up RStudio, an integrated development environment (IDE) for R that makes it easier to write and execute R code. However, you can use R without RStudio if you prefer to work in the R console or another IDE. RStudio is not required to use R, but it does provide a more user-friendly interface and several useful features that can enhance your R programming experience.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>About R</span>"
+    ]
+  },
+  {
+    "objectID": "intro_to_rstudio.html",
+    "href": "intro_to_rstudio.html",
+    "title": "2  RStudio",
+    "section": "",
+    "text": "2.1 Getting started with RStudio\nRStudio is an integrated development environment (IDE) for R. It provides a graphical user interface (GUI) for R, making it easier to write and execute R code. RStudio also provides several other useful features, including a built-in console, syntax-highlighting editor, and tools for plotting, history, debugging, workspace management, and workspace viewing. RStudio is available in both free and commercial editions; the commercial edition provides some additional features, including support for multiple sessions and enhanced debugging.\nTo get started with RStudio, you first need to install both R and RStudio on your computer. Follow these steps:",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "intro_to_rstudio.html#getting-started-with-rstudio",
+    "href": "intro_to_rstudio.html#getting-started-with-rstudio",
+    "title": "2  RStudio",
+    "section": "",
+    "text": "Download and install R from the official R website.\nDownload and install RStudio from the official RStudio website.\nLaunch RStudio. You should see the RStudio interface with four panels.\n\n\n\n\n\n\n\nR versions\n\n\n\nRStudio works with all versions of R, but it is recommended to use the latest version of R to take advantage of the latest features and improvements. You can check your R version by running version (no parentheses)in the R console.\nYou can check the latest version of R on the R-project website.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "intro_to_rstudio.html#the-rstudio-interface",
+    "href": "intro_to_rstudio.html#the-rstudio-interface",
+    "title": "2  RStudio",
+    "section": "2.2 The RStudio Interface",
+    "text": "2.2 The RStudio Interface\nRStudio’s interface consists of four panels (see Figure 2.1):\n\n\nConsole\n\nThis panel displays the R console, where you can enter and execute R commands directly. The console also shows the output of your code, error messages, and other information.\n\n\n\nSource\n\nThis panel is where you write and edit your R scripts. You can create new scripts, open existing ones, and run your code from this panel.\n\n\n\nEnvironment\n\nThis panel displays your current workspace, including all variables, data objects, and functions that you have created or loaded in your R session.\n\n\n\nPlots, Packages, Help, and Viewer\n\nThese panels display plots, installed packages, help files, and web content, respectively.\n\n\n\n\n\n\n\n\n\nFigure 2.1: The RStudio interface. In this layout, the source pane is in the upper left, the console is in the lower left, the environment panel is in the top right and the viewer/help/files panel is in the bottom right.\n\n\n\n\n\n\n\n\n\nDo I need to use RStudio?\n\n\n\nNo. You can use R without RStudio. However, RStudio makes it easier to write and execute R code, and it provides several useful features that are not available in the basic R console. Note that the only part of RStudio that is actually interacting with R directly is the console. The other panels are simply providing a GUI that enhances the user experience.\n\n\n\n\n\n\n\n\nCustomizing the RStudio Interface\n\n\n\nYou can customize the layout of RStudio to suit your preferences. To do so, go to Tools &gt; Global Options &gt; Appearance. Here, you can change the theme, font size, and panel layout. You can also resize the panels as needed to gain screen real estate (see Figure 2.2).\n\n\n\n\n\n\n\n\nFigure 2.2: Dealing with limited screen real estate can be a challenge, particularly when you want to open another window to, for example, view a web page. You can resize the panes by sliding the center divider (red arrows) or by clicking on the minimize/maximize buttons (see blue arrow).\n\n\n\nIn summary, R and RStudio are powerful tools for genomics data analysis. By understanding the advantages of using R and RStudio and familiarizing yourself with the RStudio interface, you can efficiently analyze and visualize your data. In the following chapters, we will delve deeper into the functionality of R, Bioconductor, and various statistical methods to help you gain a comprehensive understanding of genomics data analysis.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "intro_to_rstudio.html#alternatives-to-rstudio",
+    "href": "intro_to_rstudio.html#alternatives-to-rstudio",
+    "title": "2  RStudio",
+    "section": "2.3 Alternatives to RStudio",
+    "text": "2.3 Alternatives to RStudio\nWhile RStudio is a popular choice for R development, there are several alternatives you can consider:\n\nJupyter Notebooks: Jupyter Notebooks provide an interactive environment for writing and executing R code, along with rich text support for documentation. You can use the IRKernel to run R code in Jupyter.\n\n\n\n\nJupyter Notebook interface. This is an interactive environment for writing and executing R code, along with rich text support for documentation.\n\n\n\nVisual Studio Code: With the R extension for Visual Studio Code, you can write and execute R code in a lightweight editor. This setup provides features like syntax highlighting, code completion, and integrated terminal support.\n\n\n\n\nVisual Studio Code (VSCode) with the R extension. This is a lightweight alternative to RStudio that provides syntax highlighting, code completion, and integrated terminal support.\n\n\n\nPositron Workbench: This is a commercial IDE that supports R and Python. It provides a similar interface to RStudio but with additional features for data science workflows, including support for multiple languages and cloud integration.\n\n\n\n\nPositron Workbench interface. This IDE supports R and Python, providing a similar interface to RStudio with additional features for data science workflows.\n\n\n\nCommand Line R: For those who prefer a minimalistic approach, you can use R directly from the command line. This method lacks the GUI features of RStudio but can be efficient for quick tasks, scripting, automation, or when working on remote servers.\n\nEach of these alternatives has its own strengths and weaknesses, so you may want to try a few to see which one best fits your workflow. All are available for free, and you can install them alongside RStudio if you wish to use multiple environments. Each can be installed in Windows, Mac, and Linux.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "r_intro_mechanics.html",
+    "href": "r_intro_mechanics.html",
+    "title": "3  R mechanics",
+    "section": "",
+    "text": "3.1 Starting R\nWe’ve installed R and RStudio. Now, let’s start R and get going. How to start R depends a bit on the operating system (Mac, Windows, Linux) and interface. In this course, we will largely be using an Integrated Development Environment (IDE) called RStudio, but there is nothing to prohibit using R at the command line or in some other interface (and there are a few).",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "r_intro_mechanics.html#rstudio-a-quick-tour",
+    "href": "r_intro_mechanics.html#rstudio-a-quick-tour",
+    "title": "3  R mechanics",
+    "section": "3.2 RStudio: A Quick Tour",
+    "text": "3.2 RStudio: A Quick Tour\nThe RStudio interface has multiple panes. All of these panes are simply for convenience except the “Console” panel, typically in the lower left corner (by default). The console pane contains the running R interface. If you choose to run R outside RStudio, the interaction will be identical to working in the console pane. This is useful to keep in mind as some environments, such as a computer cluster, encourage using R without RStudio.\n\nPanes\nOptions\nHelp\nEnvironment, History, and Files",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "r_intro_mechanics.html#interacting-with-r",
+    "href": "r_intro_mechanics.html#interacting-with-r",
+    "title": "3  R mechanics",
+    "section": "3.3 Interacting with R",
+    "text": "3.3 Interacting with R\nThe only meaningful way of interacting with R is by typing into the R console. At the most basic level, anything that we type at the command line will fall into one of two categories:\n\nAssignments\n\nx = 1\ny &lt;- 2\n\nExpressions\n\n1 + pi + sin(42)\n\n[1] 3.225071\n\n\n\nThe assignment type is obvious because either the The &lt;- or = are used. Note that when we type expressions, R will return a result. In this case, the result of R evaluating 1 + pi + sin(42) is 3.2250711.\nThe standard R prompt is a “&gt;” sign. When present, R is waiting for the next expression or assignment. If a line is not a complete R command, R will continue the next line with a “+”. For example, typing the following with a “Return” after the second “+” will result in R giving back a “+” on the next line, a prompt to keep typing.\n\n1 + pi +\nsin(3.7)\n\n[1] 3.611757\n\n\nR can be used as a glorified calculator by using R expressions. Mathematical operations include:\n\nAddition: +\nSubtraction: -\nMultiplication: *\nDivision: /\nExponentiation: ^\nModulo: %%\n\nThe ^ operator raises the number to its left to the power of the number to its right: for example 3^2 is 9. The modulo returns the remainder of the division of the number to the left by the number on its right, for example 5 modulo 3 or 5 %% 3 is 2.\n\n3.3.1 Expressions\n\n5 + 2\n28 %% 3\n3^2\n5 + 4 * 4 + 4 ^ 4 / 10\n\nNote that R follows order-of-operations and groupings based on parentheses.\n\n5 + 4 / 9\n(5 + 4) / 9\n\n\n\n3.3.2 Assignment\nWhile using R as a calculator is interesting, to do useful and interesting things, we need to assign values to objects. To create objects, we need to give it a name followed by the assignment operator &lt;- (or, entirely equivalently, =) and the value we want to give it:\n\nweight_kg &lt;- 55 \n\n&lt;- is the assignment operator. Assigns values on the right to objects on the left, it is like an arrow that points from the value to the object. Using an = is equivalent (in nearly all cases). Learn to use &lt;- as it is good programming practice.\n\n\n\n\n\n\nWhat about &lt;- and = for assignment?\n\n\n\nThe &lt;- and = both work fine for assignment. You’ll see both used and it is up to you to choose a standard for yourself. However, some programming communities, such as Bioconductor, will strongly suggest using the &lt;- as it is clearer that it represents an assignment operation.\n\n\nObjects can be given any name such as x, current_temperature, or subject_id (see below). You want your object names to be explicit and not too long. They cannot start with a number (2x is not valid but x2 is). R is case sensitive (e.g., weight_kg is different from Weight_kg). There are some names that cannot be used because they represent the names of fundamental functions in R (e.g., if, else, for, see here for a complete list). In general, even if it’s allowed, it’s best to not use other function names, which we’ll get into shortly (e.g., c, T, mean, data, df, weights). When in doubt, check the help to see if the name is already in use. It’s also best to avoid dots (.) within a variable name as in my.dataset. It is also recommended to use nouns for variable names, and verbs for function names.\nWhen assigning a value to an object, R does not print anything. You can force to print the value by typing the name:\n\nweight_kg\n\n[1] 55\n\n\nNow that R has weight_kg in memory, which R refers to as the “global environment”, we can do arithmetic with it. For instance, we may want to convert this weight in pounds (weight in pounds is 2.2 times the weight in kg).\n\n2.2 * weight_kg\n\n[1] 121\n\n\nWe can also change a variable’s value by assigning it a new one:\n\nweight_kg &lt;- 57.5\n2.2 * weight_kg\n\n[1] 126.5\n\n\nThis means that assigning a value to one variable does not change the values of other variables. For example, let’s store the animal’s weight in pounds in a variable.\n\nweight_lb &lt;- 2.2 * weight_kg\n\nand then change weight_kg to 100.\n\nweight_kg &lt;- 100\n\nWhat do you think is the current content of the object weight_lb, 126.5 or 220?\nYou can see what objects (variables) are stored by viewing the Environment tab in Rstudio. You can also use the ls() function. You can remove objects (variables) with the rm() function. You can do this one at a time or remove several objects at once. You can also use the little broom button in your environment pane to remove everything from your environment.\n\nls()\nrm(weight_lb, weight_kg)\nls()\n\nWhat happens when you type the following, now?\n\nweight_lb # oops! you should get an error because weight_lb no longer exists!",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "r_intro_mechanics.html#rules-for-names-in-r",
+    "href": "r_intro_mechanics.html#rules-for-names-in-r",
+    "title": "3  R mechanics",
+    "section": "3.4 Rules for Names in R",
+    "text": "3.4 Rules for Names in R\nR allows users to assign names to objects such as variables, functions, and even dimensions of data. However, these names must follow a few rules.\n\nNames may contain any combination of letters, numbers, underscore, and “.”\nNames may not start with numbers, underscore.\nR names are case-sensitive.\n\nExamples of valid R names include:\npi\nx\ncamelCaps\nmy_stuff\nMY_Stuff\nthis.is.the.name.of.the.man\nABC123\nabc1234asdf\n.hi",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "r_intro_mechanics.html#about-r-functions",
+    "href": "r_intro_mechanics.html#about-r-functions",
+    "title": "3  R mechanics",
+    "section": "3.5 About R functions",
+    "text": "3.5 About R functions\nWhen you see a name followed by parentheses (), you are likely looking a name that represents an R function (or method, but we’ll sidestep that distinction for now). Examples of R functions include print(), help(), and ls(). We haven’t seen examples yet, but when a name is followed by [], that name represents a variable of some kind and the [] are used for “subsetting” the variable. So:\n\nName followed by () is a function.\nName with [] means a variable that is being subset.\n\nIn many cases, when you see a new function used, you may not know what it does. The R help() function takes the name of another function and gives back the R help document for that function if there is one. The next section reviews that technique.",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "r_intro_mechanics.html#resources-for-getting-help",
+    "href": "r_intro_mechanics.html#resources-for-getting-help",
+    "title": "3  R mechanics",
+    "section": "3.6 Resources for Getting Help",
+    "text": "3.6 Resources for Getting Help\nThere is extensive built-in help and documentation within R. A separate page contains a collection of additional resources.\nIf the name of the function or object on which help is sought is known, the following approaches with the name of the function or object will be helpful. For a concrete example, examine the help for the print method.\n\nhelp(print)\nhelp('print')\n?print\n\nThere are also tons of online resources that Google will include in searches if online searching feels more appropriate.\nI strongly recommend using help(\"newfunction\") for all functions that are new or unfamiliar to you.\nThere are also many open and free resources and reference guides for R.\n\nQuick-R: a quick online reference for data input, basic statistics and plots\nR reference card PDF by Tom Short\nRstudio cheatsheets",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "r_intro_mechanics.html#reflection",
+    "href": "r_intro_mechanics.html#reflection",
+    "title": "3  R mechanics",
+    "section": "3.7 Reflection",
+    "text": "3.7 Reflection\n\nCan you recognize the difference between assignment and expressions when interacting with R?\nCan you demonstrate an assignment to a variable?\nDo you know the rules for “names” in R?\nAre you able to get help using the R help() function?\nDo you know that functions are recognizable as names followed by ()?",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>R mechanics</span>"
+    ]
+  },
+  {
+    "objectID": "appendix.html",
+    "href": "appendix.html",
+    "title": "Appendix A — Appendix",
+    "section": "",
+    "text": "A.1 Swirl\nThe following is from the swirl website.\nTo get started, we need to install a new package into R.\ninstall.packages('swirl')\nOnce installed, we want to load it into the R workspace so we can use it.\nlibrary('swirl')\nFinally, to get going, start swirl and follow the instructions.\nswirl()",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "appendix.html#swirl",
+    "href": "appendix.html#swirl",
+    "title": "Appendix A — Appendix",
+    "section": "",
+    "text": "The swirl R package makes it fun and easy to learn R programming and data science. If you are new to R, have no fear.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>Appendix</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html",
+    "href": "git_and_github.html",
+    "title": "Appendix B — Git and GitHub",
+    "section": "",
+    "text": "B.1 install Git and GitHub CLI\nGit is a version control system that allows you to track changes in your code and collaborate with others. GitHub is a web-based platform that hosts Git repositories, making it easy to share and collaborate on projects. Github is NOT the only place to host Git repositories, but it is the most popular and has a large community of users.\nYou can use git by itself locally for version control. However, if you want to collaborate with others, you will need to use a remote repository, such as GitHub. This allows you to share your code with others, track changes, and collaborate on projects.\nTo use Git and GitHub, you need to have Git installed on your computer. You can download it from git-scm.com. After installation, you can check if Git is installed correctly by running the following command in your terminal:\nWe also need the gh command line tool to interact with GitHub. You can install it from cli.github.com. To install, go to the releases page and download the appropriate version for your operating system. For the Mac, it is the file named something like “Macos Universal” and the file will have a .pkg extension. You can install it by double-clicking the file after downloading it.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html#install-git-and-github-cli",
+    "href": "git_and_github.html#install-git-and-github-cli",
+    "title": "Appendix B — Git and GitHub",
+    "section": "",
+    "text": "git --version\n\n\n\n\n\n\n\nUsing the RStudio Terminal\n\n\n\nIf you are using RStudio, you can use the built-in terminal to run Git commands. To open the terminal, go to the “Terminal” tab in the bottom pane of RStudio. This allows you to run Git commands directly from RStudio without needing to switch to a separate terminal application.\n\nFor more details, see the RStudio terminal documentation.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html#configure-git",
+    "href": "git_and_github.html#configure-git",
+    "title": "Appendix B — Git and GitHub",
+    "section": "B.2 Configure Git",
+    "text": "B.2 Configure Git\nAfter installing Git, you need to configure it with your name and email address. This information will be used to identify you as the author of the commits you make. Run the following commands in your terminal, replacing “Your Name” and “you@example.com” with your actual name and email address:\ngit config --global user.name \"Your Name\"\ngit config --global user.email \"you@example.com\"",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html#create-a-github-account",
+    "href": "git_and_github.html#create-a-github-account",
+    "title": "Appendix B — Git and GitHub",
+    "section": "B.3 Create a GitHub account",
+    "text": "B.3 Create a GitHub account\nIf you don’t already have a GitHub account, you can create one for free at github.com.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html#login-to-github-cli",
+    "href": "git_and_github.html#login-to-github-cli",
+    "title": "Appendix B — Git and GitHub",
+    "section": "B.4 Login to GitHub CLI",
+    "text": "B.4 Login to GitHub CLI\nAfter installing the GitHub CLI, you need to log in to your GitHub account. Run the following command in your terminal:\ngh auth login",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html#introduction-to-version-control-with-git",
+    "href": "git_and_github.html#introduction-to-version-control-with-git",
+    "title": "Appendix B — Git and GitHub",
+    "section": "B.5 Introduction to Version Control with Git",
+    "text": "B.5 Introduction to Version Control with Git\nWelcome to the world of version control! Think of Git as a “save” button for your entire project, but with the ability to go back to previous saves, see exactly what you changed, and even work on different versions of your project at the same time. It’s an essential tool for reproducible and collaborative research.\nIn this tutorial, we’ll learn the absolute basics of Git using the command line directly within RStudio.\n\nB.5.1 Key Git Commands We’ll Learn Today:\n\ngit init: Initializes a new Git repository in your project folder. This is the first step to start tracking your files.\ngit add: Tells Git which files you want to track changes for. You can think of this as putting your changes into a “staging area.”\ngit commit: Takes a snapshot of your staged changes. This is like creating a permanent save point with a descriptive message.\ngit restore: Discards changes in your working directory. It’s a way to undo modifications you haven’t committed yet.\ngit branch: Allows you to create separate timelines of your project. This is useful for developing new features without affecting your main work.\ngit merge: Combines the changes from one branch into another.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html#the-toy-example-an-r-script",
+    "href": "git_and_github.html#the-toy-example-an-r-script",
+    "title": "Appendix B — Git and GitHub",
+    "section": "B.6 The Toy Example: An R Script",
+    "text": "B.6 The Toy Example: An R Script\nFirst, let’s create a simple R script that we can use for our Git exercise. In RStudio, create a new R Script and save it as data_analysis.R.\n# data_analysis.R\n\n# Load necessary libraries\nlibrary(ggplot2)\nlibrary(dplyr)\n\n# Create some sample data\ndata &lt;- data.frame(\n  x = 1:10,\n  y = (1:10) ^ 2\n)\n\n# Initial data summary\nsummary(data)",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git_and_github.html#lets-get-started-with-git",
+    "href": "git_and_github.html#lets-get-started-with-git",
+    "title": "Appendix B — Git and GitHub",
+    "section": "B.7 Let’s Get Started with Git!",
+    "text": "B.7 Let’s Get Started with Git!\nOpen the Terminal in RStudio (you can usually find it as a tab next to the Console). We’ll be typing all our Git commands here.\n\n\n\n\n\n\nFigure B.1: This is an overview of how git works along with the commands that make it tick. See this video\n\n\n\n\nB.7.1 Step 1: Initialize Your Git Repository\nFirst, we need to tell Git to start tracking our project folder.\ngit init\nYou’ll see a message like Initialized empty Git repository in.... You might also notice a new .git folder in your project directory (it might be hidden). This is where Git stores all its tracking information. Your default branch is automatically named main.\n\n\nB.7.2 Step 2: Your First Commit\nNow, let’s add our data_analysis.R script to Git’s tracking and make our first “commit.”\n\nAdd the file to the staging area:\ngit add data_analysis.R\nCommit the staged file with a message:\ngit commit -m \"Initial commit: Add basic data script\"\nThe -m flag lets you write your commit message directly in the command. Good commit messages are short but descriptive!\n\n\n\nB.7.3 Step 3: Making and Undoing a Change\nLet’s modify our R script. Add a plotting section to the end of data_analysis.R.\n# ... (keep the previous code)\n\n# Create a plot\nggplot(data, aes(x = x, y = y)) +\n  geom_point() +\n  ggtitle(\"A Simple Scatter Plot\")\nNow, what if we decided we didn’t want this change after all? We can use git restore to go back to our last committed version.\ngit restore data_analysis.R\nIf you look at your data_analysis.R file now, the plotting code will be gone!\n\n\nB.7.4 Step 4: Branching Out\nBranches are a powerful feature. Let’s create a new branch to add our plot without messing up our main branch.\n\nCreate a new branch and switch to it:\ngit checkout -b add-plot\nThis is a shortcut for git branch add-plot and git checkout add-plot.\n\nNow, re-add the plotting code to data_analysis.R.\n# ... (keep the previous code)\n\n# Create a plot\nggplot(data, aes(x = x, y = y)) +\n  geom_point() +\n  ggtitle(\"A Simple Scatter Plot\")\nLet’s commit this change on our new add-plot branch.\ngit add data_analysis.R\ngit commit -m \"feat: Add scatter plot\"\n\n\nB.7.5 Step 5: Seeing Branches in Action\nNow for the magic of branches. Let’s switch back to our main branch.\ngit checkout main\nNow, open your data_analysis.R script in the RStudio editor. The plotting code is gone! That’s because the change only exists on the add-plot branch. The main branch is exactly as we last left it.\nLet’s switch back to our feature branch.\ngit checkout add-plot\nCheck the data_analysis.R script again. The plotting code is back! This demonstrates how branches allow you to work on different versions of your project in isolation.\n\n\nB.7.6 Step 6: Merging Your Work\nOur plot is complete and we’re happy with it. It’s time to merge it back into our main branch to incorporate the new feature.\n\nSwitch back to the main branch, which is our target for the merge:\ngit checkout main\nMerge the add-plot branch into main:\ngit merge add-plot\n\nYou’ll see a message indicating that the merge happened. Now, your main branch has the updated data_analysis.R script with the plotting code!",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>B</span>  <span class='chapter-title'>Git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "additional_resources.html",
+    "href": "additional_resources.html",
+    "title": "Appendix C — Additional resources",
+    "section": "",
+    "text": "C.1 AI",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Additional resources</span>"
+    ]
+  },
+  {
+    "objectID": "additional_resources.html#ai",
+    "href": "additional_resources.html#ai",
+    "title": "Appendix C — Additional resources",
+    "section": "",
+    "text": "chatGPT\nGemini\nClaude\nDeepSeek\nPerplexity",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Additional resources</span>"
+    ]
+  },
+  {
+    "objectID": "dataviz.html",
+    "href": "dataviz.html",
+    "title": "Appendix D — Data Visualization with ggplot2",
+    "section": "",
+    "text": "Start with this worked example to get a feel for the ggplot2 package.\n\nhttps://rkabacoff.github.io/datavis/IntroGGPLOT.html\n\nThen, for more detail, I refer you to this excellent ggplot2 tutorial.\nFinally, for more R graphics inspiration, see the R Graph Gallery.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Data Visualization with ggplot2</span>"
     ]
   },
   {
