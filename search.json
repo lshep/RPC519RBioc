@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "RPC 519 R and Bioconductor",
     "section": "",
-    "text": "Preface\nThis is a selection of material from The RBioc Book created by Sean Davis. The original full content may be viewed here. The contents of this book may have minor modifications or additions.\nThe material is modified and redistributed in accordance with the original Licensing.\nSelect modifications were inspired by RPC 520 content originally distributed by Martin Morgan.\nTo Learn more about creating Quarto books visit https://quarto.org/docs/books.",
+    "text": "Preface\nThis is a selection of material from The RBioc Book created by Sean Davis. The original full content may be viewed here. The contents of this book may have minor modifications or additions.\nThe material is modified and redistributed in accordance with the original Licensing.\nSelect modifications were inspired by RPC 520 content originally distributed by Martin Morgan.",
     "crumbs": [
       "Home",
       "Preface"
@@ -339,7 +339,7 @@
     "href": "packages.html#creating-a-package",
     "title": "5  Packages",
     "section": "5.4 Creating a package",
-    "text": "5.4 Creating a package\nWhile it may seem overwhelming, creating a package can be fairly simple with the assistance of R packages that provide tips and templates. devtools and biocthis are great starting points.",
+    "text": "5.4 Creating a package\nWhile it may seem overwhelming, creating a package can be fairly simple with the assistance of R packages that provide tips and templates. Some good starting points:\n\ndevtools\nusethis\nbiocthis\nroxygen2",
     "crumbs": [
       "Home",
       "Introduction",
@@ -399,19 +399,7 @@
     "href": "rproj_and_save_load.html",
     "title": "7  Saving and Loading Workspaces and Objects",
     "section": "",
-    "text": "7.1 Rstudio Projects",
-    "crumbs": [
-      "Home",
-      "Introduction",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Saving and Loading Workspaces and Objects</span>"
-    ]
-  },
-  {
-    "objectID": "rproj_and_save_load.html#saving-and-loading-objects",
-    "href": "rproj_and_save_load.html#saving-and-loading-objects",
-    "title": "7  Saving and Loading Workspaces and Objects",
-    "section": "7.2 Saving and Loading Objects",
-    "text": "7.2 Saving and Loading Objects",
+    "text": "7.1 Rstudio Projects\nplacekeeper",
     "crumbs": [
       "Home",
       "Introduction",
@@ -422,8 +410,32 @@
     "objectID": "rproj_and_save_load.html#saving-and-loading-workspace",
     "href": "rproj_and_save_load.html#saving-and-loading-workspace",
     "title": "7  Saving and Loading Workspaces and Objects",
-    "section": "7.3 Saving and Loading Workspace",
-    "text": "7.3 Saving and Loading Workspace",
+    "section": "7.2 Saving and Loading Workspace",
+    "text": "7.2 Saving and Loading Workspace\nIf you are not in Rstudio and want to save your workspace there are a few options. If you choose to save your session when you quit out of R with q(\"yes\") or q() and selecting yes, it is also equivalent to the following using save\n\nsave(list = ls(all.names = TRUE), file =\".RData\", envir = .GlobalEnv)\n\nThis saves your workspace and command history. Any object assignments and command history (viewable with history()) will be available in your next R session. Your session will load automatically when you start up R in the same directory.\nYou can use the save.image option\n\nsave.image()\n# or\nsave.image(file=\"descriptiveFileName.RData\")\n\nIf you do not give save.image a file name, it will also load on default if you start an R session in that directory but with default settings will not have your command history.\nIf you give save.image a file name, it will not automatically load when you start R and will not have command history. You will have to load the image manually to see the objects in the new R session.\n\nload(\"descriptiveFileName.RData\")",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Saving and Loading Workspaces and Objects</span>"
+    ]
+  },
+  {
+    "objectID": "rproj_and_save_load.html#saving-and-loading-objects",
+    "href": "rproj_and_save_load.html#saving-and-loading-objects",
+    "title": "7  Saving and Loading Workspaces and Objects",
+    "section": "7.3 Saving and Loading Objects",
+    "text": "7.3 Saving and Loading Objects\nIf you want to selectively save objects, the save function is utilized. This allows you to choose the objects you want saved. The load function would then load the selected objects into a new R session.\n\nages = 1:4\nmonths = c(\"may\", \"june\", \"july\", \"august\")\nvec = c(TRUE, FALSE, TRUE)\nsave(months, ages, file=\"subset.RData\")",
+    "crumbs": [
+      "Home",
+      "Introduction",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Saving and Loading Workspaces and Objects</span>"
+    ]
+  },
+  {
+    "objectID": "rproj_and_save_load.html#saving-and-loading-command-history",
+    "href": "rproj_and_save_load.html#saving-and-loading-command-history",
+    "title": "7  Saving and Loading Workspaces and Objects",
+    "section": "7.4 Saving and Loading Command History",
+    "text": "7.4 Saving and Loading Command History\nWhen quitting out of R, if you save, it also saves your command history. To do this manually you can use the savehistory/loadhistory functions in R.",
     "crumbs": [
       "Home",
       "Introduction",
@@ -861,6 +873,390 @@
     ]
   },
   {
+    "objectID": "classes.html",
+    "href": "classes.html",
+    "title": "13  Classes",
+    "section": "",
+    "text": "All the data structures discussed are also known as an object’s class. While R has many predefined classes, it is flexible to create new classes. Many packages define their own classes of objects. This can be beneficial for organizational purposes as well as to build custom functions for specialized analysis.\nThis is a high level concept to be aware of. Bioconductor for example has many specialized classes related to genomic research. An overview of some of those classes can be found at Introduction to Bioconductor Classes.\nIf time permits we’ll come back to showing how custom and more complex classes, while intimidating to learn at first, can be really beneficial and help prevent careless errors if designed correctly.",
+    "crumbs": [
+      "Home",
+      "R Data Structures",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Classes</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html",
+    "href": "dplyr_intro_msleep.html",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "",
+    "text": "14.1 Learning goals\nThe dataset we will be using to introduce the dplyr package is an updated and expanded version of the mammals sleep dataset. Updated sleep times and weights were taken from V. M. Savage and G. B. West. A quantitative, theoretical framework for understanding mammalian sleep1.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#learning-goals",
+    "href": "dplyr_intro_msleep.html#learning-goals",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "",
+    "text": "Know that dplyr is just a different approach to manipulating data in data.frames.\nList the commonly used dplyr verbs and how they can be used to manipulate data.frames.\nShow how to aggregate and summarized data using dplyr\nKnow what the piping operator, |&gt;, is and how it can be used.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#learning-objectives",
+    "href": "dplyr_intro_msleep.html#learning-objectives",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.2 Learning objectives",
+    "text": "14.2 Learning objectives\n\nSelect subsets of the mammal sleep dataset.\nReorder the dataset.\nAdd columns to the dataset based on existing columns.\nSummarize the amount of sleep by categorical variables using group_by and summarize.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#what-is-dplyr",
+    "href": "dplyr_intro_msleep.html#what-is-dplyr",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.3 What is dplyr?",
+    "text": "14.3 What is dplyr?\nThe dplyr package is a specialized package for working with data.frames (and the related tibble) to transform and summarize tabular data with rows and columns. For another explanation of dplyr see the dplyr package vignette: Introduction to dplyr",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#why-is-dplyr-userful",
+    "href": "dplyr_intro_msleep.html#why-is-dplyr-userful",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.4 Why Is dplyr userful?",
+    "text": "14.4 Why Is dplyr userful?\ndplyr contains a set of functions–commonly called the dplyr “verbs”–that perform common data manipulations such as filtering for rows, selecting specific columns, re-ordering rows, adding new columns and summarizing data. In addition, dplyr contains a useful function to perform another common task which is the “split-apply-combine” concept.\nCompared to base functions in R, the functions in dplyr are often easier to work with, are more consistent in the syntax and are targeted for data analysis around data frames, instead of just vectors.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#data-mammals-sleep",
+    "href": "dplyr_intro_msleep.html#data-mammals-sleep",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.5 Data: Mammals Sleep",
+    "text": "14.5 Data: Mammals Sleep\nThe msleep (mammals sleep) data set contains the sleep times and weights for a set of mammals and is available in the dagdata repository on github. This data set contains 83 rows and 11 variables. The data happen to be available as a dataset in the ggplot2 package. To get access to the msleep dataset, we need to first install the ggplot2 package.\n\ninstall.packages('ggplot2')\n\nThen, we can load the library.\n\nlibrary(ggplot2)\ndata(msleep)\n\nAs with many datasets in R, “help” is available to describe the dataset itself.\n\n?msleep\n\nThe columns are described in the help page, but are included here, also.\n\n\n\ncolumn name\nDescription\n\n\n\n\nname\ncommon name\n\n\ngenus\ntaxonomic rank\n\n\nvore\ncarnivore, omnivore or herbivore?\n\n\norder\ntaxonomic rank\n\n\nconservation\nthe conservation status of the mammal\n\n\nsleep_total\ntotal amount of sleep, in hours\n\n\nsleep_rem\nrem sleep, in hours\n\n\nsleep_cycle\nlength of sleep cycle, in hours\n\n\nawake\namount of time spent awake, in hours\n\n\nbrainwt\nbrain weight in kilograms\n\n\nbodywt\nbody weight in kilograms",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#dplyr-verbs",
+    "href": "dplyr_intro_msleep.html#dplyr-verbs",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.6 dplyr verbs",
+    "text": "14.6 dplyr verbs\nThe dplyr verbs are listed here. There are many other functions available in dplyr, but we will focus on just these.\n\n\n\n\n\n\n\ndplyr verbs\nDescription\n\n\n\n\nselect()\nselect columns\n\n\nfilter()\nfilter rows\n\n\narrange()\nre-order or arrange rows\n\n\nmutate()\ncreate new columns\n\n\nsummarise()\nsummarise values\n\n\ngroup_by()\nallows for group operations in the “split-apply-combine” concept",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#using-the-dplyr-verbs",
+    "href": "dplyr_intro_msleep.html#using-the-dplyr-verbs",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.7 Using the dplyr verbs",
+    "text": "14.7 Using the dplyr verbs\nThe two most basic functions are select() and filter(), which selects columns and filters rows respectively. What are the equivalent ways to select columns without dplyr? And filtering to include only specific rows?\nBefore proceeding, we need to install the dplyr package:\n\ninstall.packages('dplyr')\n\nAnd then load the library:\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\n\n14.7.1 Selecting columns: select()\nSelect a set of columns such as the name and the sleep_total columns.\n\nsleepData &lt;- select(msleep, name, sleep_total)\nhead(sleepData)\n\n# A tibble: 6 × 2\n  name                       sleep_total\n  &lt;chr&gt;                            &lt;dbl&gt;\n1 Cheetah                           12.1\n2 Owl monkey                        17  \n3 Mountain beaver                   14.4\n4 Greater short-tailed shrew        14.9\n5 Cow                                4  \n6 Three-toed sloth                  14.4\n\n\nTo select all the columns except a specific column, use the “-” (subtraction) operator (also known as negative indexing). For example, to select all columns except name:\n\nhead(select(msleep, -name))\n\n# A tibble: 6 × 10\n  genus      vore  order    conservation sleep_total sleep_rem sleep_cycle awake\n  &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n1 Acinonyx   carni Carnivo… lc                  12.1      NA        NA      11.9\n2 Aotus      omni  Primates &lt;NA&gt;                17         1.8      NA       7  \n3 Aplodontia herbi Rodentia nt                  14.4       2.4      NA       9.6\n4 Blarina    omni  Soricom… lc                  14.9       2.3       0.133   9.1\n5 Bos        herbi Artioda… domesticated         4         0.7       0.667  20  \n6 Bradypus   herbi Pilosa   &lt;NA&gt;                14.4       2.2       0.767   9.6\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;\n\n\nTo select a range of columns by name, use the “:” operator. Note that dplyr allows us to use the column names without quotes and as “indices” of the columns.\n\nhead(select(msleep, name:order))\n\n# A tibble: 6 × 4\n  name                       genus      vore  order       \n  &lt;chr&gt;                      &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;       \n1 Cheetah                    Acinonyx   carni Carnivora   \n2 Owl monkey                 Aotus      omni  Primates    \n3 Mountain beaver            Aplodontia herbi Rodentia    \n4 Greater short-tailed shrew Blarina    omni  Soricomorpha\n5 Cow                        Bos        herbi Artiodactyla\n6 Three-toed sloth           Bradypus   herbi Pilosa      \n\n\nTo select all columns that start with the character string “sl”, use the function starts_with().\n\nhead(select(msleep, starts_with(\"sl\")))\n\n# A tibble: 6 × 3\n  sleep_total sleep_rem sleep_cycle\n        &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt;\n1        12.1      NA        NA    \n2        17         1.8      NA    \n3        14.4       2.4      NA    \n4        14.9       2.3       0.133\n5         4         0.7       0.667\n6        14.4       2.2       0.767\n\n\nSome additional options to select columns based on a specific criteria include:\n\nends_with() = Select columns that end with a character string\ncontains() = Select columns that contain a character string\nmatches() = Select columns that match a regular expression\none_of() = Select column names that are from a group of names\n\n\n\n14.7.2 Selecting rows: filter()\nThe filter() function allows us to filter rows to include only those rows that match the filter. For example, we can filter the rows for mammals that sleep a total of more than 16 hours.\n\nfilter(msleep, sleep_total &gt;= 16)\n\n# A tibble: 8 × 11\n  name    genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n1 Owl mo… Aotus omni  Prim… &lt;NA&gt;                17         1.8      NA       7  \n2 Long-n… Dasy… carni Cing… lc                  17.4       3.1       0.383   6.6\n3 North … Dide… omni  Dide… lc                  18         4.9       0.333   6  \n4 Big br… Epte… inse… Chir… lc                  19.7       3.9       0.117   4.3\n5 Thick-… Lutr… carni Dide… lc                  19.4       6.6      NA       4.6\n6 Little… Myot… inse… Chir… &lt;NA&gt;                19.9       2         0.2     4.1\n7 Giant … Prio… inse… Cing… en                  18.1       6.1      NA       5.9\n8 Arctic… Sper… herbi Rode… lc                  16.6      NA        NA       7.4\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;\n\n\nFilter the rows for mammals that sleep a total of more than 16 hours and have a body weight of greater than 1 kilogram.\n\nfilter(msleep, sleep_total &gt;= 16, bodywt &gt;= 1)\n\n# A tibble: 3 × 11\n  name    genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n1 Long-n… Dasy… carni Cing… lc                  17.4       3.1       0.383   6.6\n2 North … Dide… omni  Dide… lc                  18         4.9       0.333   6  \n3 Giant … Prio… inse… Cing… en                  18.1       6.1      NA       5.9\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;\n\n\nFilter the rows for mammals in the Perissodactyla and Primates taxonomic order. The %in% operator is a logical operator that returns TRUE for values of a vector that are present in a second vector.\n\nfilter(msleep, order %in% c(\"Perissodactyla\", \"Primates\"))\n\n# A tibble: 15 × 11\n   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n 1 Owl m… Aotus omni  Prim… &lt;NA&gt;                17         1.8      NA       7  \n 2 Grivet Cerc… omni  Prim… lc                  10         0.7      NA      14  \n 3 Horse  Equus herbi Peri… domesticated         2.9       0.6       1      21.1\n 4 Donkey Equus herbi Peri… domesticated         3.1       0.4      NA      20.9\n 5 Patas… Eryt… omni  Prim… lc                  10.9       1.1      NA      13.1\n 6 Galago Gala… omni  Prim… &lt;NA&gt;                 9.8       1.1       0.55   14.2\n 7 Human  Homo  omni  Prim… &lt;NA&gt;                 8         1.9       1.5    16  \n 8 Mongo… Lemur herbi Prim… vu                   9.5       0.9      NA      14.5\n 9 Macaq… Maca… omni  Prim… &lt;NA&gt;                10.1       1.2       0.75   13.9\n10 Slow … Nyct… carni Prim… &lt;NA&gt;                11        NA        NA      13  \n11 Chimp… Pan   omni  Prim… &lt;NA&gt;                 9.7       1.4       1.42   14.3\n12 Baboon Papio omni  Prim… &lt;NA&gt;                 9.4       1         0.667  14.6\n13 Potto  Pero… omni  Prim… lc                  11        NA        NA      13  \n14 Squir… Saim… omni  Prim… &lt;NA&gt;                 9.6       1.4      NA      14.4\n15 Brazi… Tapi… herbi Peri… vu                   4.4       1         0.9    19.6\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;\n\n\nYou can use the boolean operators (e.g. &gt;, &lt;, &gt;=, &lt;=, !=, %in%) to create the logical tests.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#piping-with",
+    "href": "dplyr_intro_msleep.html#piping-with",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.8 “Piping”” with |>",
+    "text": "14.8 “Piping”” with |&gt;\nIt is not unusual to want to perform a set of operations using dplyr. The pipe operator |&gt; allows us to “pipe” the output from one function into the input of the next. While there is nothing special about how R treats operations that are written in a pipe, the idea of piping is to allow us to read multiple functions operating one after another from left-to-right. Without piping, one would either 1) save each step in set of functions as a temporary variable and then pass that variable along the chain or 2) have to “nest” functions, which can be hard to read.\nHere’s an example we have already used:\n\nhead(select(msleep, name, sleep_total))\n\n# A tibble: 6 × 2\n  name                       sleep_total\n  &lt;chr&gt;                            &lt;dbl&gt;\n1 Cheetah                           12.1\n2 Owl monkey                        17  \n3 Mountain beaver                   14.4\n4 Greater short-tailed shrew        14.9\n5 Cow                                4  \n6 Three-toed sloth                  14.4\n\n\nNow in this case, we will pipe the msleep data frame to the function that will select two columns (name and sleep\\_total) and then pipe the new data frame to the function head(), which will return the head of the new data frame.\n\nmsleep |&gt; \n    select(name, sleep_total) |&gt; \n    head()\n\n# A tibble: 6 × 2\n  name                       sleep_total\n  &lt;chr&gt;                            &lt;dbl&gt;\n1 Cheetah                           12.1\n2 Owl monkey                        17  \n3 Mountain beaver                   14.4\n4 Greater short-tailed shrew        14.9\n5 Cow                                4  \n6 Three-toed sloth                  14.4\n\n\nYou will soon see how useful the pipe operator is when we start to combine many functions.\nNow that you know about the pipe operator (|&gt;), we will use it throughout the rest of this tutorial.\n\n14.8.1 Arrange Or Re-order Rows Using arrange()\nTo arrange (or re-order) rows by a particular column, such as the taxonomic order, list the name of the column you want to arrange the rows by:\n\nmsleep |&gt; arrange(order) |&gt; head()\n\n# A tibble: 6 × 11\n  name    genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n1 Tenrec  Tenr… omni  Afro… &lt;NA&gt;                15.6       2.3      NA       8.4\n2 Cow     Bos   herbi Arti… domesticated         4         0.7       0.667  20  \n3 Roe de… Capr… herbi Arti… lc                   3        NA        NA      21  \n4 Goat    Capri herbi Arti… lc                   5.3       0.6      NA      18.7\n5 Giraffe Gira… herbi Arti… cd                   1.9       0.4      NA      22.1\n6 Sheep   Ovis  herbi Arti… domesticated         3.8       0.6      NA      20.2\n# ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;\n\n\nNow we will select three columns from msleep, arrange the rows by the taxonomic order and then arrange the rows by sleep_total. Finally, show the head of the final data frame:\n\nmsleep |&gt; \n    select(name, order, sleep_total) |&gt;\n    arrange(order, sleep_total) |&gt; \n    head()\n\n# A tibble: 6 × 3\n  name     order        sleep_total\n  &lt;chr&gt;    &lt;chr&gt;              &lt;dbl&gt;\n1 Tenrec   Afrosoricida        15.6\n2 Giraffe  Artiodactyla         1.9\n3 Roe deer Artiodactyla         3  \n4 Sheep    Artiodactyla         3.8\n5 Cow      Artiodactyla         4  \n6 Goat     Artiodactyla         5.3\n\n\nSame as above, except here we filter the rows for mammals that sleep for 16 or more hours, instead of showing the head of the final data frame:\n\nmsleep |&gt; \n    select(name, order, sleep_total) |&gt;\n    arrange(order, sleep_total) |&gt; \n    filter(sleep_total &gt;= 16)\n\n# A tibble: 8 × 3\n  name                   order           sleep_total\n  &lt;chr&gt;                  &lt;chr&gt;                 &lt;dbl&gt;\n1 Big brown bat          Chiroptera             19.7\n2 Little brown bat       Chiroptera             19.9\n3 Long-nosed armadillo   Cingulata              17.4\n4 Giant armadillo        Cingulata              18.1\n5 North American Opossum Didelphimorphia        18  \n6 Thick-tailed opposum   Didelphimorphia        19.4\n7 Owl monkey             Primates               17  \n8 Arctic ground squirrel Rodentia               16.6\n\n\nFor something slightly more complicated do the same as above, except arrange the rows in the sleep_total column in a descending order. For this, use the function desc()\n\nmsleep |&gt; \n    select(name, order, sleep_total) |&gt;\n    arrange(order, desc(sleep_total)) |&gt; \n    filter(sleep_total &gt;= 16)\n\n# A tibble: 8 × 3\n  name                   order           sleep_total\n  &lt;chr&gt;                  &lt;chr&gt;                 &lt;dbl&gt;\n1 Little brown bat       Chiroptera             19.9\n2 Big brown bat          Chiroptera             19.7\n3 Giant armadillo        Cingulata              18.1\n4 Long-nosed armadillo   Cingulata              17.4\n5 Thick-tailed opposum   Didelphimorphia        19.4\n6 North American Opossum Didelphimorphia        18  \n7 Owl monkey             Primates               17  \n8 Arctic ground squirrel Rodentia               16.6",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#create-new-columns-using-mutate",
+    "href": "dplyr_intro_msleep.html#create-new-columns-using-mutate",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.9 Create New Columns Using mutate()",
+    "text": "14.9 Create New Columns Using mutate()\nThe mutate() function will add new columns to the data frame. Create a new column called rem_proportion, which is the ratio of rem sleep to total amount of sleep.\n\nmsleep |&gt; \n    mutate(rem_proportion = sleep_rem / sleep_total) |&gt;\n    head()\n\n# A tibble: 6 × 12\n  name    genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n1 Cheetah Acin… carni Carn… lc                  12.1      NA        NA      11.9\n2 Owl mo… Aotus omni  Prim… &lt;NA&gt;                17         1.8      NA       7  \n3 Mounta… Aplo… herbi Rode… nt                  14.4       2.4      NA       9.6\n4 Greate… Blar… omni  Sori… lc                  14.9       2.3       0.133   9.1\n5 Cow     Bos   herbi Arti… domesticated         4         0.7       0.667  20  \n6 Three-… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n# ℹ 3 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;, rem_proportion &lt;dbl&gt;\n\n\nYou can add many new columns using mutate (separated by commas). Here we add a second column called bodywt_grams which is the bodywt column in grams.\n\nmsleep |&gt; \n    mutate(rem_proportion = sleep_rem / sleep_total, \n           bodywt_grams = bodywt * 1000) |&gt;\n    head()\n\n# A tibble: 6 × 13\n  name    genus vore  order conservation sleep_total sleep_rem sleep_cycle awake\n  &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;\n1 Cheetah Acin… carni Carn… lc                  12.1      NA        NA      11.9\n2 Owl mo… Aotus omni  Prim… &lt;NA&gt;                17         1.8      NA       7  \n3 Mounta… Aplo… herbi Rode… nt                  14.4       2.4      NA       9.6\n4 Greate… Blar… omni  Sori… lc                  14.9       2.3       0.133   9.1\n5 Cow     Bos   herbi Arti… domesticated         4         0.7       0.667  20  \n6 Three-… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6\n# ℹ 4 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;, rem_proportion &lt;dbl&gt;,\n#   bodywt_grams &lt;dbl&gt;\n\n\nIs there a relationship between rem_proportion and bodywt? How about sleep_total?\n\n14.9.1 Create summaries: summarise()\nThe summarise() function will create summary statistics for a given column in the data frame such as finding the mean. For example, to compute the average number of hours of sleep, apply the mean() function to the column sleep_total and call the summary value avg_sleep.\n\nmsleep |&gt; \n    summarise(avg_sleep = mean(sleep_total))\n\n# A tibble: 1 × 1\n  avg_sleep\n      &lt;dbl&gt;\n1      10.4\n\n\nThere are many other summary statistics you could consider such sd(), min(), max(), median(), sum(), n() (returns the length of vector), first() (returns first value in vector), last() (returns last value in vector) and n_distinct() (number of distinct values in vector).\n\nmsleep |&gt; \n    summarise(avg_sleep = mean(sleep_total), \n              min_sleep = min(sleep_total),\n              max_sleep = max(sleep_total),\n              total = n())\n\n# A tibble: 1 × 4\n  avg_sleep min_sleep max_sleep total\n      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;\n1      10.4       1.9      19.9    83",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#grouping-data-group_by",
+    "href": "dplyr_intro_msleep.html#grouping-data-group_by",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "14.10 Grouping data: group_by()",
+    "text": "14.10 Grouping data: group_by()\nThe group_by() verb is an important function in dplyr. The group_by allows us to use the concept of “split-apply-combine”. We literally want to split the data frame by some variable (e.g. taxonomic order), apply a function to the individual data frames and then combine the output. This approach is similar to the aggregate function from R, but group_by integrates with dplyr.\nLet’s do that: split the msleep data frame by the taxonomic order, then ask for the same summary statistics as above. We expect a set of summary statistics for each taxonomic order.\n\nmsleep |&gt; \n    group_by(order) |&gt;\n    summarise(avg_sleep = mean(sleep_total), \n              min_sleep = min(sleep_total), \n              max_sleep = max(sleep_total),\n              total = n())\n\n# A tibble: 19 × 5\n   order           avg_sleep min_sleep max_sleep total\n   &lt;chr&gt;               &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;int&gt;\n 1 Afrosoricida        15.6       15.6      15.6     1\n 2 Artiodactyla         4.52       1.9       9.1     6\n 3 Carnivora           10.1        3.5      15.8    12\n 4 Cetacea              4.5        2.7       5.6     3\n 5 Chiroptera          19.8       19.7      19.9     2\n 6 Cingulata           17.8       17.4      18.1     2\n 7 Didelphimorphia     18.7       18        19.4     2\n 8 Diprotodontia       12.4       11.1      13.7     2\n 9 Erinaceomorpha      10.2       10.1      10.3     2\n10 Hyracoidea           5.67       5.3       6.3     3\n11 Lagomorpha           8.4        8.4       8.4     1\n12 Monotremata          8.6        8.6       8.6     1\n13 Perissodactyla       3.47       2.9       4.4     3\n14 Pilosa              14.4       14.4      14.4     1\n15 Primates            10.5        8        17      12\n16 Proboscidea          3.6        3.3       3.9     2\n17 Rodentia            12.5        7        16.6    22\n18 Scandentia           8.9        8.9       8.9     1\n19 Soricomorpha        11.1        8.4      14.9     5",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "dplyr_intro_msleep.html#footnotes",
+    "href": "dplyr_intro_msleep.html#footnotes",
+    "title": "14  Introduction to dplyr: mammal sleep dataset",
+    "section": "",
+    "text": "A quantitative, theoretical framework for understanding mammalian sleep. Van M. Savage, Geoffrey B. West. Proceedings of the National Academy of Sciences Jan 2007, 104 (3) 1051-1056; DOI: 10.1073/pnas.0610080104↩︎",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introduction to dplyr: mammal sleep dataset</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html",
+    "href": "eda_and_univariate_brfss.html",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "",
+    "text": "15.1 A Case Study on the Behavioral Risk Factor Surveillance System\nThe Behavioral Risk Factor Surveillance System (BRFSS) is a large-scale health survey conducted annually by the Centers for Disease Control and Prevention (CDC) in the United States. The BRFSS collects information on various health-related behaviors, chronic health conditions, and the use of preventive services among the adult population (18 years and older) through telephone interviews. The main goal of the BRFSS is to identify and monitor the prevalence of risk factors associated with chronic diseases, inform public health policies, and evaluate the effectiveness of health promotion and disease prevention programs. The data collected through BRFSS is crucial for understanding the health status and needs of the population, and it serves as a valuable resource for researchers, policy makers, and healthcare professionals in making informed decisions and designing targeted interventions.\nIn this chapter, we will walk through an exploratory data analysis (EDA) of the Behavioral Risk Factor Surveillance System dataset using R. EDA is an important step in the data analysis process, as it helps you to understand your data, identify trends, and detect any anomalies before performing more advanced analyses. We will use various R functions and packages to explore the dataset, with a focus on active learning and hands-on experience.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#loading-the-dataset",
+    "href": "eda_and_univariate_brfss.html#loading-the-dataset",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.2 Loading the Dataset",
+    "text": "15.2 Loading the Dataset\nFirst, let’s load the dataset into R. We will use the read.csv() function from the base R package to read the data and store it in a data frame called brfss. Make sure the CSV file is in your working directory, or provide the full path to the file.\nFirst, we need to get the data. Either download the data from THIS LINK or have R do it directly from the command-line (preferred):\n\ndownload.file('https://raw.githubusercontent.com/seandavi/ITR/master/BRFSS-subset.csv',\n              destfile = 'BRFSS-subset.csv')\n\n\n\npath &lt;- file.choose()    # look for BRFSS-subset.csv\n\n\nstopifnot(file.exists(path))\nbrfss &lt;- read.csv(path)",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#inspecting-the-data",
+    "href": "eda_and_univariate_brfss.html#inspecting-the-data",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.3 Inspecting the Data",
+    "text": "15.3 Inspecting the Data\nOnce the data is loaded, let’s take a look at the first few rows of the dataset using the head() function:\n\nhead(brfss)\n\n  Age   Weight    Sex Height Year\n1  31 48.98798 Female 157.48 1990\n2  57 81.64663 Female 157.48 1990\n3  43 80.28585   Male 177.80 1990\n4  72 70.30682   Male 170.18 1990\n5  31 49.89516 Female 154.94 1990\n6  58 54.43108 Female 154.94 1990\n\n\nThis will display the first six rows of the dataset, allowing you to get a feel for the data structure and variable types.\nNext, let’s check the dimensions of the dataset using the dim() function:\n\ndim(brfss)\n\n[1] 20000     5\n\n\nThis will return the number of rows and columns in the dataset, which is important to know for subsequent analyses.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#summary-statistics",
+    "href": "eda_and_univariate_brfss.html#summary-statistics",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.4 Summary Statistics",
+    "text": "15.4 Summary Statistics\nNow that we have a basic understanding of the data structure, let’s calculate some summary statistics. The summary() function in R provides a quick overview of the main statistics for each variable in the dataset:\n\nsummary(brfss)\n\n      Age            Weight           Sex                Height     \n Min.   :18.00   Min.   : 34.93   Length:20000       Min.   :105.0  \n 1st Qu.:36.00   1st Qu.: 61.69   Class :character   1st Qu.:162.6  \n Median :51.00   Median : 72.57   Mode  :character   Median :168.0  \n Mean   :50.99   Mean   : 75.42                      Mean   :169.2  \n 3rd Qu.:65.00   3rd Qu.: 86.18                      3rd Qu.:177.8  \n Max.   :99.00   Max.   :278.96                      Max.   :218.0  \n NA's   :139     NA's   :649                         NA's   :184    \n      Year     \n Min.   :1990  \n 1st Qu.:1990  \n Median :2000  \n Mean   :2000  \n 3rd Qu.:2010  \n Max.   :2010  \n               \n\n\nThis will display the minimum, first quartile, median, mean, third quartile, and maximum for each numeric variable, and the frequency counts for each factor level for categorical variables.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#data-visualization",
+    "href": "eda_and_univariate_brfss.html#data-visualization",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.5 Data Visualization",
+    "text": "15.5 Data Visualization\nVisualizing the data can help you identify patterns and trends in the dataset. Let’s start by creating a histogram of the Age variable using the hist() function.\nThis will create a histogram showing the frequency distribution of ages in the dataset. You can customize the appearance of the histogram by adjusting the parameters within the hist() function.\n\nhist(brfss$Age, main = \"Age Distribution\", \n     xlab = \"Age\", col = \"lightblue\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat are the options for a histogram?\n\n\n\nThe hist() function has many options. For example, you can change the number of bins, the color of the bars, the title, and the x-axis label. You can also add a vertical line at the mean or median, or add a normal curve to the histogram. For more information, type ?hist in the R console.\nMore generally, it is important to understand the options available for each function you use. You can do this by reading the documentation for the function, which can be accessed by typing ?function_name or help(\"function_name\")in the R console.\n\n\nNext, let’s create a boxplot to compare the distribution of Weight between males and females. We will use the boxplot() function for this. This will create a boxplot comparing the weight distribution between males and females. You can customize the appearance of the boxplot by adjusting the parameters within the boxplot() function.\n\nboxplot(brfss$Weight ~ brfss$Sex, main = \"Weight Distribution by Sex\", \n        xlab = \"Sex\", ylab = \"Weight\", col = c(\"pink\", \"lightblue\"))",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#analyzing-relationships-between-variables",
+    "href": "eda_and_univariate_brfss.html#analyzing-relationships-between-variables",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.6 Analyzing Relationships Between Variables",
+    "text": "15.6 Analyzing Relationships Between Variables\nTo further explore the data, let’s investigate the relationship between age and weight using a scatterplot. We will use the plot() function for this:\nThis will create a scatterplot of age and weight, allowing you to visually assess the relationship between these two variables.\n\nplot(brfss$Age, brfss$Weight, main = \"Scatterplot of Age and Weight\", \n     xlab = \"Age\", ylab = \"Weight\", col = \"darkblue\")  \n\n\n\n\n\n\n\n\nTo quantify the strength of the relationship between age and weight, we can calculate the correlation coefficient using the cor() function:\nThis will return the correlation coefficient between age and weight, which can help you determine whether there is a linear relationship between these variables.\n\ncor(brfss$Age, brfss$Weight)\n\n[1] NA\n\n\nWhy does cor() give a value of NA? What can we do about it? A quick glance at help(\"cor\") will give you the answer.\n\ncor(brfss$Age, brfss$Weight, use = \"complete.obs\")\n\n[1] 0.02699989",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#exercises",
+    "href": "eda_and_univariate_brfss.html#exercises",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.7 Exercises",
+    "text": "15.7 Exercises\n\nWhat is the mean weight in this dataset? How about the median? What is the difference between the two? What does this tell you about the distribution of weights in the dataset?\n\n\nShow answer\nmean(brfss$Weight, na.rm = TRUE)\n\n\n[1] 75.42455\n\n\nShow answer\nmedian(brfss$Weight, na.rm = TRUE)\n\n\n[1] 72.57478\n\n\nShow answer\nmean(brfss$Weight, na.rm=TRUE) - median(brfss$Weight, na.rm = TRUE)\n\n\n[1] 2.849774\n\n\nGiven the findings about the mean and median in the previous exercise, use the hist() function to create a histogram of the weight distribution in this dataset. How would you describe the shape of this distribution?\n\n\nShow answer\nhist(brfss$Weight, xlab=\"Weight (kg)\", breaks = 30)\n\n\n\n\n\n\n\n\n\nUse plot() to examine the relationship between height and weight in this dataset.\n\n\nShow answer\nplot(brfss$Height, brfss$Weight)\n\n\n\n\n\n\n\n\n\nWhat is the correlation between height and weight? What does this tell you about the relationship between these two variables?\n\n\nShow answer\ncor(brfss$Height, brfss$Weight, use = \"complete.obs\")\n\n\n[1] 0.5140928\n\n\nCreate a histogram of the height distribution in this dataset. How would you describe the shape of this distribution?\n\n\nShow answer\nhist(brfss$Height, xlab=\"Height (cm)\", breaks = 30)",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#conclusion",
+    "href": "eda_and_univariate_brfss.html#conclusion",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.8 Conclusion",
+    "text": "15.8 Conclusion\nIn this chapter, we have demonstrated how to perform an exploratory data analysis on the Behavioral Risk Factor Surveillance System dataset using R. We covered data loading, inspection, summary statistics, visualization, and the analysis of relationships between variables. By actively engaging with the R code and data, you have gained valuable experience in using R for EDA and are well-equipped to tackle more complex analyses in your future work.\nRemember that EDA is just the beginning of the data analysis process, and further statistical modeling and hypothesis testing will likely be necessary to draw meaningful conclusions from your data. However, EDA is a crucial step in understanding your data and informing your subsequent analyses.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#learn-about-the-data",
+    "href": "eda_and_univariate_brfss.html#learn-about-the-data",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.9 Learn about the data",
+    "text": "15.9 Learn about the data\nUsing the data exploration techniques you have seen to explore the brfss dataset.\n\nsummary()\ndim()\ncolnames()\nhead()\ntail()\nclass()\nView()\n\nYou may want to investigate individual columns visually using plotting like hist(). For categorical data, consider using something like table().",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#clean-data",
+    "href": "eda_and_univariate_brfss.html#clean-data",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.10 Clean data",
+    "text": "15.10 Clean data\nR read Year as an integer value, but it’s really a factor\n\nbrfss$Year &lt;- factor(brfss$Year)",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#weight-in-1990-vs.-2010-females",
+    "href": "eda_and_univariate_brfss.html#weight-in-1990-vs.-2010-females",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.11 Weight in 1990 vs. 2010 Females",
+    "text": "15.11 Weight in 1990 vs. 2010 Females\n\nCreate a subset of the data\n\n\nbrfssFemale &lt;- brfss[brfss$Sex == \"Female\",]\nsummary(brfssFemale)\n\n      Age            Weight           Sex                Height     \n Min.   :18.00   Min.   : 36.29   Length:12039       Min.   :105.0  \n 1st Qu.:37.00   1st Qu.: 57.61   Class :character   1st Qu.:157.5  \n Median :52.00   Median : 65.77   Mode  :character   Median :163.0  \n Mean   :51.92   Mean   : 69.05                      Mean   :163.3  \n 3rd Qu.:67.00   3rd Qu.: 77.11                      3rd Qu.:168.0  \n Max.   :99.00   Max.   :272.16                      Max.   :200.7  \n NA's   :103     NA's   :560                         NA's   :140    \n   Year     \n 1990:5718  \n 2010:6321  \n            \n            \n            \n            \n            \n\n\n\nVisualize\n\n\nplot(Weight ~ Year, brfssFemale)\n\n\n\n\n\n\n\n\n\nStatistical test\n\n\nt.test(Weight ~ Year, brfssFemale)\n\n\n    Welch Two Sample t-test\n\ndata:  Weight by Year\nt = -27.133, df = 11079, p-value &lt; 2.2e-16\nalternative hypothesis: true difference in means between group 1990 and group 2010 is not equal to 0\n95 percent confidence interval:\n -8.723607 -7.548102\nsample estimates:\nmean in group 1990 mean in group 2010 \n          64.81838           72.95424",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "eda_and_univariate_brfss.html#weight-and-height-in-2010-males",
+    "href": "eda_and_univariate_brfss.html#weight-and-height-in-2010-males",
+    "title": "15  Case Study: Behavioral Risk Factor Surveillance System",
+    "section": "15.12 Weight and height in 2010 Males",
+    "text": "15.12 Weight and height in 2010 Males\n\nCreate a subset of the data\n\n\nbrfss2010Male &lt;- subset(brfss,  Year == 2010 & Sex == \"Male\")\nsummary(brfss2010Male)\n\n      Age            Weight           Sex                Height      Year     \n Min.   :18.00   Min.   : 36.29   Length:3679        Min.   :135   1990:   0  \n 1st Qu.:45.00   1st Qu.: 77.11   Class :character   1st Qu.:173   2010:3679  \n Median :57.00   Median : 86.18   Mode  :character   Median :178              \n Mean   :56.25   Mean   : 88.85                      Mean   :178              \n 3rd Qu.:68.00   3rd Qu.: 99.79                      3rd Qu.:183              \n Max.   :99.00   Max.   :278.96                      Max.   :218              \n NA's   :30      NA's   :49                          NA's   :31               \n\n\n\nVisualize the relationship\n\n\nhist(brfss2010Male$Weight)\n\n\n\n\n\n\n\nhist(brfss2010Male$Height)\n\n\n\n\n\n\n\nplot(Weight ~ Height, brfss2010Male)\n\n\n\n\n\n\n\n\n\nFit a linear model (regression)\n\n\nfit &lt;- lm(Weight ~ Height, brfss2010Male)\nfit\n\n\nCall:\nlm(formula = Weight ~ Height, data = brfss2010Male)\n\nCoefficients:\n(Intercept)       Height  \n   -86.8747       0.9873  \n\n\nSummarize as ANOVA table\n\nanova(fit)\n\nAnalysis of Variance Table\n\nResponse: Weight\n            Df  Sum Sq Mean Sq F value    Pr(&gt;F)    \nHeight       1  197664  197664   693.8 &lt; 2.2e-16 ***\nResiduals 3617 1030484     285                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nPlot points, superpose fitted regression line; where am I?\n\n\nplot(Weight ~ Height, brfss2010Male)\nabline(fit, col=\"blue\", lwd=2)\n# Substitute your own weight and height...\npoints(73 * 2.54, 178 / 2.2, col=\"red\", cex=4, pch=20)\n\n\n\n\n\n\n\n\n\nClass and available ‘methods’\n\n\nclass(fit)                 # 'noun'\nmethods(class=class(fit))  # 'verb'\n\n\nDiagnostics\n\n\nplot(fit)\n# Note that the \"plot\" above does not have a \".lm\"\n# However, R will use \"plot.lm\". Why?\n?plot.lm",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Case Study: Behavioral Risk Factor Surveillance System</span>"
+    ]
+  },
+  {
+    "objectID": "visualization_guide.html",
+    "href": "visualization_guide.html",
+    "title": "16  Self-Guided Data Visualization in R",
+    "section": "",
+    "text": "16.1 Getting Started with ggplot2\nData visualization is a critical skill in the data scientist’s toolkit. It’s the bridge between raw data and human understanding. Effective visualizations can reveal patterns, trends, and outliers that might be missed in a table of numbers. In the R programming language, the ggplot2 package stands as the gold standard for creating beautiful, flexible, and powerful graphics.\nThis document will guide you through the principles of effective data visualization and show you how to apply them using ggplot2. We’ll cover best practices, common plot types, and the “grammar of graphics” methodology that makes ggplot2 so intuitive.\nBefore diving in, though, there are a some truly amazing online resources that showcase what can be done with R graphics and also stimulate your imagination. Two of the best are:\nAfter walking through this document, go back to these resources and explore the examples. You’ll see how the principles we discuss here are applied in real-world scenarios, and you’ll gain inspiration for your own visualizations.\nTo get started, we need to load the ggplot2 package, which is part of the tidyverse.\n# Load the necessary R packages for data visualization\nlibrary(ggplot2)\nlibrary(dplyr)",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self-Guided Data Visualization in R</span>"
+    ]
+  },
+  {
+    "objectID": "visualization_guide.html#core-principles-of-effective-data-visualization",
+    "href": "visualization_guide.html#core-principles-of-effective-data-visualization",
+    "title": "16  Self-Guided Data Visualization in R",
+    "section": "16.2 Core Principles of Effective Data Visualization",
+    "text": "16.2 Core Principles of Effective Data Visualization\nBefore we start plotting, it’s essential to understand what makes a visualization effective. Two key principles are maximizing the data-ink ratio and using clear labels.\n\n16.2.1 The “Least Ink” Principle\nCoined by the statistician Edward Tufte, the data-ink ratio is the proportion of a graphic’s ink devoted to the non-redundant display of data information. The goal is to maximize this ratio. In simpler terms, every single pixel should have a reason to be there.\n\n\n\n\n\n\nFigure 16.1: Edward Tufte’s landmark book, “The Visual Display of Quantitative Information,” emphasizes the importance of maximizing the data-ink ratio.\n\n\n\nAvoid chart junk like:\n\nRedundant grid lines\nUnnecessary backgrounds or colors\n3D effects on 2D plots\nShadows and other decorative elements\n\nLet’s look at an example. The first plot has a lot of “chart junk,” while the second one is cleaner and focuses on the data.\n\n# Using the built-in 'mpg' dataset\nggplot(mpg, aes(x = displ, y = hwy, color = class)) +\n  geom_point() +\n  theme_gray() + # A theme with a lot of non-data ink\n  labs(title = \"Fuel Efficiency vs. Engine Displacement\",\n       subtitle = \"This is a very busy plot\",\n       x = \"Engine Displacement (Liters)\",\n       y = \"Highway Miles per Gallon\",\n       color = \"Vehicle Class\")\n\n\n\n\n\n\n\nFigure 16.2: A cluttered plot with low data-ink ratio. The gray background, heavy gridlines, and legend title are all unnecessary.\n\n\n\n\n\nHere’s a cleaner version of the same plot that follows the “least ink” principle. Notice how it removes unnecessary elements while still conveying the same information.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) +\n  geom_point() +\n  theme_minimal() + # A cleaner theme\n  labs(title = \"Fuel Efficiency vs. Engine Displacement\",\n       x = \"Engine Displacement (Liters)\",\n       y = \"Highway Miles per Gallon\",\n       color = \"Class\") # Simpler legend title\n\n\n\n\n\n\n\nFigure 16.3: A clean, minimalist plot that follows the ‘least ink’ principle. The focus is entirely on the relationship between the data points.\n\n\n\n\n\nWhile this is a subjective topic, the goal is to make your plots as clear and informative as possible. The “least ink” principle is a guideline, not a rule, but it can help you create more effective visualizations.\n\n\n16.2.2 The Importance of Clear Labeling\nA plot without labels is just a picture. To be a useful piece of analysis, it needs to communicate context. Always ensure your plots have:\n\nA clear and descriptive title.\nLabeled axes with units (\\(e.g.\\), “Temperature (°C)”).\nAn informative legend if you’re using color, shape, or size to encode data.\n\n\n\n16.2.3 Color and Contrast\nColor is a powerful tool in data visualization, but it can also be misused. R provides several built-in color palettes, and you can also use packages like RColorBrewer for more options. Think in terms of colorblind-friendly palettes, and avoid using too many colors in a single plot.\nColor palettes can be roughly categorized into:\n\nSequential palettes (first list of colors), which are suited to ordered data that progress from low to high (gradient).\nQualitative palettes (second list of colors), which are best suited to represent nominal or categorical data. They not imply magnitude differences between groups.\nDiverging palettes (third list of colors), which put equal emphasis on mid-range critical values and extremes at both ends of the data range.\n\n\nlibrary(RColorBrewer)\n\ndisplay.brewer.all()\n\n\n\n\n\n\n\nFigure 16.4: Examples of color palettes in R. The first row shows sequential palettes, the second row shows qualitative palettes, and the third row shows diverging palettes.\n\n\n\n\n\nIt is also important to consider colorblindness when choosing colors for your plots. The most common types of color blindness are red-green and blue-yellow. You can use tools like the colorspace package to check how your plots will look to people with different types of color vision deficiencies.\n\ndisplay.brewer.all(colorblindFriendly=TRUE)\n\n\n\n\n\n\n\nFigure 16.5: A colorblind-friendly palette from the ‘colorspace’ package. This palette is designed to be distinguishable for people with various types of color vision deficiencies.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self-Guided Data Visualization in R</span>"
+    ]
+  },
+  {
+    "objectID": "visualization_guide.html#introduction-to-ggplot2-the-grammar-of-graphics",
+    "href": "visualization_guide.html#introduction-to-ggplot2-the-grammar-of-graphics",
+    "title": "16  Self-Guided Data Visualization in R",
+    "section": "16.3 Introduction to ggplot2: The Grammar of Graphics",
+    "text": "16.3 Introduction to ggplot2: The Grammar of Graphics\nRather than reproducing excellent online resources, for this section, pick any or all of the following resources to learn about the grammar of graphics and how to use ggplot2:\n\nR for Data Science: Data Visualization\nggplot2 documentation\nModern Data Visualization with R",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self-Guided Data Visualization in R</span>"
+    ]
+  },
+  {
+    "objectID": "visualization_guide.html#sets-and-intersections-upset-plots",
+    "href": "visualization_guide.html#sets-and-intersections-upset-plots",
+    "title": "16  Self-Guided Data Visualization in R",
+    "section": "16.4 Sets and Intersections: UpSet Plots",
+    "text": "16.4 Sets and Intersections: UpSet Plots\nWhen dealing with multiple sets, visualizing their intersections can be challenging. Traditional Venn diagrams become cluttered and hard to read with more than three sets. An UpSet plot is a powerful alternative for visualizing the intersections of multiple sets. It consists of two main parts: a matrix that shows which sets are part of an intersection, and a bar chart that shows the size of each intersection. This makes it far more scalable and easier to interpret than a complex Venn diagram.\nTo create an UpSet plot, we use the UpSetR package. It takes a specific input format where 0s and 1s indicate the absence or presence of an element in a set.\n\n# install.packages(\"UpSetR\")\nlibrary(UpSetR)\nmovies &lt;- read.csv(system.file(\"extdata\", \"movies.csv\", package = \"UpSetR\"), \n    header = T, sep = \";\")\n\n# Use the 'movies' dataset that comes with UpSetR\n# This dataset is already in the correct binary format\nupset(movies, \n      nsets = 5, # Show the 5 most frequent genres\n      order.by = \"freq\",\n      mainbar.y.label = \"Intersection Size\",\n      sets.x.label = \"Total Movies in Genre\")\n\n\n\n\n\n\n\nFigure 16.6: An UpSet plot visualizing movie genres. The main bar chart shows the size of intersections (e.g., how many movies are both ‘Comedy’ and ‘Romance’). The bottom-left matrix indicates which genres are part of each intersection. This is much clearer than a 5-set Venn diagram.\n\n\n\n\n\nThe UpSet plot clearly shows us, for instance, the number of movies that are exclusively “Drama” versus those that are a combination of “Drama,” “Comedy,” and “Romance.” This level of detail is difficult to achieve with a Venn diagram.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self-Guided Data Visualization in R</span>"
+    ]
+  },
+  {
+    "objectID": "visualization_guide.html#complex-heatmaps",
+    "href": "visualization_guide.html#complex-heatmaps",
+    "title": "16  Self-Guided Data Visualization in R",
+    "section": "16.5 Complex Heatmaps",
+    "text": "16.5 Complex Heatmaps\nHeatmaps are a powerful way to visualize complex data matrices, especially when dealing with large datasets. They allow you to see patterns and relationships in the data at a glance.\nWhat is a heatmap? It’s a graphical representation of data where individual values are represented as colors. The color intensity indicates the magnitude of the value, making it easy to spot trends and outliers. The underlying data is typically a matrix of numbers.\n\n\n\n\n\n\nNote\n\n\n\nA matrix is a two-dimensional array of numbers, where each element is identified by its row and column indices. Matrices can include only ONE data type.\n\n\nThere are many ways to create heatmaps in R including the base R heatmap() function, the ggplot2 package, and specialized packages like ComplexHeatmap.\nFeel free to explore the following resources for some of the most popular heatmap packages in R:\n\nggplot2 Heatmaps allows you to create basic heatmaps using the geom_tile() function. This is a good starting point for simple heatmaps.\nThe heatmap() function in base R is a simple way to create heatmaps. It automatically scales the data and provides options for clustering rows and columns.\nThe pheatmamp package is a popular package for creating heatmaps with more customization options. It allows you to add annotations, customize colors, and control clustering.\nComplex Heatmaps is a powerful R package for creating complex heatmaps. It allows you to visualize data matrices with multiple annotations, making it ideal for genomic data analysis.\nInteractive Complex Heatmaps is an extension of the Complex Heatmaps package that allows you to create interactive heatmaps. This can be useful for exploring large datasets and identifying patterns.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self-Guided Data Visualization in R</span>"
+    ]
+  },
+  {
+    "objectID": "visualization_guide.html#genome-and-genomic-data-visualization",
+    "href": "visualization_guide.html#genome-and-genomic-data-visualization",
+    "title": "16  Self-Guided Data Visualization in R",
+    "section": "16.6 Genome and Genomic Data Visualization",
+    "text": "16.6 Genome and Genomic Data Visualization\nThe Gviz package is a powerful tool for visualizing genomic data in R. It allows you to create publication-quality plots of genomic features, such as gene annotations, sequence alignments, and expression data.\nThe GenomicDistributions package is another useful package for visualizing genomic data. It provides functions for creating distribution plots of genomic features, such as coverage, chip-seq or atac-seq distributions relative to genomic features, etc.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self-Guided Data Visualization in R</span>"
+    ]
+  },
+  {
+    "objectID": "visualization_guide.html#conclusion",
+    "href": "visualization_guide.html#conclusion",
+    "title": "16  Self-Guided Data Visualization in R",
+    "section": "16.7 Conclusion",
+    "text": "16.7 Conclusion\nThis document has provided a comprehensive foundation for creating effective data visualizations in R with ggplot2. We’ve covered the core principles of good design, explored a wide range of common plot types including heatmaps, and seen how ggplot2’s layered grammar allows for the creation of complex, insightful graphics by mapping multiple data dimensions to aesthetics. We also discussed why certain plots like Venn diagrams can be problematic and introduced powerful alternatives like UpSet plots.\nThe key to mastering data visualization is practice. Experiment with different datasets, try new geoms, and always think critically about the story your plot is telling and the best way to tell it.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self-Guided Data Visualization in R</span>"
+    ]
+  },
+  {
     "objectID": "appendix.html",
     "href": "appendix.html",
     "title": "Appendix A — Interactive Intro to R",
@@ -985,7 +1381,31 @@
     "href": "additional_resources.html",
     "title": "Appendix C — Additional resources",
     "section": "",
-    "text": "C.1 AI",
+    "text": "C.1 R Cheatsheets and Reference material",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Additional resources</span>"
+    ]
+  },
+  {
+    "objectID": "additional_resources.html#r-cheatsheets-and-reference-material",
+    "href": "additional_resources.html#r-cheatsheets-and-reference-material",
+    "title": "Appendix C — Additional resources",
+    "section": "",
+    "text": "Base R Cheat Sheet\nModern Data Visualization with R",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Additional resources</span>"
+    ]
+  },
+  {
+    "objectID": "additional_resources.html#rmarkdown-and-quarto",
+    "href": "additional_resources.html#rmarkdown-and-quarto",
+    "title": "Appendix C — Additional resources",
+    "section": "C.2 RMarkdown and Quarto",
+    "text": "C.2 RMarkdown and Quarto\n\nRMarkdown Cheatsheet\nRstudio 1 page RMarkdown Cheatsheet\nRstudio RMarkdown Cheetsheet\nQuarto\nQuarto Books. This course material is a quarto book",
     "crumbs": [
       "Home",
       "Appendices",
@@ -996,8 +1416,8 @@
     "objectID": "additional_resources.html#ai",
     "href": "additional_resources.html#ai",
     "title": "Appendix C — Additional resources",
-    "section": "",
-    "text": "chatGPT\nGemini\nClaude\nDeepSeek\nPerplexity",
+    "section": "C.3 AI",
+    "text": "C.3 AI\n\nchatGPT\nGemini\nClaude\nDeepSeek\nPerplexity",
     "crumbs": [
       "Home",
       "Appendices",
