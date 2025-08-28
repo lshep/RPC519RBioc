@@ -10,5 +10,3 @@ The material is modified and redistributed in accordance with the original [Lice
 Select modifications were inspired by [RPC 520
 content](https://mtmorgan.github.io/RPG520/) originally distributed by Martin
 Morgan.
-
-To Learn more about creating Quarto books visit <https://quarto.org/docs/books>.

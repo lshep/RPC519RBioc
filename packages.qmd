@@ -93,5 +93,10 @@ specific needs.
 ## Creating a package
 
 While it may seem overwhelming, creating a package can be fairly simple with the
-assistance of R packages that provide tips and templates. [devtools](https://cran.r-project.org/web/packages/devtools/index.html) and
-[biocthis](https://bioconductor.org/packages/biocthis/) are great starting points. 
+assistance of R packages that provide tips and templates.
+Some good starting points:
+
+* [devtools](https://cran.r-project.org/web/packages/devtools/index.html) 
+* [usethis](https://cran.r-project.org/web/packages/usethis/index.html)
+* [biocthis](https://bioconductor.org/packages/biocthis/)
+* [roxygen2](https://cran.r-project.org/web/packages/roxygen2/index.html)
