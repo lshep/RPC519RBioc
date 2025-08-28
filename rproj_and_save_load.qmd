@@ -1,5 +1,4 @@
 ---
-title: Saving and Loading Workspaces and Objects
 author: "Sean Davis and Lori Kern"
 ---
 # Saving and Loading Workspaces and Objects

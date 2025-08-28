@@ -1,0 +1,15 @@
+{
+  "hash": "1c5eb57b6ad980dd68337f0d9d83f0db",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Saving and Loading Workspaces and Objects\nauthor: \"Sean Davis and Lori Kern\"\n---\n# Saving and Loading Workspaces and Objects\n\n## Rstudio Projects\n\n**placekeeper**\n\n\n## Saving and Loading Workspace\n\nIf you are not in Rstudio and want to save your workspace there are a few\noptions. If you choose to save your session when you quit out of R\nwith `q(\"yes\")` or `q()` and selecting `yes`, it is also equivalent to the\nfollowing using save\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsave(list = ls(all.names = TRUE), file =\".RData\", envir = .GlobalEnv)\n```\n:::\n\nThis saves your workspace and command history. Any object assignments and\ncommand history (viewable with `history()`) will be available in your next R\nsession. Your session will load automatically when you start up R in the same\ndirectory. \n\nYou can use the `save.image` option\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsave.image()\n# or\nsave.image(file=\"descriptiveFileName.RData\")\n```\n:::\n\n\nIf you do not give `save.image` a file name, it will also load on default if you\nstart an R session in that directory but with default settings will not have\nyour command history. \n\nIf you give `save.image` a file name, it will not automatically load when you\nstart R and will not have command history. You will have to load the image\nmanually to see the objects in the new R session.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nload(\"descriptiveFileName.RData\")\n```\n:::\n\n\n## Saving and Loading Objects\n\nIf you want to selectively save objects, the `save` function is utilized. This\nallows you to choose the objects you want saved. The `load` function would then\nload the selected objects into a new R session.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nages = 1:4\nmonths = c(\"may\", \"june\", \"july\", \"august\")\nvec = c(TRUE, FALSE, TRUE)\nsave(months, ages, file=\"subset.RData\")\n```\n:::\n\n\n## Saving and Loading Command History\n\nWhen quitting out of R, if you save, it also saves your command history. To do\nthis manually you can use the `savehistory`/`loadhistory` functions in R.   ",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
