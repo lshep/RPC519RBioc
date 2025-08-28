@@ -5,7 +5,7 @@ This chapter is based on the [Intro to ggplot2 chapter](https://rkabacoff.github
 
 The [insurance dataset](https://www.kaggle.com/datasets/mirichoi0218/insurance) is described in the book Machine Learning with R by Brett Lantz. A cleaned version of the dataset is also available on Kaggle. The dataset describes medical information and costs billed by health insurance companies in 2013, as compiled by the United States Census Bureau. Variables include age, sex, body mass index, number of children covered by health insurance, smoker status, US region, and individual medical costs billed by health insurance for 1338 individuals.
 
-```{r}
+```{r, echo=FALSE}
 options(bitmapType = "cairo")
 
 ```
