@@ -54,6 +54,7 @@ book:
       chapters:
         - dplyr_intro_msleep.qmd
         - eda_and_univariate_brfss.qmd
+        - ggplot2/intro.qmd
         - visualization_guide.qmd
     - references.qmd
     
@@ -75,6 +76,9 @@ format:
     theme:
       - cosmo
       - brand
+    dev: "png"
+    devargs:
+      type: "cairo"
   pdf:
     documentclass: scrreprt
 
