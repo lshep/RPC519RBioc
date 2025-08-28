@@ -1,10 +1,63 @@
 ---
+title: Saving and Loading Workspaces and Objects
 author: "Sean Davis and Lori Kern"
 ---
 # Saving and Loading Workspaces and Objects
 
 ## Rstudio Projects
 
-## Saving and Loading Objects
+**placekeeper**
+
 
 ## Saving and Loading Workspace
+
+If you are not in Rstudio and want to save your workspace there are a few
+options. If you choose to save your session when you quit out of R
+with `q("yes")` or `q()` and selecting `yes`, it is also equivalent to the
+following using save
+
+```{r, eval=FALSE}
+save(list = ls(all.names = TRUE), file =".RData", envir = .GlobalEnv)
+```
+This saves your workspace and command history. Any object assignments and
+command history (viewable with `history()`) will be available in your next R
+session. Your session will load automatically when you start up R in the same
+directory. 
+
+You can use the `save.image` option
+
+```{r, eval=FALSE}
+save.image()
+# or
+save.image(file="descriptiveFileName.RData")
+```
+
+If you do not give `save.image` a file name, it will also load on default if you
+start an R session in that directory but with default settings will not have
+your command history. 
+
+If you give `save.image` a file name, it will not automatically load when you
+start R and will not have command history. You will have to load the image
+manually to see the objects in the new R session.
+
+```{r, eval=FALSE}
+load("descriptiveFileName.RData")
+```
+
+## Saving and Loading Objects
+
+If you want to selectively save objects, the `save` function is utilized. This
+allows you to choose the objects you want saved. The `load` function would then
+load the selected objects into a new R session.
+
+```{r, eval=FALSE}
+ages = 1:4
+months = c("may", "june", "july", "august")
+vec = c(TRUE, FALSE, TRUE)
+save(months, ages, file="subset.RData")
+```
+
+## Saving and Loading Command History
+
+When quitting out of R, if you save, it also saves your command history. To do
+this manually you can use the `savehistory`/`loadhistory` functions in R.   
