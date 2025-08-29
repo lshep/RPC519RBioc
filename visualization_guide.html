@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2025-08-27">
 <meta name="description" content="A selection of material introducing R, Bioconductor, and more …">
 
-<title>16&nbsp; Self-Guided Data Visualization in R – RPC 519 R and Bioconductor</title>
+<title>19&nbsp; Self-Guided Data Visualization in R – RPC 519 R and Bioconductor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./references.html" rel="next">
-<link href="./eda_and_univariate_brfss.html" rel="prev">
+<link href="./comparison_options.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -195,7 +195,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dplyr_intro_msleep.html">Exploratory Data Analysis</a></li><li class="breadcrumb-item"><a href="./visualization_guide.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dplyr_intro_msleep.html">Exploratory Data Analysis</a></li><li class="breadcrumb-item"><a href="./visualization_guide.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -254,14 +254,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./reading_and_writing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Reading and writing data files</span></span></a>
+  <a href="./rproj_and_save_load.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Saving and Loading Workspaces and Objects</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rproj_and_save_load.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Saving and Loading Workspaces and Objects</span></span></a>
+  <a href="./reading_and_writing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Reading and writing data files</span></span></a>
   </div>
 </li>
       </ul>
@@ -311,6 +311,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Classes</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./control_statements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Control Statements</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -325,19 +331,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./dplyr_intro_msleep.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introduction to dplyr: mammal sleep dataset</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Introduction to dplyr: mammal sleep dataset</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./eda_and_univariate_brfss.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Case Study: Behavioral Risk Factor Surveillance System</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Case Study: Behavioral Risk Factor Surveillance System</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ggplot2/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Exploring data with <code>ggplot2</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./comparison_options.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Base R vs tidy</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./visualization_guide.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></span></a>
   </div>
 </li>
       </ul>
@@ -393,27 +411,27 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#getting-started-with-ggplot2" id="toc-getting-started-with-ggplot2" class="nav-link active" data-scroll-target="#getting-started-with-ggplot2"><span class="header-section-number">16.1</span> Getting Started with ggplot2</a></li>
-  <li><a href="#core-principles-of-effective-data-visualization" id="toc-core-principles-of-effective-data-visualization" class="nav-link" data-scroll-target="#core-principles-of-effective-data-visualization"><span class="header-section-number">16.2</span> Core Principles of Effective Data Visualization</a>
+  <li><a href="#getting-started-with-ggplot2" id="toc-getting-started-with-ggplot2" class="nav-link active" data-scroll-target="#getting-started-with-ggplot2"><span class="header-section-number">19.1</span> Getting Started with ggplot2</a></li>
+  <li><a href="#core-principles-of-effective-data-visualization" id="toc-core-principles-of-effective-data-visualization" class="nav-link" data-scroll-target="#core-principles-of-effective-data-visualization"><span class="header-section-number">19.2</span> Core Principles of Effective Data Visualization</a>
   <ul class="collapse">
-  <li><a href="#the-least-ink-principle" id="toc-the-least-ink-principle" class="nav-link" data-scroll-target="#the-least-ink-principle"><span class="header-section-number">16.2.1</span> The “Least Ink” Principle</a></li>
-  <li><a href="#the-importance-of-clear-labeling" id="toc-the-importance-of-clear-labeling" class="nav-link" data-scroll-target="#the-importance-of-clear-labeling"><span class="header-section-number">16.2.2</span> The Importance of Clear Labeling</a></li>
-  <li><a href="#color-and-contrast" id="toc-color-and-contrast" class="nav-link" data-scroll-target="#color-and-contrast"><span class="header-section-number">16.2.3</span> Color and Contrast</a></li>
+  <li><a href="#the-least-ink-principle" id="toc-the-least-ink-principle" class="nav-link" data-scroll-target="#the-least-ink-principle"><span class="header-section-number">19.2.1</span> The “Least Ink” Principle</a></li>
+  <li><a href="#the-importance-of-clear-labeling" id="toc-the-importance-of-clear-labeling" class="nav-link" data-scroll-target="#the-importance-of-clear-labeling"><span class="header-section-number">19.2.2</span> The Importance of Clear Labeling</a></li>
+  <li><a href="#color-and-contrast" id="toc-color-and-contrast" class="nav-link" data-scroll-target="#color-and-contrast"><span class="header-section-number">19.2.3</span> Color and Contrast</a></li>
   </ul></li>
-  <li><a href="#introduction-to-ggplot2-the-grammar-of-graphics" id="toc-introduction-to-ggplot2-the-grammar-of-graphics" class="nav-link" data-scroll-target="#introduction-to-ggplot2-the-grammar-of-graphics"><span class="header-section-number">16.3</span> Introduction to ggplot2: The Grammar of Graphics</a></li>
-  <li><a href="#sets-and-intersections-upset-plots" id="toc-sets-and-intersections-upset-plots" class="nav-link" data-scroll-target="#sets-and-intersections-upset-plots"><span class="header-section-number">16.4</span> Sets and Intersections: UpSet Plots</a></li>
-  <li><a href="#complex-heatmaps" id="toc-complex-heatmaps" class="nav-link" data-scroll-target="#complex-heatmaps"><span class="header-section-number">16.5</span> Complex Heatmaps</a></li>
-  <li><a href="#genome-and-genomic-data-visualization" id="toc-genome-and-genomic-data-visualization" class="nav-link" data-scroll-target="#genome-and-genomic-data-visualization"><span class="header-section-number">16.6</span> Genome and Genomic Data Visualization</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">16.7</span> Conclusion</a></li>
+  <li><a href="#introduction-to-ggplot2-the-grammar-of-graphics" id="toc-introduction-to-ggplot2-the-grammar-of-graphics" class="nav-link" data-scroll-target="#introduction-to-ggplot2-the-grammar-of-graphics"><span class="header-section-number">19.3</span> Introduction to ggplot2: The Grammar of Graphics</a></li>
+  <li><a href="#sets-and-intersections-upset-plots" id="toc-sets-and-intersections-upset-plots" class="nav-link" data-scroll-target="#sets-and-intersections-upset-plots"><span class="header-section-number">19.4</span> Sets and Intersections: UpSet Plots</a></li>
+  <li><a href="#complex-heatmaps" id="toc-complex-heatmaps" class="nav-link" data-scroll-target="#complex-heatmaps"><span class="header-section-number">19.5</span> Complex Heatmaps</a></li>
+  <li><a href="#genome-and-genomic-data-visualization" id="toc-genome-and-genomic-data-visualization" class="nav-link" data-scroll-target="#genome-and-genomic-data-visualization"><span class="header-section-number">19.6</span> Genome and Genomic Data Visualization</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">19.7</span> Conclusion</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/visualization_guide.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/visualization_guide.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dplyr_intro_msleep.html">Exploratory Data Analysis</a></li><li class="breadcrumb-item"><a href="./visualization_guide.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./dplyr_intro_msleep.html">Exploratory Data Analysis</a></li><li class="breadcrumb-item"><a href="./visualization_guide.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Self-Guided Data Visualization in R</span></h1>
 </div>
 
 
@@ -456,8 +474,8 @@ window.Quarto = {
 <li><a href="https://data-to-viz.com/">From Data to Viz</a>: A guide that helps you choose the right type of visualization for your data and provides examples in R.</li>
 </ul>
 <p>After walking through this document, go back to these resources and explore the examples. You’ll see how the principles we discuss here are applied in real-world scenarios, and you’ll gain inspiration for your own visualizations.</p>
-<section id="getting-started-with-ggplot2" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="getting-started-with-ggplot2"><span class="header-section-number">16.1</span> Getting Started with ggplot2</h2>
+<section id="getting-started-with-ggplot2" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="getting-started-with-ggplot2"><span class="header-section-number">19.1</span> Getting Started with ggplot2</h2>
 <p>To get started, we need to load the <code>ggplot2</code> package, which is part of the <code>tidyverse</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the necessary R packages for data visualization</span></span>
@@ -465,11 +483,11 @@ window.Quarto = {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="core-principles-of-effective-data-visualization" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="core-principles-of-effective-data-visualization"><span class="header-section-number">16.2</span> Core Principles of Effective Data Visualization</h2>
+<section id="core-principles-of-effective-data-visualization" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="core-principles-of-effective-data-visualization"><span class="header-section-number">19.2</span> Core Principles of Effective Data Visualization</h2>
 <p>Before we start plotting, it’s essential to understand what makes a visualization effective. Two key principles are maximizing the data-ink ratio and using clear labels.</p>
-<section id="the-least-ink-principle" class="level3" data-number="16.2.1">
-<h3 data-number="16.2.1" class="anchored" data-anchor-id="the-least-ink-principle"><span class="header-section-number">16.2.1</span> The “Least Ink” Principle</h3>
+<section id="the-least-ink-principle" class="level3" data-number="19.2.1">
+<h3 data-number="19.2.1" class="anchored" data-anchor-id="the-least-ink-principle"><span class="header-section-number">19.2.1</span> The “Least Ink” Principle</h3>
 <p>Coined by the statistician Edward Tufte, the <strong>data-ink ratio</strong> is the proportion of a graphic’s ink devoted to the non-redundant display of data information. The goal is to maximize this ratio. In simpler terms, <strong>every single pixel should have a reason to be there.</strong></p>
 <div id="fig-tufte-book" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -477,7 +495,7 @@ window.Quarto = {
 <img src="https://www.edwardtufte.com/wp-content/uploads/2023/09/edward-tufte-visual-display-of-quantitative-information.jpg" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tufte-book-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.1: Edward Tufte’s landmark book, “The Visual Display of Quantitative Information,” emphasizes the importance of maximizing the data-ink ratio.
+Figure&nbsp;19.1: Edward Tufte’s landmark book, “The Visual Display of Quantitative Information,” emphasizes the importance of maximizing the data-ink ratio.
 </figcaption>
 </figure>
 </div>
@@ -506,7 +524,7 @@ Figure&nbsp;16.1: Edward Tufte’s landmark book, “The Visual Display of Quant
 <img src="visualization_guide_files/figure-html/fig-bad-plot-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bad-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.2: A cluttered plot with low data-ink ratio. The gray background, heavy gridlines, and legend title are all unnecessary.
+Figure&nbsp;19.2: A cluttered plot with low data-ink ratio. The gray background, heavy gridlines, and legend title are all unnecessary.
 </figcaption>
 </figure>
 </div>
@@ -528,7 +546,7 @@ Figure&nbsp;16.2: A cluttered plot with low data-ink ratio. The gray background,
 <img src="visualization_guide_files/figure-html/fig-good-plot-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-good-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.3: A clean, minimalist plot that follows the ‘least ink’ principle. The focus is entirely on the relationship between the data points.
+Figure&nbsp;19.3: A clean, minimalist plot that follows the ‘least ink’ principle. The focus is entirely on the relationship between the data points.
 </figcaption>
 </figure>
 </div>
@@ -536,8 +554,8 @@ Figure&nbsp;16.3: A clean, minimalist plot that follows the ‘least ink’ prin
 </div>
 <p>While this is a subjective topic, the goal is to make your plots as clear and informative as possible. The “least ink” principle is a guideline, not a rule, but it can help you create more effective visualizations.</p>
 </section>
-<section id="the-importance-of-clear-labeling" class="level3" data-number="16.2.2">
-<h3 data-number="16.2.2" class="anchored" data-anchor-id="the-importance-of-clear-labeling"><span class="header-section-number">16.2.2</span> The Importance of Clear Labeling</h3>
+<section id="the-importance-of-clear-labeling" class="level3" data-number="19.2.2">
+<h3 data-number="19.2.2" class="anchored" data-anchor-id="the-importance-of-clear-labeling"><span class="header-section-number">19.2.2</span> The Importance of Clear Labeling</h3>
 <p>A plot without labels is just a picture. To be a useful piece of analysis, it needs to communicate context. Always ensure your plots have:</p>
 <ul>
 <li>A clear and descriptive title.</li>
@@ -545,8 +563,8 @@ Figure&nbsp;16.3: A clean, minimalist plot that follows the ‘least ink’ prin
 <li>An informative legend if you’re using color, shape, or size to encode data.</li>
 </ul>
 </section>
-<section id="color-and-contrast" class="level3" data-number="16.2.3">
-<h3 data-number="16.2.3" class="anchored" data-anchor-id="color-and-contrast"><span class="header-section-number">16.2.3</span> Color and Contrast</h3>
+<section id="color-and-contrast" class="level3" data-number="19.2.3">
+<h3 data-number="19.2.3" class="anchored" data-anchor-id="color-and-contrast"><span class="header-section-number">19.2.3</span> Color and Contrast</h3>
 <p>Color is a powerful tool in data visualization, but it can also be misused. R provides several built-in color palettes, and you can also use packages like <code>RColorBrewer</code> for more options. Think in terms of colorblind-friendly palettes, and avoid using too many colors in a single plot.</p>
 <p>Color palettes can be roughly categorized into:</p>
 <ul>
@@ -565,7 +583,7 @@ Figure&nbsp;16.3: A clean, minimalist plot that follows the ‘least ink’ prin
 <img src="visualization_guide_files/figure-html/fig-color-palettes-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-color-palettes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.4: Examples of color palettes in R. The first row shows sequential palettes, the second row shows qualitative palettes, and the third row shows diverging palettes.
+Figure&nbsp;19.4: Examples of color palettes in R. The first row shows sequential palettes, the second row shows qualitative palettes, and the third row shows diverging palettes.
 </figcaption>
 </figure>
 </div>
@@ -581,7 +599,7 @@ Figure&nbsp;16.4: Examples of color palettes in R. The first row shows sequentia
 <img src="visualization_guide_files/figure-html/fig-colorblind-friendly-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-colorblind-friendly-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.5: A colorblind-friendly palette from the ‘colorspace’ package. This palette is designed to be distinguishable for people with various types of color vision deficiencies.
+Figure&nbsp;19.5: A colorblind-friendly palette from the ‘colorspace’ package. This palette is designed to be distinguishable for people with various types of color vision deficiencies.
 </figcaption>
 </figure>
 </div>
@@ -589,8 +607,8 @@ Figure&nbsp;16.5: A colorblind-friendly palette from the ‘colorspace’ packag
 </div>
 </section>
 </section>
-<section id="introduction-to-ggplot2-the-grammar-of-graphics" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="introduction-to-ggplot2-the-grammar-of-graphics"><span class="header-section-number">16.3</span> Introduction to ggplot2: The Grammar of Graphics</h2>
+<section id="introduction-to-ggplot2-the-grammar-of-graphics" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="introduction-to-ggplot2-the-grammar-of-graphics"><span class="header-section-number">19.3</span> Introduction to ggplot2: The Grammar of Graphics</h2>
 <p>Rather than reproducing excellent online resources, for this section, pick any or all of the following resources to learn about the grammar of graphics and how to use <code>ggplot2</code>:</p>
 <ul>
 <li><a href="https://r4ds.had.co.nz/data-visualisation.html">R for Data Science: Data Visualization</a></li>
@@ -598,8 +616,8 @@ Figure&nbsp;16.5: A colorblind-friendly palette from the ‘colorspace’ packag
 <li><a href="https://rkabacoff.github.io/datavis/">Modern Data Visualization with R</a></li>
 </ul>
 </section>
-<section id="sets-and-intersections-upset-plots" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="sets-and-intersections-upset-plots"><span class="header-section-number">16.4</span> Sets and Intersections: UpSet Plots</h2>
+<section id="sets-and-intersections-upset-plots" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="sets-and-intersections-upset-plots"><span class="header-section-number">19.4</span> Sets and Intersections: UpSet Plots</h2>
 <p>When dealing with multiple sets, visualizing their intersections can be challenging. Traditional Venn diagrams become cluttered and hard to read with more than three sets. An <strong>UpSet plot</strong> is a powerful alternative for visualizing the intersections of multiple sets. It consists of two main parts: a matrix that shows which sets are part of an intersection, and a bar chart that shows the size of each intersection. This makes it far more scalable and easier to interpret than a complex Venn diagram.</p>
 <p>To create an UpSet plot, we use the <code>UpSetR</code> package. It takes a specific input format where 0s and 1s indicate the absence or presence of an element in a set.</p>
 <div class="cell">
@@ -622,7 +640,7 @@ Figure&nbsp;16.5: A colorblind-friendly palette from the ‘colorspace’ packag
 <img src="visualization_guide_files/figure-html/fig-upset-plot-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-upset-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;16.6: An UpSet plot visualizing movie genres. The main bar chart shows the size of intersections (e.g., how many movies are both ‘Comedy’ and ‘Romance’). The bottom-left matrix indicates which genres are part of each intersection. This is much clearer than a 5-set Venn diagram.
+Figure&nbsp;19.6: An UpSet plot visualizing movie genres. The main bar chart shows the size of intersections (e.g., how many movies are both ‘Comedy’ and ‘Romance’). The bottom-left matrix indicates which genres are part of each intersection. This is much clearer than a 5-set Venn diagram.
 </figcaption>
 </figure>
 </div>
@@ -630,8 +648,8 @@ Figure&nbsp;16.6: An UpSet plot visualizing movie genres. The main bar chart sho
 </div>
 <p>The UpSet plot clearly shows us, for instance, the number of movies that are exclusively “Drama” versus those that are a combination of “Drama,” “Comedy,” and “Romance.” This level of detail is difficult to achieve with a Venn diagram.</p>
 </section>
-<section id="complex-heatmaps" class="level2" data-number="16.5">
-<h2 data-number="16.5" class="anchored" data-anchor-id="complex-heatmaps"><span class="header-section-number">16.5</span> Complex Heatmaps</h2>
+<section id="complex-heatmaps" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="complex-heatmaps"><span class="header-section-number">19.5</span> Complex Heatmaps</h2>
 <p>Heatmaps are a powerful way to visualize complex data matrices, especially when dealing with large datasets. They allow you to see patterns and relationships in the data at a glance.</p>
 <p>What is a heatmap? It’s a graphical representation of data where individual values are represented as colors. The color intensity indicates the magnitude of the value, making it easy to spot trends and outliers. The underlying data is typically a matrix of numbers.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -657,13 +675,13 @@ Note
 <li><a href="https://bioconductor.org/packages/release/bioc/html/InteractiveComplexHeatmap.html">Interactive Complex Heatmaps</a> is an extension of the Complex Heatmaps package that allows you to create interactive heatmaps. This can be useful for exploring large datasets and identifying patterns.</li>
 </ul>
 </section>
-<section id="genome-and-genomic-data-visualization" class="level2" data-number="16.6">
-<h2 data-number="16.6" class="anchored" data-anchor-id="genome-and-genomic-data-visualization"><span class="header-section-number">16.6</span> Genome and Genomic Data Visualization</h2>
+<section id="genome-and-genomic-data-visualization" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="genome-and-genomic-data-visualization"><span class="header-section-number">19.6</span> Genome and Genomic Data Visualization</h2>
 <p>The <a href="https://www.bioconductor.org/packages/Gviz/"><code>Gviz</code> package</a> is a powerful tool for visualizing genomic data in R. It allows you to create publication-quality plots of genomic features, such as gene annotations, sequence alignments, and expression data.</p>
 <p>The <a href="https://www.bioconductor.org/packages/GenomicDistributions/">GenomicDistributions package</a> is another useful package for visualizing genomic data. It provides functions for creating distribution plots of genomic features, such as coverage, chip-seq or atac-seq distributions relative to genomic features, etc.</p>
 </section>
-<section id="conclusion" class="level2" data-number="16.7">
-<h2 data-number="16.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">16.7</span> Conclusion</h2>
+<section id="conclusion" class="level2" data-number="19.7">
+<h2 data-number="19.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">19.7</span> Conclusion</h2>
 <p>This document has provided a comprehensive foundation for creating effective data visualizations in R with <code>ggplot2</code>. We’ve covered the core principles of good design, explored a wide range of common plot types including heatmaps, and seen how <code>ggplot2</code>’s layered grammar allows for the creation of complex, insightful graphics by mapping multiple data dimensions to aesthetics. We also discussed why certain plots like Venn diagrams can be problematic and introduced powerful alternatives like UpSet plots.</p>
 <p>The key to mastering data visualization is practice. Experiment with different datasets, try new <code>geoms</code>, and always think critically about the story your plot is telling and the best way to tell it.</p>
 
@@ -1072,8 +1090,8 @@ Note
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./eda_and_univariate_brfss.html" class="pagination-link" aria-label="Case Study: Behavioral Risk Factor Surveillance System">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Case Study: Behavioral Risk Factor Surveillance System</span></span>
+      <a href="./comparison_options.html" class="pagination-link" aria-label="Base R vs tidy">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Base R vs tidy</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
