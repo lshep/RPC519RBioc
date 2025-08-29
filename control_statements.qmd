@@ -13,15 +13,17 @@ following:
   * for
   * while
   * repeat-break
-
+  
 - Special
+  * break
   * return
   * next
 
 - Other
-  * try / tryCatch
   * nested
-  
+  * try / tryCatch
+  * vectorization and apply functions
+
 
 ::: {.callout-important}
 Pay attention to syntax. It is important to include all parenthesis and
@@ -190,6 +192,8 @@ while(expression){
   ...
 }
 ```
+In this example we will start at the value 1 and as long as that value stays
+less than or equal to 5, we will print the value, incrementing by 1 each loop:
 
 **Example**
 ```{r}
@@ -238,8 +242,137 @@ repeat{
 }
 ```
 
+## Special
+
+There are some special other options used to customize control statements. These
+are used within control statements and can be especially useful in nested
+statements. 
+
+<center>
+**break**
+</center>
+We have already seen `break` usage with repeat. Break will stop and exit the
+control statement immediately when it hits.
+
+<center>
+**return**
+</center>
+
+`return` is similar to break in that it will stop and ext the control statement
+immediately when it is hit, however it will return the result of the given
+executed function or variable value upon exiting. It is generally used within
+functions.
+
+**Syntax:**
+```{r, eval=FALSE}
+return(expression)
+```
+
+This example creates a function that takes argument x.  If x is equal to 0 it
+returns the string "zero". If it does not equal 0 it continues to execute
+code. It will add 4 to the value. If that value is less than 0 it returns the
+value, otherwise it returns the value multipled by 2. 
+
+**Example**
+```{r}
+func <- function(x){
+  if(x == 0){
+    return("zero")
+  }
+  x <- x+4
+  if (x <= 0){
+    return(x)
+  }else{
+    return(x*2)
+  } 
+}
+
+func(0)
+func(-8)
+func(6)
+```
+
+<center>
+**next**
+</center>
+
+`next` will skip the current iteration of a loop without executing any further
+statements without terminating the loop.
+
+**Example**
+```{r}
+for(i in 1:10){
+  if(i%%2 != 0){
+    next
+  }
+  print(i)
+}
+```
+
 ## Other
+
+### nesting
+
+We already saw an example of a nesting built into the design of repeat-break;
+nesting an if statement inside the repeat. All control statements can have
+multiple nesting.
+Nesting multiple for loops to loop over the row and columns of a matrix is such
+an example.
+
+**Example:**
+
+In this example we create a numeric matrix with 5 rows and 3 columns and fill
+the numbers 1 through 15 by column. Let us loop over by row and print out each
+cell of the matrix. 
+
+```{r}
+mat <- matrix(1:15, ncol=3)
+mat
+for (r in seq(nrow(mat))) {
+  for (c in seq(ncol(mat))) {
+    print(mat[r, c])
+  }
+}
+
+```
 
 ### try / tryCatch
 
-### nesting
+This isn't necessarily a control statement but fits well enough to disucss. A
+`tryCatch` statement is a way to handle code that may produce errors, warnings,
+or other conditions that may arise.
+
+**Syntax:**
+```{r, eval=FALSE}
+tryCatch(expr,
+         error = function(e) {
+	     ## error handling code 
+	 },
+         warning = function(w) {
+	     ## warning handling code 
+	 },
+         finally = {
+	    ## code to execute regardless of conditions
+	 }
+)
+```
+It can include all error, warning, finally or any subset of the three. expr is
+an expression or block of code that is attempted to be executed. The error if a
+function that is triggered if running the expr resulted in an error. The
+argument e is generally an error object that contains details about the error
+for reference or parsing if necessary. warning similar to error but handles
+warnings with argument w. finally is code that executed regardless of what
+happens. This is particularly useful for when the expr opens a connection such
+as a database or file; finally can be used to close or clean up these open
+connections.
+
+### vectorization and apply functions
+
+Some most common and simply implementations of control functions are to perform
+functions over a vector or applying a function over the columns or rows of a
+matrix. While control statement can be utilized, they may not be the most
+efficient way to accomplish these tasks. It is encouraged to invesetigate if an
+already existing vectorized function exists for common tasks (mean, average, etc
+are already vectorized) or to utilized apply functions. Apply functions
+include: `apply()`, `lapply()`, `sapply()`, `mapply()`, and `tapply()`. 
+
