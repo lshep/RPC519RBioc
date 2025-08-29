@@ -50,6 +50,7 @@ book:
         - dataframes_intro.qmd
         - factors.qmd
         - classes.qmd
+        - control_statements.qmd
     - part: "Exploratory Data Analysis"
       chapters:
         - dplyr_intro_msleep.qmd
