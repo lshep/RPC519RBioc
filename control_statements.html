@@ -394,10 +394,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#while" id="toc-while" class="nav-link" data-scroll-target="#while"><span class="header-section-number">14.2.2</span> while</a></li>
   <li><a href="#repeat" id="toc-repeat" class="nav-link" data-scroll-target="#repeat"><span class="header-section-number">14.2.3</span> repeat</a></li>
   </ul></li>
-  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other"><span class="header-section-number">14.3</span> Other</a>
+  <li><a href="#special" id="toc-special" class="nav-link" data-scroll-target="#special"><span class="header-section-number">14.3</span> Special</a></li>
+  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other"><span class="header-section-number">14.4</span> Other</a>
   <ul class="collapse">
-  <li><a href="#try-trycatch" id="toc-try-trycatch" class="nav-link" data-scroll-target="#try-trycatch"><span class="header-section-number">14.3.1</span> try / tryCatch</a></li>
-  <li><a href="#nesting" id="toc-nesting" class="nav-link" data-scroll-target="#nesting"><span class="header-section-number">14.3.2</span> nesting</a></li>
+  <li><a href="#nesting" id="toc-nesting" class="nav-link" data-scroll-target="#nesting"><span class="header-section-number">14.4.1</span> nesting</a></li>
+  <li><a href="#try-trycatch" id="toc-try-trycatch" class="nav-link" data-scroll-target="#try-trycatch"><span class="header-section-number">14.4.2</span> try / tryCatch</a></li>
+  <li><a href="#vectorization-and-apply-functions" id="toc-vectorization-and-apply-functions" class="nav-link" data-scroll-target="#vectorization-and-apply-functions"><span class="header-section-number">14.4.3</span> vectorization and apply functions</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/control_statements.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/control_statements.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
@@ -467,13 +469,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Special
 <ul>
+<li>break</li>
 <li>return</li>
 <li>next</li>
 </ul></li>
 <li>Other
 <ul>
-<li>try / tryCatch</li>
 <li>nested</li>
+<li>try / tryCatch</li>
+<li>vectorization and apply functions</li>
 </ul></li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -661,6 +665,7 @@ Tip
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  ...</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>In this example we will start at the value 1 and as long as that value stays less than or equal to 5, we will print the value, incrementing by 1 each loop:</p>
 <p><strong>Example</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>value <span class="ot">&lt;-</span> <span class="dv">1</span></span>
@@ -722,13 +727,134 @@ Important
 </div>
 </section>
 </section>
-<section id="other" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="other"><span class="header-section-number">14.3</span> Other</h2>
-<section id="try-trycatch" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="try-trycatch"><span class="header-section-number">14.3.1</span> try / tryCatch</h3>
+<section id="special" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="special"><span class="header-section-number">14.3</span> Special</h2>
+<p>There are some special other options used to customize control statements. These are used within control statements and can be especially useful in nested statements.</p>
+<center>
+<strong>break</strong>
+</center>
+<p>We have already seen <code>break</code> usage with repeat. Break will stop and exit the control statement immediately when it hits.</p>
+<center>
+<strong>return</strong>
+</center>
+<p><code>return</code> is similar to break in that it will stop and ext the control statement immediately when it is hit, however it will return the result of the given executed function or variable value upon exiting. It is generally used within functions.</p>
+<p><strong>Syntax:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">return</span>(expression)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This example creates a function that takes argument x. If x is equal to 0 it returns the string “zero”. If it does not equal 0 it continues to execute code. It will add 4 to the value. If that value is less than 0 it returns the value, otherwise it returns the value multipled by 2.</p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>func <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(x <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="st">"zero"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x<span class="sc">+</span><span class="dv">4</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">&lt;=</span> <span class="dv">0</span>){</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x<span class="sc">*</span><span class="dv">2</span>)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="fu">func</span>(<span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "zero"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">func</span>(<span class="sc">-</span><span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">func</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 20</code></pre>
+</div>
+</div>
+<center>
+<strong>next</strong>
+</center>
+<p><code>next</code> will skip the current iteration of a loop without executing any further statements without terminating the loop.</p>
+<p><strong>Example</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(i<span class="sc">%%</span><span class="dv">2</span> <span class="sc">!=</span> <span class="dv">0</span>){</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">next</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2
+[1] 4
+[1] 6
+[1] 8
+[1] 10</code></pre>
+</div>
+</div>
 </section>
-<section id="nesting" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="nesting"><span class="header-section-number">14.3.2</span> nesting</h3>
+<section id="other" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="other"><span class="header-section-number">14.4</span> Other</h2>
+<section id="nesting" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="nesting"><span class="header-section-number">14.4.1</span> nesting</h3>
+<p>We already saw an example of a nesting built into the design of repeat-break; nesting an if statement inside the repeat. All control statements can have multiple nesting. Nesting multiple for loops to loop over the row and columns of a matrix is such an example.</p>
+<p><strong>Example:</strong></p>
+<p>In this example we create a numeric matrix with 5 rows and 3 columns and fill the numbers 1 through 15 by column. Let us loop over by row and print out each cell of the matrix.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>, <span class="at">ncol=</span><span class="dv">3</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>mat</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     [,1] [,2] [,3]
+[1,]    1    6   11
+[2,]    2    7   12
+[3,]    3    8   13
+[4,]    4    9   14
+[5,]    5   10   15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (r <span class="cf">in</span> <span class="fu">seq</span>(<span class="fu">nrow</span>(mat))) {</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (c <span class="cf">in</span> <span class="fu">seq</span>(<span class="fu">ncol</span>(mat))) {</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(mat[r, c])</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+[1] 6
+[1] 11
+[1] 2
+[1] 7
+[1] 12
+[1] 3
+[1] 8
+[1] 13
+[1] 4
+[1] 9
+[1] 14
+[1] 5
+[1] 10
+[1] 15</code></pre>
+</div>
+</div>
+</section>
+<section id="try-trycatch" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="try-trycatch"><span class="header-section-number">14.4.2</span> try / tryCatch</h3>
+<p>This isn’t necessarily a control statement but fits well enough to disucss. A <code>tryCatch</code> statement is a way to handle code that may produce errors, warnings, or other conditions that may arise.</p>
+<p><strong>Syntax:</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tryCatch</span>(expr,</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">error =</span> <span class="cf">function</span>(e) {</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>         <span class="do">## error handling code </span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>     },</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">warning =</span> <span class="cf">function</span>(w) {</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>         <span class="do">## warning handling code </span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>     },</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">finally =</span> {</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>        <span class="do">## code to execute regardless of conditions</span></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>     }</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>It can include all error, warning, finally or any subset of the three. expr is an expression or block of code that is attempted to be executed. The error if a function that is triggered if running the expr resulted in an error. The argument e is generally an error object that contains details about the error for reference or parsing if necessary. warning similar to error but handles warnings with argument w. finally is code that executed regardless of what happens. This is particularly useful for when the expr opens a connection such as a database or file; finally can be used to close or clean up these open connections.</p>
+</section>
+<section id="vectorization-and-apply-functions" class="level3" data-number="14.4.3">
+<h3 data-number="14.4.3" class="anchored" data-anchor-id="vectorization-and-apply-functions"><span class="header-section-number">14.4.3</span> vectorization and apply functions</h3>
+<p>Some most common and simply implementations of control functions are to perform functions over a vector or applying a function over the columns or rows of a matrix. While control statement can be utilized, they may not be the most efficient way to accomplish these tasks. It is encouraged to invesetigate if an already existing vectorized function exists for common tasks (mean, average, etc are already vectorized) or to utilized apply functions. Apply functions include: <code>apply()</code>, <code>lapply()</code>, <code>sapply()</code>, <code>mapply()</code>, and <code>tapply()</code>.</p>
 
 
 </section>
