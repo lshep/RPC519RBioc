@@ -40,8 +40,8 @@ book:
         - r_intro_mechanics.qmd
         - r_basics.qmd
         - packages.qmd
-        - reading_and_writing.qmd
         - rproj_and_save_load.qmd
+        - reading_and_writing.qmd
     - part: data_structures_overview.qmd
       chapters:
         - vectors.qmd
@@ -55,6 +55,7 @@ book:
         - dplyr_intro_msleep.qmd
         - eda_and_univariate_brfss.qmd
         - ggplot2/intro.qmd
+        - comparison_options.qmd
         - visualization_guide.qmd
     - references.qmd
     
