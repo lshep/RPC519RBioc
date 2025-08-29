@@ -20,7 +20,21 @@ following:
 
 - Other
   * try / tryCatch
-  * nested 
+  * nested
+  
+
+::: {.callout-important}
+Pay attention to syntax. It is important to include all parenthesis and
+brackets. In general if you have an open parenthesis or bracket, you will need a
+closed parenthesis or bracket.
+:::
+
+::: {.callout-tip}
+Good coding practices involve consistent indenting and spacing. Once a control
+statement is initialized, all code in its brackets are indented to show clearly
+what code/statements are being executed for that section. This becomes
+especially important if you start nesting control statements.  
+:::
 
 ## Conditional Statements
 
@@ -89,11 +103,6 @@ if (x > 0){
 
 What is x now?
 
-::: {.callout-important}
-Pay attention to syntax. It is important to include all parenthesis and
-brackets. In general if you have an open parenthesis or bracket, you will need a
-closed parenthesis or bracket.
-:::
 
 ### ifelse
 
