@@ -1677,15 +1677,27 @@
     ]
   },
   {
+    "objectID": "installpackages.html",
+    "href": "installpackages.html",
+    "title": "Appendix E — Installation of Packages",
+    "section": "",
+    "text": "To install packages needed to run and compile this book you can use the installation script provided.\n\nsource(\"https://raw.githubusercontent.com/lshep/RPC519RBioc/refs/heads/main/installationScript.R\")\n\nThis will install required packages as well as optional packages utilized in the appendix and quarto used to compile this book. To choose what packages to install you may reference this script and optionally select installs.",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Installation of Packages</span>"
+    ]
+  },
+  {
     "objectID": "contact.html",
     "href": "contact.html",
-    "title": "Appendix E — Contact",
+    "title": "Appendix F — Contact",
     "section": "",
     "text": "Lori Kern  lori.shepherd@roswellpark.org  RSC-400  MTHF 7:00-2:30",
     "crumbs": [
       "Home",
       "Appendices",
-      "<span class='chapter-number'>E</span>  <span class='chapter-title'>Contact</span>"
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Contact</span>"
     ]
   },
   {
