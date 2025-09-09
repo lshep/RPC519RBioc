@@ -3,7 +3,7 @@ project:
 
 author:
   - name: Lori Kern
-    url: https://seandavi.github.io/
+    url: https://github.com/lshep/
     affiliation: Bioconductor / Roswell Park Comprehensive Cancer Center
     affiliation-url: https://bioconductor.org
     email: lori.shepherd@roswellpark.org
@@ -19,7 +19,7 @@ book:
   author: "Lori Kern"
   date: "today"
   repo-url: https://github.com/lshep/RPC519RBioc
-  url: https://seandavi.github.io/RBiocBook
+  url: https://lshep.github.io/RPC519RBioc
   repo-actions: [edit, issue, source]
   downloads: [pdf, epub]
   page-navigation: true
@@ -65,6 +65,7 @@ book:
     - git_and_github.qmd
     - additional_resources.qmd
     - dataviz.qmd
+    - contact.qmd
 
   page-footer:
     center:
