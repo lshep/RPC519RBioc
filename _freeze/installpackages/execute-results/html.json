@@ -1,0 +1,15 @@
+{
+  "hash": "8f5ae0aa7156a74fb6902a11c9cfd7c8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Installation of Packages\n\n---\n\nTo install packages needed to run and compile this book you can use the\ninstallation script provided.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsource(\"https://raw.githubusercontent.com/lshep/RPC519RBioc/refs/heads/main/installationScript.R\")\n```\n:::\n\n\nThis will install required packages as well as optional packages utilized in the\nappendix and quarto used to compile this book. To choose what packages to\ninstall you may reference this [script](https://raw.githubusercontent.com/lshep/RPC519RBioc/refs/heads/main/installationScript.R)\nand optionally select installs.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
