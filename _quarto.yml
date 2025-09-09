@@ -65,6 +65,7 @@ book:
     - git_and_github.qmd
     - additional_resources.qmd
     - dataviz.qmd
+    - installpackages.qmd
     - contact.qmd
 
   page-footer:

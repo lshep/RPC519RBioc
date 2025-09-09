@@ -1,6 +1,11 @@
 install.packages("BiocManager")
 
-pkgList = c("ggplot2", "dplyr", "knitr", "readr", "readxl", "writexl",
-            "RColorBrewer", "UpSetR", "swirl", "rmarkdown", "tidyr")
+pkgs <- c("dplyr", "readr", "tidyr", "ggplot2", "rmarkdown", "knitr", "readxl",
+"writexl", "RColorBrewer", "UpSetR")
 
-BiocManager::install(pkgList)
+BiocManager::install(pkgs)
+
+xtra <- c("swirl", "quarto")
+
+BiocManager::install(xtra)
+

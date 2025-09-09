@@ -1,0 +1,14 @@
+# Installation of Packages
+
+To install packages needed to run and compile this book you can use the
+installation script provided.
+
+```{r, eval=FALSE}
+
+source("https://raw.githubusercontent.com/lshep/RPC519RBioc/refs/heads/main/installationScript.R")
+```
+
+This will install optional packages utilized in the appendix and to compile this
+book. To choose what packages to install you may reference this
+[script](https://raw.githubusercontent.com/lshep/RPC519RBioc/refs/heads/main/installationScript.R)
+and optionally select installs.
