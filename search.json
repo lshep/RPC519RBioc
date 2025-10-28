@@ -1689,15 +1689,27 @@
     ]
   },
   {
+    "objectID": "classNotes.html",
+    "href": "classNotes.html",
+    "title": "Appendix F — Class Notes",
+    "section": "",
+    "text": "Helpful Notes from Questions during 519 Class held Oct 2025.\nThursday’s class was an interactive session on Rmarkdown. This will briefly highly some of the formating and packages that were covered in class.\nSee also Additional Resources\n\nF.0.1 Random\nBold: **\nItalics: *\nLine Space: ---\nInline Code: Single Backticks ` Inline Code `\nNote: If using html as output than can use html syntax as well (e.g &lt;br&gt;, &lt;a href = https:///&gt;tag&lt;/a&gt;\n\n\nF.0.2 Code Blocks\nCode Block: Backticks to open and close section: ```\nCode Block Options: After opening backticks {} can define options for the code chunk. It is always a good idea to give it the programming language and an id for the code chunk for debugging {r myid, options ...} Common Options:\n\neval\necho\nresults\nmessage\nwarning\nfigure options: fig.cap, out.width, etc\n\n\n\nF.0.3 Tables\n\nlibrary(knitr) for kable\nlibrary(kableExtra) for cool styling and built in themes\nlibrary(DT) for interactive tables\n\n\n\nF.0.4 Lists\nOrdered uses numbers\nUnordered uses Dash -\nChecklist use Dash space brackets - [ ] or - [X]\n\n\nF.0.5 Figures\n\nBuild it with ![image caption](path to image)\nlibrary(knitr) include_graphics\nhtml &lt;figure&gt;\n\n\n\nF.0.6 Table of Contents\n\nIn rmarkdown header\n\noutput:\n  html_document:\n    toc: true\n\n\nSpecial: [Back to top](#top)\nYou can anchor any section header # Coding Section{#codechunk} and then reference [link to coding](#codechunk)\nWith html &lt;a href=\"#top\" style=\"color:red; float:right;\"&gt;Back to top&lt;/a&gt;\n\n\n\nF.0.7 Plotting\n\nCode blocks have options for plotting\nCan include directly in code block or save to png, jpeg, etc and include elsewhere\nlibrary(knitr) include_graphics\n\n\n\nF.0.8 Tabulars\n\n## Results {.tabset}\n\n### Text\nSome Overview Text\n\n### Plots\nAnoter section\n\n### tables\nAnoter section\n\n\n\nF.0.9 Columns\n\nCan specify for the entire document through options and layouts but ad hoc with columns\n\n\n::: {.columns}\n\n::: {.column width=\"50%\"}\nsomething\n\n:::\n::: {.column width=\"50%\"}\nSecond column\n\n:::\n:::",
+    "crumbs": [
+      "Home",
+      "Appendices",
+      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Class Notes</span>"
+    ]
+  },
+  {
     "objectID": "contact.html",
     "href": "contact.html",
-    "title": "Appendix F — Contact",
+    "title": "Appendix G — Contact",
     "section": "",
     "text": "Lori Kern  lori.shepherd@roswellpark.org  RSC-400  MTHF 7:00-2:30",
     "crumbs": [
       "Home",
       "Appendices",
-      "<span class='chapter-number'>F</span>  <span class='chapter-title'>Contact</span>"
+      "<span class='chapter-number'>G</span>  <span class='chapter-title'>Contact</span>"
     ]
   },
   {
