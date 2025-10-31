@@ -66,6 +66,7 @@ book:
     - additional_resources.qmd
     - dataviz.qmd
     - installpackages.qmd
+    - classNotes.qmd
     - contact.qmd
 
   page-footer:

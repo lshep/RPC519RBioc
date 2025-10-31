@@ -1,0 +1,124 @@
+# Class Notes
+
+---
+
+Helpful Notes from Questions during 519 Class held Oct 2025.
+
+Thursday's class was an interactive session on Rmarkdown. This will briefly
+highly some of the formating and packages that were covered in class.
+
+See also [Additional
+Resources](https://lshep.github.io/RPC519RBioc/additional_resources.html#rmarkdown-and-quarto)
+
+### Random
+
+Bold: `**`
+
+Italics: `*`
+
+Line Space: `---`
+
+Inline Code: Single Backticks ```` ` ```` Inline Code ```` ` ````
+
+Note: If using html as output than can use html syntax as well (e.g `<br>`, `<a
+href = https:///>tag</a>` 
+
+### Code Blocks
+
+Code Block: Backticks  to open and close section:  ```` ``` ````
+
+Code Block Options: After opening backticks `{}` can define options for the code
+chunk. It is always a good idea to give it the programming language and an id
+for the code chunk for debugging `{r myid, options ...}`
+Common Options:
+
+- eval
+- echo
+- results
+- message
+- warning
+- figure options: fig.cap, out.width, etc
+
+### Tables
+
+- library(knitr) for kable
+- library(kableExtra) for cool styling and built in themes
+- library(DT) for interactive tables
+
+### Lists
+
+Ordered uses numbers
+
+Unordered uses Dash `-`
+
+Checklist use Dash space brackets `- [ ]` or `- [X]` 
+
+### Figures
+
+- Build it with `![image caption](path to image)`
+- library(knitr) include_graphics
+- html `<figure>`
+
+### Table of Contents
+
+- In rmarkdown header
+```
+output:
+  html_document:
+    toc: true
+
+```
+- Special: `[Back to top](#top)`
+- You can anchor any section header `# Coding Section{#codechunk}` and then
+reference `[link to coding](#codechunk)`
+- With html `<a href="#top" style="color:red; float:right;">Back to top</a>`
+
+
+### Plotting
+
+- Code blocks have options for plotting
+
+- Can include directly in code block or save to png, jpeg, etc and include
+  elsewhere
+
+- library(knitr) include_graphics
+
+
+### Tabulars
+
+```
+
+## Results {.tabset}
+
+### Text
+Some Overview Text
+
+### Plots
+Anoter section
+
+### tables
+Anoter section
+
+```
+
+
+### Columns
+
+- Can specify for the entire document through options and layouts but ad hoc
+  with columns
+
+```
+
+::: {.columns}
+
+::: {.column width="50%"}
+something
+
+:::
+::: {.column width="50%"}
+Second column
+
+:::
+:::
+
+```
