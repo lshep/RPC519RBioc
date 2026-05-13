@@ -410,7 +410,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#aggregating-data" id="toc-aggregating-data" class="nav-link" data-scroll-target="#aggregating-data"><span class="header-section-number">11.7</span> Aggregating data</a></li>
   <li><a href="#creating-a-data.frame-from-scratch" id="toc-creating-a-data.frame-from-scratch" class="nav-link" data-scroll-target="#creating-a-data.frame-from-scratch"><span class="header-section-number">11.8</span> Creating a data.frame from scratch</a></li>
-  <li><a href="#saving-a-data.frame" id="toc-saving-a-data.frame" class="nav-link" data-scroll-target="#saving-a-data.frame"><span class="header-section-number">11.9</span> Saving a data.frame</a></li>
+  <li><a href="#joining-merging-data" id="toc-joining-merging-data" class="nav-link" data-scroll-target="#joining-merging-data"><span class="header-section-number">11.9</span> Joining / Merging Data</a>
+  <ul class="collapse">
+  <li><a href="#join-columns" id="toc-join-columns" class="nav-link" data-scroll-target="#join-columns"><span class="header-section-number">11.9.1</span> Join Columns</a></li>
+  <li><a href="#join-rows" id="toc-join-rows" class="nav-link" data-scroll-target="#join-rows"><span class="header-section-number">11.9.2</span> Join Rows</a></li>
+  <li><a href="#joining-data-by-key" id="toc-joining-data-by-key" class="nav-link" data-scroll-target="#joining-data-by-key"><span class="header-section-number">11.9.3</span> Joining Data by Key</a></li>
+  </ul></li>
+  <li><a href="#saving-a-data.frame" id="toc-saving-a-data.frame" class="nav-link" data-scroll-target="#saving-a-data.frame"><span class="header-section-number">11.10</span> Saving a data.frame</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/lshep/RPC519RBioc/edit/main/dataframes_intro.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/lshep/RPC519RBioc/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/lshep/RPC519RBioc/blob/main/dataframes_intro.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -443,7 +449,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">May 6, 2026</p>
+      <p class="date-modified">May 13, 2026</p>
     </div>
   </div>
     
@@ -601,27 +607,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ydat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    symbol          systematic_name      nutrient        
- Length:198430      Length:198430      Length:198430     
- Class :character   Class :character   Class :character  
- Mode  :character   Mode  :character   Mode  :character  
-                                                         
-                                                         
-                                                         
-      rate          expression             bp           
- Min.   :0.0500   Min.   :-6.500000   Length:198430     
- 1st Qu.:0.1000   1st Qu.:-0.290000   Class :character  
- Median :0.2000   Median : 0.000000   Mode  :character  
- Mean   :0.1752   Mean   : 0.003367                     
- 3rd Qu.:0.2500   3rd Qu.: 0.290000                     
- Max.   :0.3000   Max.   : 6.640000                     
-      mf           
- Length:198430     
- Class :character  
- Mode  :character  
-                   
-                   
-                   </code></pre>
+<pre><code>       symbol        systematic_name        nutrient     
+ Length   :198430   Length   :198430   Length   :198430  
+ N.unique :  4210   N.unique :  5536   N.unique :     6  
+ N.blank  :     0   N.blank  :     0   N.blank  :     0  
+ Min.nchar:     2   Min.nchar:     5   Min.nchar:     6  
+ Max.nchar:     9   Max.nchar:     9   Max.nchar:     9  
+ NAs      : 47250                                        
+      rate          expression                bp        
+ Min.   :0.0500   Min.   :-6.500000   Length   :198430  
+ 1st Qu.:0.1000   1st Qu.:-0.290000   N.unique :   880  
+ Median :0.2000   Median : 0.000000   N.blank  :     0  
+ Mean   :0.1752   Mean   : 0.003367   Min.nchar:     7  
+ 3rd Qu.:0.2500   3rd Qu.: 0.290000   Max.nchar:    82  
+ Max.   :0.3000   Max.   : 6.640000   NAs      :  7663  
+         mf        
+ Length   :198430  
+ N.unique :  1085  
+ N.blank  :     0  
+ Min.nchar:    11  
+ Max.nchar:   125  
+ NAs      :  7663  </code></pre>
 </div>
 </div>
 <p>In RStudio, there is an additional function, <code>View()</code> (note the capital “V”) that opens the first 1000 rows (default) in the RStudio window, akin to a spreadsheet view.</p>
@@ -759,8 +765,8 @@ NA.47249 &lt;NA&gt; &lt;NA&gt;</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ydat<span class="sc">$</span>symbol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Length     Class      Mode 
-   198430 character character </code></pre>
+<pre><code>   Length  N.unique   N.blank Min.nchar Max.nchar       NAs 
+   198430      4210         0         2         9     47250 </code></pre>
 </div>
 </div>
 <p>Using the <code>is.na()</code> function, we can make filter further to get down to values of interest.</p>
@@ -916,12 +922,12 @@ NA.47249 &lt;NA&gt; &lt;NA&gt;</code></pre>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(smoker_risk)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  smoker     risk
-1 smoker 3.494214
-2 smoker 3.841851
-3 smoker 3.607017
-4 smoker 4.449390
-5 smoker 3.896246
-6 smoker 5.712052</code></pre>
+1 smoker 4.206258
+2 smoker 4.418306
+3 smoker 1.898005
+4 smoker 4.126605
+5 smoker 5.891097
+6 smoker 4.543194</code></pre>
 </div>
 </div>
 <p>R also has plotting shortcuts that work with data.frames to simplify plotting</p>
@@ -936,11 +942,139 @@ NA.47249 &lt;NA&gt; &lt;NA&gt;</code></pre>
 </div>
 </div>
 </section>
-<section id="saving-a-data.frame" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="saving-a-data.frame"><span class="header-section-number">11.9</span> Saving a data.frame</h2>
+<section id="joining-merging-data" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="joining-merging-data"><span class="header-section-number">11.9</span> Joining / Merging Data</h2>
+<p>There are a number of ways to merge or join data. We discussed cbind and rbind in matricies which will work with data.frames provided there are equal dimension of the bind but there are a number of ways to merge data as well.</p>
+<section id="join-columns" class="level3" data-number="11.9.1">
+<h3 data-number="11.9.1" class="anchored" data-anchor-id="join-columns"><span class="header-section-number">11.9.1</span> Join Columns</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>deceased <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">size =</span> <span class="fu">nrow</span>(smoker_risk), <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">cbind</span>(smoker_risk, deceased))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  smoker     risk deceased
+1 smoker 4.206258        0
+2 smoker 4.418306        0
+3 smoker 1.898005        1
+4 smoker 4.126605        0
+5 smoker 5.891097        0
+6 smoker 4.543194        1</code></pre>
+</div>
+</div>
+<p>Be careful if a columns can be repeated to match length it will by default.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>meta_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">sex=</span><span class="fu">c</span>(<span class="st">"f"</span>, <span class="st">"m"</span>, <span class="st">"m"</span>, <span class="st">"f"</span>), <span class="at">age=</span><span class="fu">c</span>(<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">20</span>,<span class="dv">80</span>))</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">cbind</span>(smoker_risk, deceased, meta_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  smoker     risk deceased sex age
+1 smoker 4.206258        0   f  40
+2 smoker 4.418306        0   m  60
+3 smoker 1.898005        1   m  20
+4 smoker 4.126605        0   f  80
+5 smoker 5.891097        0   f  40
+6 smoker 4.543194        1   m  60</code></pre>
+</div>
+</div>
+</section>
+<section id="join-rows" class="level3" data-number="11.9.2">
+<h3 data-number="11.9.2" class="anchored" data-anchor-id="join-rows"><span class="header-section-number">11.9.2</span> Join Rows</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(<span class="fu">rbind</span>(smoker_risk, smoker_risk[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        smoker      risk
+99  non-smoker 3.9722497
+100 non-smoker 0.9386303
+101     smoker 4.2062580
+102     smoker 4.4183059
+103     smoker 1.8980054
+104     smoker 4.1266051</code></pre>
+</div>
+</div>
+<p>There is also a dplyr method to join rows that can handle NA automatically</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>second_smoker_set <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">smoker=</span><span class="fu">c</span>(<span class="st">"smoker"</span>, <span class="st">"non-smoker"</span>, <span class="st">"smoker"</span>),</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>                               <span class="at">deceased =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(<span class="fu">bind_rows</span>(smoker_risk, second_smoker_set))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        smoker      risk deceased
+98  non-smoker 1.7904640       NA
+99  non-smoker 3.9722497       NA
+100 non-smoker 0.9386303       NA
+101     smoker        NA        0
+102 non-smoker        NA        0
+103     smoker        NA        1</code></pre>
+</div>
+</div>
+<p>If you tried this with rbind it will fail</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(smoker_risk, second_smoker_set)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `match.names()`:
+! names do not match previous names</code></pre>
+</div>
+</div>
+</section>
+<section id="joining-data-by-key" class="level3" data-number="11.9.3">
+<h3 data-number="11.9.3" class="anchored" data-anchor-id="joining-data-by-key"><span class="header-section-number">11.9.3</span> Joining Data by Key</h3>
+<p>There are multiple options to merge by id (database like) depending on desired result.</p>
+<ol type="1">
+<li>merge</li>
+<li>left_join</li>
+<li>right_join</li>
+<li>inner_join</li>
+<li>full_join</li>
+</ol>
+<p>The base R <code>merge()</code> by default will only keep matching elements</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">ages=</span><span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">50</span>,<span class="dv">40</span>,<span class="dv">80</span>), <span class="at">sex =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"M"</span>, <span class="cn">NA</span>, <span class="st">"F"</span>))</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>), <span class="at">results =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="fu">merge</span>(df1, df2, <span class="at">by=</span><span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id ages sex results
+1  2   50   M       0
+2  4   80   F       1</code></pre>
+</div>
+</div>
+<p>What argument can we use to do a full merge?</p>
+<p>The <code>*_join()</code> methods are from dplyr.</p>
+<ul>
+<li><code>left_join()</code> keeps all rows from df1</li>
+<li><code>right_join()</code> keeps all rows from df2</li>
+<li><code>inner_join()</code> keeps only matching</li>
+<li><code>full_join()</code> keeps everything</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># only matches</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id ages sex results
+1  2   50   M       0
+2  4   80   F       1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep everything</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(df1, df2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(id)`</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  id ages  sex results
+1  1   12    F      NA
+2  2   50    M       0
+3  3   40 &lt;NA&gt;      NA
+4  4   80    F       1</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="saving-a-data.frame" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="saving-a-data.frame"><span class="header-section-number">11.10</span> Saving a data.frame</h2>
 <p>Once we have a data.frame of interest, we may want to save it. The most portable way to save a data.frame is to use one of the <code>write</code> functions. In this case, let’s save the data as a <code>.csv</code> file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(smoker_risk, <span class="st">"smoker_risk.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(smoker_risk, <span class="st">"smoker_risk.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
