@@ -106,7 +106,49 @@ level for categorical variables.
 ## Data Visualization
  
 Visualizing the data can help you identify patterns and trends in the dataset.
-Let's start by creating a histogram of the Age variable using the `hist()`
+
+
+Let's start by exploring categorical visualization with bar and pie
+charts. Using these types of visual representations allows ease comparison
+categorical types. 
+
+A bar chart of sex for instance. We first have to convert the data into a table:
+
+```{r}
+sex_counts <- table(brfss$Sex)
+sex_counts
+barplot(sex_counts,
+        col = "steelblue",
+        main = "Distribution of Sex",
+        xlab = "Sex",
+        ylab = "Count")
+```
+
+Do you think we can change the color of the bins?
+
+Maybe a pie chart would be better to show the proportion of the total?
+
+```{r}
+pie(sex_counts,
+    col = c("pink", "lightblue"),
+    main = "Sex Distribution")
+```
+
+But for pie charts we often think of percentages. Let's convert to report the
+percentage of the total.
+
+```{r}
+pct <- round(sex_counts / sum(sex_counts) * 100)
+pie(sex_counts,
+    labels = paste(pct, "%"),
+    col = c("pink", "lightblue"),
+    main = "Sex Distribution")
+```
+
+But we lost the identifier. How would you adjust the above to add Male/Female in
+addition to the percentage?
+
+Next let's create a histogram of the Age variable using the `hist()`
 function.
 
 This will create a histogram showing the frequency distribution of ages in the

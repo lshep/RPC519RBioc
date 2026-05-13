@@ -385,10 +385,10 @@ brfss_2010_DF <-
 
 ```{r}
 # dplyr / tibble
-brfss_male_tbl <-
-    brfss_tbl |> filter(Sex == "Male")
 brfss_female_tbl <-
     brfss_tbl |> filter(Sex == "Female")
+brfss_male_tbl <-
+    brfss_tbl |> filter(Sex == "Male")
 brfss_2010_tbl <-
     brfss_tbl |> filter(Year == "2010")
 ```
@@ -402,7 +402,143 @@ ggplot2
 library(ggplot2)
 ```
 
-Let's start with a boxplot that compares the Weights of Males vs Females for the
+Let's start by exploring categorical visualization with bar and pie
+charts.
+
+
+::: {.columns}
+
+::: {.column width="50%"}
+```{r, eval=FALSE}
+# base R
+sex_counts <- table(brfss_DF$Sex)
+barplot(sex_counts,
+        col = c("pink","steelblue"),
+        main = "Distribution of Sex",
+        xlab = "Sex",
+        ylab = "Count")
+```
+:::
+::: {.column width="50%"}
+
+```{r, warning=FALSE, eval=FALSE}
+# ggplot2
+ggplot(brfss_tbl, aes(x = Sex)) +
+  geom_bar(fill = c("pink","steelblue")) +
+  labs(
+    title = "Distribution of Sex",
+    x = "Sex",
+    y = "Count"
+  ) +
+  theme_minimal()
+```
+:::
+:::
+
+::: {.columns}
+
+::: {.column width="50%"}
+```{r, echo=FALSE}
+# base R
+sex_counts <- table(brfss_DF$Sex)
+barplot(sex_counts,
+        col = c("pink","steelblue"),
+        main = "Distribution of Sex",
+        xlab = "Sex",
+        ylab = "Count")
+```
+:::
+::: {.column width="50%"}
+
+```{r, warning=FALSE, echo=FALSE}
+# ggplot2
+ggplot(brfss_tbl, aes(x = Sex)) +
+  geom_bar(fill = c("pink","steelblue")) +
+  labs(
+    title = "Distribution of Sex",
+    x = "Sex",
+    y = "Count"
+  ) +
+  theme_minimal()
+```
+:::
+:::
+
+Or we can display as a pie chart to better see proportion
+
+
+::: {.columns}
+
+::: {.column width="50%"}
+```{r, eval=FALSE}
+# base R
+pie(sex_counts,
+    labels=NA,
+    col = c("pink", "lightblue"),
+    main = "Sex Distribution",
+    border=NA)
+legend("bottomright",
+       legend = names(sex_counts),
+       fill = c("pink", "lightblue"),
+       border=NA,
+       bty = "n",
+       title="Sex")
+```
+:::
+::: {.column width="50%"}
+
+```{r, warning=FALSE, eval=FALSE}
+# ggplot2
+brfss_tbl %>%
+  count(Sex) %>%
+  ggplot(aes(x = "", y = n, fill = Sex)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = c("Female" = "pink",
+                               "Male" = "lightblue")) +
+  labs(title = "Sex Distribution") +
+  theme_void()
+```
+:::
+:::
+
+
+::: {.columns}
+
+::: {.column width="50%"}
+```{r, echo=FALSE}
+# base R
+pie(sex_counts,
+    labels=NA,
+    col = c("pink", "lightblue"),
+    main = "Sex Distribution",
+    border=NA)
+legend("bottomright",
+       legend = names(sex_counts),
+       fill = c("pink", "lightblue"),
+       border=NA,
+       bty = "n",
+       title="Sex")
+```
+:::
+::: {.column width="50%"}
+
+```{r, warning=FALSE, echo=FALSE}
+# ggplot2
+brfss_tbl %>%
+  count(Sex) %>%
+  ggplot(aes(x = "", y = n, fill = Sex)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = c("Female" = "pink",
+                               "Male" = "lightblue")) +
+  labs(title = "Sex Distribution") +
+  theme_void()
+```
+:::
+:::
+
+Now let's move on to a boxplot that compares the Weights of Males vs Females for the
 2010 dataset.
 
 ::: {.columns}
