@@ -473,15 +473,11 @@ Or we can display as a pie chart to better see proportion
 ```{r, eval=FALSE}
 # base R
 pie(sex_counts,
-    labels=NA,
     col = c("pink", "lightblue"),
-    main = "Sex Distribution",
-    border=NA)
+    main = "Sex Distribution")
 legend("bottomright",
        legend = names(sex_counts),
        fill = c("pink", "lightblue"),
-       border=NA,
-       bty = "n",
        title="Sex")
 ```
 :::
@@ -509,15 +505,11 @@ brfss_tbl %>%
 ```{r, echo=FALSE}
 # base R
 pie(sex_counts,
-    labels=NA,
     col = c("pink", "lightblue"),
-    main = "Sex Distribution",
-    border=NA)
+    main = "Sex Distribution")
 legend("bottomright",
        legend = names(sex_counts),
        fill = c("pink", "lightblue"),
-       border=NA,
-       bty = "n",
        title="Sex")
 ```
 :::
@@ -537,6 +529,11 @@ brfss_tbl %>%
 ```
 :::
 :::
+
+Notice the slight differences between the two plots. What arguments should be
+included to the base R version to make it look like the ggplot2 version (or visa
+versa)?
+
 
 Now let's move on to a boxplot that compares the Weights of Males vs Females for the
 2010 dataset.
