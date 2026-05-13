@@ -269,6 +269,85 @@ R also has plotting shortcuts that work with data.frames to simplify plotting
 plot( risk ~ smoker, data=smoker_risk)
 ```
 
+## Joining / Merging Data
+
+There are a number of ways to merge or join data. We discussed cbind and rbind
+in matricies which will work with data.frames provided there are equal dimension
+of the bind but there are a number of ways to merge data as well.
+
+### Join Columns
+
+```{r}
+deceased <- sample(c(0,1), size = nrow(smoker_risk), replace=TRUE)
+head(cbind(smoker_risk, deceased))
+```
+
+Be careful if a columns can be repeated to match length it will by default.
+
+```{r}
+meta_data <- data.frame(sex=c("f", "m", "m", "f"), age=c(40,60,20,80))
+head(cbind(smoker_risk, deceased, meta_data))
+```
+
+### Join Rows
+
+```{r}
+tail(rbind(smoker_risk, smoker_risk[1:4,]))
+```
+
+There is also a dplyr method to join rows that can handle NA automatically
+
+```{r, message=FALSE}
+library(dplyr)
+second_smoker_set = data.frame(smoker=c("smoker", "non-smoker", "smoker"),
+                               deceased = c(0,0,1))
+tail(bind_rows(smoker_risk, second_smoker_set))
+```
+
+If you tried this with rbind it will fail
+```{r error=TRUE}
+rbind(smoker_risk, second_smoker_set)
+```
+
+### Joining Data by Key
+
+There are multiple options to merge by id (database like) depending on desired result.
+
+1. merge
+2. left_join
+3. right_join
+4. inner_join
+5. full_join
+
+The base R `merge()` by default will only keep matching elements
+
+```{r}
+df1 <- data.frame(id=1:4, ages=c(12,50,40,80), sex = c("F", "M", NA, "F"))
+df2 <- data.frame(id = c(2,4), results = c(0,1))
+
+merge(df1, df2, by="id")
+```
+
+What argument can we use to do a full merge?
+
+The `*_join()` methods are from dplyr.
+
+* `left_join()` keeps all rows from df1
+* `right_join()` keeps all rows from df2
+* `inner_join()` keeps only matching
+* `full_join()` keeps everything 
+
+```{r}
+# only matches
+inner_join(df1, df2)
+
+
+# keep everything
+full_join(df1, df2)
+
+```
+
+
 ## Saving a data.frame
 
 Once we have a data.frame of interest, we may want to save it. The most
