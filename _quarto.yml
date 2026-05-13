@@ -84,8 +84,6 @@ format:
     dev: "png"
     devargs:
       type: "cairo"
-  pdf:
-    documentclass: scrreprt
 
 
 
