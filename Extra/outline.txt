@@ -1,0 +1,245 @@
+Set working directory
+
+Create Rmd
+
+Render
+
+Change header
+
+Point out bold, add italics
+  using star, underscore and html (b/i)
+
+Line spacer (---, <br>)
+
+Point out inline code
+
+explain parts of code chunk call, eval=FALSE, etc and add installation 
+
+```{r install, eval=FALSE}
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install(c("ggplot2", "dplyr"))
+```
+
+load section with and without message, mention warning=FALSE
+
+```{r load}
+library(ggplot2)
+library(dplyr)
+data(msleep)
+head(msleep)
+```
+
+Manual Table
+|||
+|:--|:--:|--|
+
+Or using html <table> with <td> <tr> , etc.
+
+Default Kable
+
+```{r msleeptbl, eval=TRUE, echo=TRUE}
+library(knitr)
+kable(msleep[1:5,1:7], caption="Stylized Kable")
+```
+
+Default theme bootstrap theme,
+kable_paper, kable_classic, kable_classic_2, kable_minimal, kable_material and
+kable_material_dark
+
+Use a theme from kableExtra
+
+```{r msleeptbl2}
+suppressPackageStartupMessages(library(kableExtra))
+kable(msleep[1:5,1:7]) %>% kable_classic(full_width = F, html_font = "Cambria")
+```
+
+Show how advanced we can get
+
+```{r msleeptbl3}
+kable(msleep[1:5,1:7], caption="Stylized Kable") %>%
+  kable_styling(bootstrap_options = c("striped", "condensed", "hover"),
+                full_width = FALSE,
+                position="left")%>%
+  row_spec(0, background = "#95c5c5", color = "white") %>%
+  column_spec(1, bold = TRUE, border_right = "2px solid #555") %>%
+  footnote(general = "This is a subset of the `msleep` dataset.",
+           footnote_as_chunk = TRUE)
+```
+
+Interactive Tables
+
+```{r interactivetbl, message=FALSE}
+library(DT)
+datatable(
+msleep[,1:7],
+options = list(
+pageLength = 10,
+autoWidth = TRUE,
+dom = 'Bfrtip', 
+buttons = c('colvis') 
+),
+extensions = 'Buttons',
+filter = 'top', 
+rownames = FALSE
+)
+```
+
+
+Other Features
+
+Show link and lists and checklists and can use html directly
+
+[Bioconductor Website](https://bioconductor.org)
+<br>
+<a href="https://bioconductor.org">Another Link to Bioconductor</a>
+
+Ordered (1,2,3) Unordered (-), Checklists (- [ ], - [X])
+Nested
+
+
+Change header to include table of contents
+
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+
+
+Other ways to link sections within the document
+
+[Back to top](#top)
+<a href="#top" style="color:steelblue; float:right;">Back to top</a>
+
+Add anchors and links 
+<a name="mylink"></a>
+
+# anchor sections manually
+## Hyperlinks{#links}
+
+[Jump to Links](#links)
+
+Headers auto link, spaces are dashes, or you can shorten or create your own
+
+
+
+Add figure 
+
+
+Built in syntax
+
+![Bioconductor Image Caption](bioconductor_note.jpg)
+
+Alternative 1 Classic html
+
+<figure>
+  <img src="bioconductor_note.jpg" width="50%" alt="Bioconductor Note">
+  <figcaption>Figure 1: Screenshot of a Bioconductor note.</figcaption>
+</figure>
+
+
+Alternative 2 Knitr
+
+```{r, echo=FALSE, out.width="50%", fig.cap="Bioconductor Logo Caption"}
+knitr::include_graphics("bioconductor_note.jpg")
+```
+
+
+## Plotting
+
+```{r histogram, echo=FALSE, fig.cap="Figure 1: histogram <br> Add descriptve caption text that may be very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long"}
+ggplot(msleep, aes(x = sleep_total)) +
+  geom_histogram(binwidth = 1, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of Total Sleep Hours in Mammals",
+       x = "Total Sleep Hours",
+       y = "Frequency") +
+  theme_minimal()
+
+```
+
+### Formatting
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(cache = TRUE)
+```
+
+Can specify for the entire document through options and layouts but ad hoc with columns
+
+
+Format by using columns
+
+::: {.columns}
+::: {.column width="50%"}
+```{r scatterplot, echo=FALSE}
+ggplot(msleep, aes(x = bodywt, y = sleep_total, color = vore)) +
+  geom_point(alpha = 1) +
+  scale_x_log10() + # Use log scale for body weight due to wide range
+  labs(title = "Total Sleep vs. Body Weight by Diet",
+       x = "Body Weight (kg, log scale)",
+       y = "Total Sleep Hours",
+       color = "Diet") +
+  theme_minimal()
+
+```
+:::
+::: {.column width="50%"}
+```{r histogramV2, echo=FALSE, fig.cap="Figure 1: histogram <br> Add descriptve caption text that may be very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very very long"}
+ggplot(msleep, aes(x = sleep_total)) +
+  geom_histogram(binwidth = 1, fill = "skyblue", color = "black") +
+  labs(title = "Distribution of Total Sleep Hours in Mammals",
+       x = "Total Sleep Hours",
+       y = "Frequency") +
+  theme_minimal()
+```
+:::
+:::
+
+When you start typing this is back to regular formatting space across the full page 
+
+
+
+More plotting 
+
+```{r saveplotToDevice, warning=FALSE, message=FALSE, results='hide'}
+Cairo::CairoPNG("plot.png", width = 800, height = 600)
+ggplot(msleep, aes(x = sleep_rem, y = sleep_total - sleep_rem)) +
+  geom_point(alpha = 0.6) +
+  facet_wrap(~ order) + # Create separate plots for each 'order'
+  labs(title = "REM Sleep vs. Non-REM Sleep by Mammal Order",
+       x = "REM Sleep (hours)",
+       y = "Non-REM Sleep (hours)") +
+  theme_bw()
+dev.off()
+```
+
+```{r showPlot, echo=FALSE, out.width="75%"}
+knitr::include_graphics("plot.png")
+```
+
+
+## Results {.tabset}
+
+### Text
+Some Overview Text
+
+### Plots
+```{r}
+plot(1:10, 1:10)
+```
+
+### Tables
+```{r msleeptblV2, eval=TRUE, echo=TRUE}
+library(knitr)
+kable(msleep[1:5,1:7]) 
+```
+
+## Back to a normal header
+
+See here
+
+# SessionInfo
+
+```{r sessionInfo}
+sessionInfo()
+```
